@@ -1,18 +1,17 @@
 angular.module("BerryApp").factory("loginFactory", [
 	"$location", "$http", "$q",
- 	function($location, $http, $q){
- 		//User data
- 		var data = {
- 			Token: "",
- 			User: {
- 				Email: "",
- 				FullName: "",
- 				ImageURL: "",
- 				Role: "",
- 				SSN: "",
- 				Username: ""
- 			}
- 		};
+	function($location, $http, $q){
+		//User data
+		var data = {
+			Token: "",
+			User: {
+				Email: "",
+				FullName: "",
+				ImageURL: "",
+				Role: "",
+				SSN: "",
+			}
+		};
 		
 		var obj = {
 			//Checkar á user
@@ -24,7 +23,7 @@ angular.module("BerryApp").factory("loginFactory", [
 				var deferred = $q.defer();
 				var request = $http({
 					method: "POST", 
-					url: "http://dispatch.ru.is/h24/api/v1/login",
+					url: "/api/login",
 					data: loginData
 				});
 				data = data.data;
@@ -42,6 +41,6 @@ angular.module("BerryApp").factory("loginFactory", [
 				getUser: function(){
 					return data.User.Username;
 				}
-			} 
+			};
 		return obj;
-	 	}]);
+		}]);
