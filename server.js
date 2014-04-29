@@ -38,6 +38,7 @@ app.del('/api/cars/:id', cars.del)
 */
 app.get('/api/login', function(req, res) {
   res.send(true);
+  console.log("User: " + req.uname + " logged in.");
 });
 
 var server = http.createServer(app)
