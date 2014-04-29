@@ -1,23 +1,3 @@
-var app = angular.module("BerryApp", ["ngRoute"]);
-
-app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
-	$routeProvider.when("/", {
-		templateUrl: "templates/Main.html",
-		controller: "MainController",
-	}).when("/LogIn", {
-		templateUrl: "templates/LogIn.html",
-		controller: "LogInController",
-	}).otherwise({ redirectTo: "/" });
-	
-	//$locationProvider.html5Mode(true);
-}]);
-
-
-app.controller("MainController", ["$scope", "$location", function($scope, $location) {
-
-
-
-}]);
 angular.module("BerryApp").controller("loginController", 
 	["$scope", "$location", "$http", "loginFactory",
 	function($scope, $location, $http, loginFactory){
@@ -41,4 +21,3 @@ angular.module("BerryApp").controller("loginController",
 				});
 		};	
 }]);
-
