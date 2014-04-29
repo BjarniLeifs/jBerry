@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-  grunt.initConfig({
+
+grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
@@ -7,11 +8,11 @@ module.exports = function(grunt) {
       },
       basic: {
         src: ['src/**/*.js'],
-        dest: 'dist/JBerry.js',
+        dest: 'out/JBerry.js',
       },
       extras: {
         src: ['css/*.css'],
-        dest: 'dist/style.css',
+        dest: 'out/style.css',
       },
     },
     uglify: {
@@ -20,7 +21,17 @@ module.exports = function(grunt) {
       },
       basic: {
         files: {
-          'dist/JBerry.min.js': ['<%= concat.basic.dest %>']
+          'out/JBerry.min.js': ['<%= concat.basic.dest %>']
+        }
+      }
+    },
+    connect:{
+      server:{ 
+       options: {
+        port: 3000,
+        keepalive: true,
+        livereload: false,
+        open: true
         }
       }
     },
@@ -41,6 +52,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat'); 
+  grunt.loadNpmTasks('grunt-contrib-connect'); 
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'connect']);
 };
