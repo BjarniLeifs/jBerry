@@ -36,7 +36,10 @@ app.post('/api/cars', cars.create)
 app.put('/api/cars/:id', cars.update)
 app.del('/api/cars/:id', cars.del)
 */
-
+app.get('/api/login', function(req, res) {
+  res.send(true);
+  console.log("User: " + req.uname + " logged in.");
+});
 
 var server = http.createServer(app)
 
