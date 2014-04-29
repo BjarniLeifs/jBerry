@@ -35,15 +35,7 @@
           }
         }
       },
-      watch: {
-    scripts: {
-      files: ['templates/*.html','src/controllers/*.js', 'src/services/*.js'],
-      tasks: ['jshint'],
-      options: {
-        interrupt: true,
-      },
-    },
-  },
+
       jshint: {
         files: ['Gruntfile.js', 'src/**/*.js'],
         options: {
@@ -62,8 +54,7 @@
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat'); 
     grunt.loadNpmTasks('grunt-contrib-connect'); 
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-    grunt.registerTask('default', ['jshint', 'watch', 'concat', 'uglify', 'connect']);
+    grunt.registerTask('default', ['jshint',  'concat', 'uglify', 'connect']);
   };
