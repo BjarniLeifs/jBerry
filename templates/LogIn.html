@@ -1,1 +1,17 @@
-<h1> LogIn Controller</h1>
+<div class="container">
+	<div class="row">
+    	<div class="container" id="formContainer">
+
+          <form class="form-signin" id="login" role="form">
+            <h3 class="form-signin-heading">Innskráning</h3>
+            <a href="#" id="flipToRecover" class="flipLink">
+              <div id="triangle-topright"></div>
+            </a>
+            <input type="username" class="form-control" ng-model="user" name="username" id="username" placeholder="Notendanafn" required autofocus>
+            <input type="password" class="form-control" ng-model="pass" 
+             name="password" id="password" placeholder="Lykilorð" required>
+            <button ng-click="connect()" class="btn btn-lg btn-primary btn-block" type="submit">Skráðu mig inn...</button>
+          </form>
+    	 </div> 
+	</div>
+</div>
