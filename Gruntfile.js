@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
-
-  grunt.initConfig({
+grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
@@ -21,6 +20,19 @@ module.exports = function(grunt) {
         }
       }
     },
+
+     connect:{
+      server:{ 
+       options: {
+        port: 3000,
+        keepalive: true,
+        livereload: false,
+        open: true
+
+
+        }
+      }
+    },
     jshint: {
       files: ['Gruntfile.js', 'src/**/*.js'],
       options: {
@@ -38,6 +50,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat'); 
+  grunt.loadNpmTasks('grunt-contrib-connect'); 
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'connect']);
 };
