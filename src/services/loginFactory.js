@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular.module("BerryApp").factory("loginFactory", [
 	"$location", "$http", "$q",
 	function($location, $http, $q){
@@ -44,3 +45,23 @@ angular.module("BerryApp").factory("loginFactory", [
 			};
 		return obj;
 		}]);
+=======
+app.factory("loginFactory", ["$location", "$http", "$q",function($location, $http, $q){
+	var user;
+
+	return {
+		validUser: function(user, pass){
+			return $http.post({method: "POST", url:"http://dispatch.ru.is/h24/api/v1/login", data: {user:user, password:pass}});
+		},
+		getToken: function(){
+			return user.Token;
+		},
+		setUser: function(newUser) {
+			user = newUser;
+		},
+		getUserName: function(){
+			return user.User.Username;
+		}
+	};
+}]);
+>>>>>>> 401422cff2f83b5ecb3d485e0b71af11ae11b4bc
