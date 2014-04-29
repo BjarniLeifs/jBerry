@@ -1,23 +1,26 @@
 module.exports = function(grunt) {
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
         separator: '\n'
       },
-      dist: {
+      basic: {
         src: ['src/**/*.js'],
-        dest: 'dist/JBerry.js'
-      }
+        dest: 'dist/JBerry.js',
+      },
+      extras: {
+        src: ['css/*.css'],
+        dest: 'dist/style.css',
+      },
     },
     uglify: {
       options: {
         banner: '/*! Made on <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
-      dist: {
+      basic: {
         files: {
-          'dist/JBerry.min.js': ['<%= concat.dist.dest %>']
+          'dist/JBerry.min.js': ['<%= concat.basic.dest %>']
         }
       }
     },
