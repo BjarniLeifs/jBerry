@@ -16,3 +16,4 @@ app.factory("loginFactory", ["$location", "$http", "$q",function($location, $htt
 		}
 	};
 }]);
+
