@@ -46,14 +46,30 @@ grunt.initConfig({
           document: true
         }
       }
+    },
+    watch: {
+      js: {
+        files: ['src/**/*.js'],
+        tasks: ['concat:basic'],
+        options: {
+          livereload: true,
+        }
+      },
+      css: {
+        files: ['css/*.css', 'css/less/*.less'],
+        tasks: ['concat:extras'],
+        options: {
+          livereload: true,
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat'); 
-  grunt.loadNpmTasks('grunt-contrib-connect'); 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'connect']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'connect', 'watch']);
 };
