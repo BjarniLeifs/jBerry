@@ -1,0 +1,14 @@
+#container #container-headerLogin {
+  padding: 1%;
+  float: right;
+}
+#container #container-imgRow {
+  margin-right: -15px;
+  padding-top: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: -15px;
+}
+#container #container-loginbutton {
+  margin: 1%;
+}
