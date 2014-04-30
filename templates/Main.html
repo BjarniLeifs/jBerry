@@ -1,30 +1,88 @@
-<div id="Container" class="row-fluid">
-	<div id="Container-Head" class="span12">
-		<div id="Container-Head-logo"></div>
-		<div id="Head-profile"></div>
-	</div>
-	<div id="Container-Left" class="span2">
-
-	</div>
-	<div id="Container-Center" class="span8">
-
-	</div>
-	<div id="Container-Right" class="span2">
-
-	</div>
-</div>
-
-<div´id="Container" class="container">
+<div id="Container" class="container">
 	<div id="Container-Head" class="row clearfix">
 		<div class="col-md-12 column">
 		</div>
 	</div>
-	<div class="row clearfix">
+	<div class="row clearfix" style=" height: 100%;">
 		<div id="Container-Left" class="col-md-2 column">
+			<div id="Container-Left-Menu">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<p>Tasks</p>
+					</div>
+				</div>
+				
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Planer" data-parent="#Container-Left-Menu">
+							<span class="glyphicon glyphicon-book"></span><p>Planner</p>
+						</a>
+					</div>
+					<div id="Planer" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									SubName-1
+								</li>
+								<li>
+									SubName-2
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Statics" data-parent="#Container-Left-Menu">
+							<span class="glyphicon glyphicon-cog"></span><p>Statics</p>
+						</a>
+					</div>
+					<div id="Statics" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									SubName-1
+								</li>
+								<li>
+									SubName-2
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Food" data-parent="#Container-Left-Menu">
+							<span class="glyphicon glyphicon-cutlery"></span><p>Food</p>
+						</a>
+					</div>
+					<div id="Food" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									SubName-1
+								</li>
+								<li>
+									SubName-2
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="Container-Center" class="col-md-6 column">
+
+		<div id="Container-Center" class="col-md-8 column">
+			<div class="block food">
+
+			</div>
+
+			<div class="block post">
+
+			</div>
+
+			<div class="block proPost">
+
+			</div>
 		</div>
-		<div id="Container-Right" class="col-md-4 column">
+		<div id="Container-Right" class="col-md-2 column">
+		
 		</div>
 	</div>
 </div>

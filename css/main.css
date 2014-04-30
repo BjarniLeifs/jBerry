@@ -1,1 +1,100 @@
-#Container{position:absolute;width:100%;top:0;bottom:0}#Container #Container-Head{background-color:red}#Container #Container-Left{background-color:#fff}#Container #Container-Center{background-color:#ff0}#Container #Container-Right{background-color:#00f}
+#Container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+#Container #Container-Head {
+  background-color: #432f21;
+  height: 42px;
+  border-bottom: 1px solid black;
+}
+#Container #Container-Left {
+  height: 100%;
+  border-right: 1px solid black;
+  padding: 0;
+  background-color: #cdcab9;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-group {
+  margin-bottom: 0px;
+  border: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-group p {
+  display: inline-block;
+  font-size: 24px;
+  color: #000;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-heading {
+  height: 40px;
+  border-bottom: 1px solid #000;
+  background-color: #cdcab9;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-heading a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  float: left;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-heading a p {
+  margin-left: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-heading a p:hover {
+  color: #ca171b;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-inner ul {
+  border-bottom: 1px solid #000;
+  margin-bottom: 0px;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-inner li {
+  list-style: none;
+  margin-left: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+#Container #Container-Left #Container-Left-Menu .accordion-inner li:hover {
+  color: #ca171b;
+}
+#Container #Container-Left .list-group-item {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: white;
+  background-color: #cdcab9;
+  border-radius: 0px !important;
+  border: none;
+  cursor: pointer;
+}
+#Container #Container-Left .list-group-item:hover {
+  color: black;
+}
+#Container #Container-Left .list-selected {
+  background-color: black;
+  color: black;
+  border: solid black;
+  border-width: 2px 0px 2px 2px;
+}
+#Container #Container-Center {
+  height: 94%;
+  overflow: overlay;
+}
+#Container #Container-Center .block {
+  width: 35em;
+  height: 15em;
+  border: 1px solid black;
+  margin: 2em auto 2em auto;
+}
+#Container #Container-Right {
+  height: 100%;
+  border-left: 1px solid black;
+}
