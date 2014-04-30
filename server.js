@@ -1,21 +1,33 @@
-if (!process.env.NODE_ENV) process.env.NODE_ENV='development'
+if (!process.env.NODE_ENV) 
+  process.env.NODE_ENV='development';
 
 var express = require('express')
   , http = require('http')
   , path = require('path')
   //, cars = require('./server/api/cars')
+var MongoStore = require('connect-mongo')(express);
 
-var app = express()
+var app = express();
 
-var clientDir = path.join(__dirname, '/')
+
+var clientDir = path.join(__dirname, '/');
 
 app.configure(function() {
-  app.set('port', process.env.PORT || 3000)
-  app.use(express.favicon())
-  app.use(express.logger('dev'))
-  app.use(express.bodyParser()) 
-  app.use(app.router) 
-  app.use(express.static(clientDir)) 
+  app.set('port', process.env.PORT || 3000);
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
+  app.use(express.bodyParser());
+  app.use(express.cookieParser('IceSeed'));
+  app.use(express.session());
+  app.use(express.session({
+    store: new MongoStore({
+      db: 'SessionStore',
+      host: '127.0.0.1',
+      port: 3355
+    })
+  }));
+  app.use(app.router);
+  app.use(express.static(clientDir));
 })
 
 app.configure('development', function(){
@@ -23,7 +35,7 @@ app.configure('development', function(){
 })
 
 app.get('/', function(req, res) {
-  res.sendfile(path.join(clientDir, 'index.html'))
+  res.sendfile(path.join(clientDir, 'index.html'));
 })
 
 /*
@@ -41,7 +53,7 @@ app.get('/api/login', function(req, res) {
   console.log("User: " + req.uname + " logged in.");
 });
 
-var server = http.createServer(app)
+var server = http.createServer(app);
 
 
 server.listen(app.get('port'), function(){
