@@ -1,19 +1,31 @@
+  <div id="container">
+    <div id="headerLogin">
+      <ul class="nav nav-tabs">
+        <li><input type="username" class="form-control" ng-model="user" name="username" id="username" placeholder="Your username" required autofocus></li>
+        <li><input type="password" class="form-control" ng-model="pass" 
+          name="password" id="password" placeholder="Your password"required></li>
+          <li><button ng-click="connect()" class="btn btn-default btn-sm" type="submit">Sign in</button></li>
+          <li><button ng-click="regester()" class="btn btn-default btn-sm" type="submit">Register</button></li>
+        </ul>
+      </div>
+      <div class="col-sm-12">
+        <div id="slider_amirol"></div>
+      </div>
 
-<div class="container">
-	<div class="row">
-    	<div class="container" id="formContainer">
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <a href="#" class="thumbnail">
+            <img data-src="holder.js/100%x180" alt="...">
+          </a>
+        </div>
+        ...
+      </div>
 
-          <form class="form-signin" id="login" role="form">
-            <h3 class="form-signin-heading">Innskráning</h3>
-            <a href="#" id="flipToRecover" class="flipLink">
-              <div id="triangle-topright"></div>
-            </a>
-            <input type="username" class="form-control" ng-model="user" name="username" id="username" placeholder="Your username" required autofocus>
-            <input type="password" class="form-control" ng-model="pass" 
-             name="password" id="password" placeholder="Your password" required>
-            <button ng-click="connect()" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <button ng-click="regester()" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-          </form>
-    	 </div> 
-	</div>
-</div>
+
+
+    </div>
+
+
+
+
+
