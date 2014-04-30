@@ -47,25 +47,24 @@
             document: true
           }
         }
-      }
-    },
-    watch: {
-      js: {
-        files: ['src/**/*.js'],
-        tasks: ['concat:basic'],
-        options: {
-          livereload: true,
-        }
       },
-      css: {
-        files: ['css/*.css', 'css/less/*.less'],
-        tasks: ['concat:extras'],
-        options: {
-          livereload: true,
+      watch: {
+        js: {
+          files: ['src/**/*.js'],
+          tasks: ['concat:basic'],
+          options: {
+            livereload: true,
+          }
+        },
+        css: {
+          files: ['css/*.css', 'css/less/*.less'],
+          tasks: ['concat:extras'],
+          options: {
+            livereload: true,
+          }
         }
       }
-    }
-  });
+    });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
