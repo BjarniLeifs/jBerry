@@ -9,7 +9,7 @@ app.factory("userFactory", ["$location", "$http", "$q",function($location, $http
 			return user.Token;
 		},
 		setUser: function(newUser) {
-			return $http.post({method: "POST", url: "http://api/register"})
+			return $http.post({method: "POST", url: "http://api/register"});
 		},
 		getUserName: function(){
 			return user.User.Username;
