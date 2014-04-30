@@ -17,14 +17,16 @@ app.configure(function() {
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
-  app.use(express.cookieParser('IceSeed'));
+  app.use(express.cookieParser('Xarikem443Dweik2o3D'));
   app.use(express.session());
   app.use(express.session({
+    secret: "Xarikem443Dweik2o3D",
     store: new MongoStore({
       db: 'SessionStore',
       host: '127.0.0.1',
       port: 3355
-    })
+    }),
+    cookie: {maxAge: 604800000}
   }));
   app.use(app.router);
   app.use(express.static(clientDir));
