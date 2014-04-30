@@ -25,17 +25,6 @@
           }
         }
       },
-      connect:{
-        server:{ 
-         options: {
-          port: 3001,
-          keepalive: true,
-          livereload: false,
-          open: true
-          }
-        }
-      },
-
       jshint: {
         files: ['Gruntfile.js', 'src/**/*.js'],
         options: {
@@ -63,14 +52,21 @@
             livereload: true,
           }
         }
+      },
+      express: {
+        server: {
+          options: {
+            script: './server.js'
+          }
+        }
       }
     });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat'); 
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'connect', 'watch']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'express:server', 'watch']);
 };
