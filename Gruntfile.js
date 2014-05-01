@@ -10,6 +10,10 @@
           src: ['src/**/*.js'],
           dest: 'out/JBerry.js',
         },
+        server: {
+          src: ['server.js', 'server/**/*.js', 'serverInitial.js'],
+          dest: './serverCon.js',
+        },
         extras: {
           src: ['css/*.css'],
           dest: 'out/style.css',
@@ -26,7 +30,7 @@
         }
       },
       jshint: {
-        files: ['Gruntfile.js', 'src/**/*.js'],
+        files: ['server.js', 'Gruntfile.js', 'src/**/*.js', 'server/**/*.js'],
         options: {
           // options here to override JSHint defaults
           globals: {
@@ -56,7 +60,7 @@
       express: {
         server: {
           options: {
-            script: './server.js'
+            script: './serverCon.js'
           }
         }
       }

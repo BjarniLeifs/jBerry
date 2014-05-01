@@ -46,3 +46,10 @@ app.get('/', function(req, res) {
 });
 
 var server = http.createServer(app);
+
+
+
+
+server.listen(app.get('port'), function(){
+  console.log("Web server listening in  on port %d", app.get('port'));
+});
