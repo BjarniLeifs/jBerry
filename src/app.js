@@ -7,8 +7,16 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/LogIn", {
 		templateUrl: "templates/LogIn.html",
 		controller: "LogInController",
+	}).when("/createBlog", {
+		templateUrl: "templates/createBlog.html",
+		controller: "blogController",
+	}).when("/profile", {
+		templateUrl: "templates/profile.html",
+		controller: "profileController",
+	}).when("/checkin", {
+		templateUrl: "templates/checkin.html",
+		controller: "checkinController",
 	}).otherwise({ redirectTo: "/" });
-	
 	//$locationProvider.html5Mode(true);
 }]);
 
