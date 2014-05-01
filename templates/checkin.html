@@ -1,82 +1,32 @@
-Enter today's weight: <input type="text" name="wKg">kg<br>
-<table>
-	<thead>
-		<tr>
-			<td>Measurements</td>
-			<td>Last Entry</td>
-			<td>Today's Entry</td>
-		</tr>	
-	</thead>
-	<tfoot>
-		<tr>
-			<td colspan="3">
-				<a href="#">Edit Previous Enteries</a>
-			</td>
-		</tr>
-	</tfoot>
-	<tbody>
-		<tr>
-			<td>Neck:</td>
-			<td>none</td>
-			<td><input type="text" name="neck">cm</td>
-		</tr>
-		<tr>
-			<td>Chest:</td>
-			<td>none</td>
-			<td><input type="text" name="chest">cm</td>
-		</tr>
-		<tr>
-			<td>Left Bicep:</td>
-			<td>none</td>
-			<td><input type="text" name="lBicep">cm</td>
-		</tr>
-		<tr>
-			<td>Right Bicep:</td>
-			<td>none</td>
-			<td><input type="text" name="rBicep">cm</td>
-		</tr>
-		<tr>
-			<td>Left Forearm:</td>
-			<td>none</td>
-			<td><input type="text" name="lForearm">cm</td>
-		</tr>
-		<tr>
-			<td>Right Forearm:</td>
-			<td>none</td>
-			<td><input type="text" name="rForearm">cm</td>
-		</tr>	
-		<tr>
-			<td>Waist:</td>
-			<td>none</td>
-			<td><input type="text" name="waist">cm</td>
-		</tr>
-		<tr>
-			<td>Hips:</td>
-			<td>none</td>
-			<td><input type="text" name="hips">cm</td>
-		</tr>
-		<tr>
-			<td>Left Thigh:</td>
-			<td>none</td>
-			<td><input type="text" name="lThigh">cm</td>
-		</tr>
-		<tr>
-			<td>Right Thigh:</td>
-			<td>none</td>
-			<td><input type="text" name="rThigh">cm</td>
-		</tr>
-		<tr>
-			<td>Left Calf:</td>
-			<td>none</td>
-			<td><input type="text" name="lCalf">cm</td>
-		</tr>
-		<tr>
-			<td>Right Calf:</td>
-			<td>none</td>
-			<td><input type="text" name="rCalf">cm</td>
-		</tr>
-	</tbody>
-</table>
+
+<form role="form">
+  	<div class="form-group">
+    	<label for="todaysweight">Weight:</label>
+    		<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br>
+    	<label for="neck">Neck:</label>
+   			<input type="number" min="0.0" step="0.1" max="1000"  name="neck" placeholder=""> cm<br>
+   		<label for="chest">Chest:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="chest" placeholder=""> cm<br>
+   		<label for="bicep">Bicep:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="bicep" placeholder=""> cm<br>
+   		<label for="forearm">Forearm:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="forearm" placeholder=""> cm<br>
+   		<label for="waist">Waist:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="waist" placeholder=""> cm<br>
+   		<label for="hips">Hips:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="hips" placeholder=""> cm<br>
+   		<label for="uThigh">Upper Thigh:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="uThigh" placeholder=""> cm<br>
+   		<label for="mThigh">Middle Thigh:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="mThigh" placeholder=""> cm<br>  		
+		<label for="Calf">Calf:</label>
+			<input type="number" min="0.0" step="0.1" max="1000"  name="Calf" placeholder=""> cm<br>
+	</div>
+  	<button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+
 
 
 

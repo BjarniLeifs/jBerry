@@ -13,17 +13,14 @@ app.directive('timeLine', ['$compile', function($compile) {
 				tmp += "<tr><td class='hours now'>"+hours+"</td>";
 
 			for(var j = 0; j <= 6; j++) {
-				
 				if(dObj.minutes !== j)
 					tmp += "<td class='cell-minutes'><span  class='minutes'>"+j+"0</span></td>";
 				else 
 					tmp += "<td class='cell-minutes'><span class='minutes now'>"+j+"</span></td>";
 
 			}
-
 			tmp += "</tr>";
 		}
-
 		tmp += "</table>";
 
 		return tmp;
@@ -39,14 +36,11 @@ app.directive('timeLine', ['$compile', function($compile) {
 			$compile(elem.contents());
 
 			$('tr').hover(function() {
-				$(this).find('.cell-minutes').slideDown('fast', function() {
-
-				});
+				$(this).find('.cell-minutes').slideDown('fast');
 			}, function() {
-				$(this).find('.cell-minutes').slideUp('fast', function() {
-
-				});
+				$(this).find('.cell-minutes').slideUp('fast');
 			});
+
 			elem.bind('mouseover', function() {
 				elem.css('cursor', 'pointer');
 			});
