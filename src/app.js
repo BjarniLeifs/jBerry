@@ -16,6 +16,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/checkin", {
 		templateUrl: "templates/checkin.html",
 		controller: "checkinController",
+	}).when("/nutritionopz", {
+		templateUrl: "templates/nutritionopz.html",
+		controller: "nutritionopzController",
 	}).otherwise({ redirectTo: "/" });
 	//$locationProvider.html5Mode(true);
 }]);
