@@ -21,7 +21,7 @@ app.configure(function() {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(clientDir));
 });
 
 app.configure('development', function(){
@@ -40,5 +40,9 @@ passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
 mongoose.connect('mongodb://localhost:27017');
+
+app.get('/', function(req, res) {
+  res.sendfile(path.join(clientDir, 'index.html'));
+});
 
 var server = http.createServer(app);
