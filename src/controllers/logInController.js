@@ -28,5 +28,5 @@ app.controller("loginController", ["$scope", "$location", "$http", "loginFactory
 				
 			});
 
-		}
+		};
 }]);
