@@ -42,3 +42,10 @@ passport.deserializeUser(Account.deserializeUser());
 mongoose.connect('mongodb://localhost:27017');
 
 var server = http.createServer(app);
+
+
+
+
+server.listen(app.get('port'), function(){
+  console.log("Web server listening in  on port %d", app.get('port'));
+});
