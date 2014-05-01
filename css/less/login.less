@@ -1,21 +1,115 @@
-#container{
-	
-	#container-headerLogin{
+#container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	#container-header {
+		width: 100%;
+		border-bottom: 1px solid #ccc;
 		padding: 1%;
-		float: right;
+		height: 6.5em;
+
+		#container-header-form {
+			float: right;
+			input {
+				color: black;
+			}
+
+			li {
+				float: right;
+				margin: 10px;
+			}
+
+			.checkbox {
+				float:left; 
+				margin-top: 5px;
+			}
+
+			.input-group {
+				width: 200px;
+				float: right;
+				margin: 10px;
+
+				.input-group {
+					margin: 0;
+				}
+			}
+
+			button {
+				float: right;
+				margin: 10px;	
+			}
+		}
+	}
+
+	#container-main {
+		width: 100%;
+		height: 100%;
 		
-	}
+		#container-register {
+			position: absolute;
+			right: 5em;
+			float: right;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			margin: 2%;
+			height: 30em;
+			width: 22em;
+			box-shadow: 2px 4px 14px #000;
 
-	#container-imgRow{
-		margin-right: -15px;
-		padding-top: 20%;
-		padding-left: 5%;
-		padding-right: 5%;
-		margin-left: -15px;
-	}
+		 	#container-register-header {
+		 		h2 {
+		 			font: 25px Georgia, "Times New Roman", Times, serif;
+					padding: 0px 0px 10px 20px;
+					display: block;
+					border-bottom: 1px solid #DADADA;
+					color: #888;
+					font-weight: bolder;
+		 		}
+		 	}
 
-	#container-loginbutton{
-		margin: 1%;
+		 	#container-register-form {
+		 		padding: 2% 7% 2% 7%;
 
+		 		.input-group {
+		 			margin-bottom: 25px;
+		 		}
+
+
+	 			.button-sub {
+	 				width: 100%;
+
+	 				.btn-social-icon {
+	 					float: right;
+						margin-left: 25px;
+	 				}
+	 			}
+		 	}
+		 }
+
+		 #focus-box {
+		 	width: 60%;
+			padding-top: 5%;
+			position: absolute;
+			margin: 2%;
+
+			div {
+				margin-bottom: 30px;
+			}
+		 }
+
+		#container-imgRow{
+			margin-right: -15px;
+			padding-top: 20%;
+			padding-left: 5%;
+			padding-right: 5%;
+			margin-left: -15px;
+		}
+
+		#container-loginbutton{
+			margin: 1%;
+
+		}
 	}
 }

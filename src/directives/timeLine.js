@@ -39,13 +39,13 @@ app.directive('timeLine', ['$compile', function($compile) {
 			$compile(elem.contents());
 
 			$('tr').hover(function() {
-			    $(this).find('.cell-minutes').slideDown('fast', function() {
+				$(this).find('.cell-minutes').slideDown('fast', function() {
 
-			    });
+				});
 			}, function() {
-			    $(this).find('.cell-minutes').slideUp('fast', function() {
+				$(this).find('.cell-minutes').slideUp('fast', function() {
 
-			    });
+				});
 			});
 			elem.bind('mouseover', function() {
 				elem.css('cursor', 'pointer');
