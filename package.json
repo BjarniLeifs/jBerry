@@ -6,7 +6,9 @@
     "express": "3.1.0",
     "mongodb": "*",
     "mongoose": "*",
-    "connect-mongo": "*"
+    "connect-mongo": "*",
+    "passport": "*",
+    "passport-local": "*"
   },
   "devDependencies": {
     "grunt": "^0.4.2",
