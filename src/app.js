@@ -6,7 +6,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		controller: "MainController",
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
-		controller: "LogInController",
+		controller: "loginController",
 	}).when("/createBlog", {
 		templateUrl: "templates/createBlog.html",
 		controller: "blogController",
@@ -25,4 +25,3 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).otherwise({ redirectTo: "/" });
 	//$locationProvider.html5Mode(true);
 }]);
-
