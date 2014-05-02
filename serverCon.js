@@ -47,17 +47,16 @@ app.get('/', function(req, res) {
 
 <<<<<<< HEAD
 var server = http.createServer(app);
-
-
-
-
 =======
 var server = http.createServer(app);
 
-
-
-
+// some comment
 >>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
+
+
+
+
+
 server.listen(app.get('port'), function(){
   console.log("Web server listening in  on port %d", app.get('port'));
 });
