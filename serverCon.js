@@ -45,11 +45,19 @@ app.get('/', function(req, res) {
   res.sendfile(path.join(clientDir, 'index.html'));
 });
 
+<<<<<<< HEAD
 var server = http.createServer(app);
 
 
 
 
+=======
+var server = http.createServer(app);
+
+
+
+
+>>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
 server.listen(app.get('port'), function(){
   console.log("Web server listening in  on port %d", app.get('port'));
 });
