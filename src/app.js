@@ -10,6 +10,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/createBlog", {
 		templateUrl: "templates/createBlog.html",
 		controller: "blogController",
+	}).when("/blogs", {
+		templateUrl: "templates/blogs.html",
+		controller: "blogController",
 	}).when("/profile", {
 		templateUrl: "templates/profile.html",
 		controller: "profileController",
