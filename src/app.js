@@ -4,7 +4,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	$routeProvider.when("/", {
 		templateUrl: "templates/Main.html",
 		controller: "MainController",
-	}).when("/LogIn", {
+	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
 		controller: "LogInController",
 	}).when("/createBlog", {
