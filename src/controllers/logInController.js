@@ -1,32 +1,37 @@
-app.controller("loginController", ["$scope", "$location", "$http", "loginFactory",function($scope, $location, $http, loginFactory){
-		$scope.user = "";
-		$scope.pass = "";
-		$scope.realName = "";
+app.controller("loginController", ["$scope", "$location", "$http", "userFactory",function($scope, $location, $http, userFactory){
+	$scope.reg = {name: '', email: '', password:'', conpassword: ''};
+	$scope.email = "";
+	$scope.pass = "";
 
-		$scope.connect = function(){
-			userFactory.validUser($scope.user, $scope.pass)
-			.success(function(data, status, headers, config){
-				if(status == 200) {
-					userFactory.validUser(data);
-					$location.path("/#");
-					$scope.$apply();
-				}
-			}).error(function(){
-			
-			});
-		};
+	$scope.connect = function(){
+		if(!($scope.email && $scope.pass))
+			return;
 
-		$scope.register = function(){
-			userFactory.setUser($scope.realName, $scope.user, $scope.pass)
-			.success(function(data, status, headers, config){
-				if (status == 200) {
-					userFactory.setUser(data);
-					$location.path("/#");
-					$scope.$apply();
-				}
-			}).error(function(){
-				
-			});
 
-		};
+		userFactory.validUser($scope.email, $scope.pass).success(function(data, status, headers, config){
+			if(status === 200) {
+				userFactory.validUser(data);
+				$location.path("/#/");
+				$scope.$apply();
+			}
+		}).error(function(){
+			console.log("Error");
+		});
+	};
+
+	$scope.register = function(){
+		if(!$scope.reg)
+			return;
+
+		userFactory.setUser($scope.reg).success(function(data, status, headers, config){
+			if (status === 200) {
+				userFactory.setUser(data);
+				$location.path("/#");
+				$scope.$apply();
+			}
+		}).error(function(){
+			console.log("Error");
+		});
+
+	};
 }]);
