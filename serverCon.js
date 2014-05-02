@@ -39,7 +39,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-mongoose.connect('mongodb://localhost:27017');
+//mongoose.connect('mongodb://localhost:27017');
 
 app.get('/', function(req, res) {
   res.sendfile(path.join(clientDir, 'index.html'));
