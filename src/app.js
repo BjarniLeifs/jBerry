@@ -7,6 +7,11 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
 		controller: "loginController",
+	}).when("/newblog", {
+		templateUrl: "templates/newBlog.html",
+		controller: "blogController",
+	}).when("/blogs", {
+		templateUrl: "templates/blogs.html",
 	}).when("/createBlog", {
 		templateUrl: "templates/createBlog.html",
 		controller: "blogController",
@@ -31,4 +36,3 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).otherwise({ redirectTo: "/" });
 	//$locationProvider.html5Mode(true);
 }]);
-
