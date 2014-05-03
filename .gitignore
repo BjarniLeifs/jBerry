@@ -1,4 +1,8 @@
 node_modules/
 out/
 ~/node_modules
+<<<<<<< HEAD
 serverCon.js
+=======
+~/serverCon.js
+>>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
