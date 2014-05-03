@@ -17,7 +17,7 @@
         </div>
         <div class="tab-pane" id="measurements">
             <h1>Measurements</h1>
-            <p>Measurements Measurements Measurements</p>
+            <img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto">
             <form role="form">
 			  	<div class="form-group">
 			    	<label for="todaysweight">Weight:</label>
@@ -64,32 +64,68 @@
 			</form>
 
         </div>
-        <div class="tab-pane" id="activityMets">
+        <div class="tab-pane" id="activityMets" width="20">
             <h1>Activity Mets</h1>
-            <p>Activity Mets Activity Mets Activity Mets</p>
-			Bicycling
-			Conditioning exercise
-			Dancing
-			Fishing and hunting
-			Home activities
-			Home repair
-			Inactivity quiet
-			Lawn and garden
-			Miscellaneous
-			Music playing
-			Occupation
-			Sports
-			Transportation
-			Water activities
-			Winter activities
-			Religious activities
-			Volunteer activities
+			<div class="row">
+				<!-- Navigation Buttons -->
+				<div class="col-md-3">
+					<ul class="nav nav-pills nav-stacked" id="myTabs">
+						<li class="active"><a data-target="#bicycling">Bicycling</a></li> 
+						<li><a data-target="#conditioning">Conditioning Exercise</a></li>
+						<li><a data-target="#dancing">Dancing</a></li>
+						<li><a data-target="#fishing">Fishing and Hunting</a></li>
+						<li><a data-target="#homes">Home Activities</a></li>
+						<li><a data-target="#homeRepair">Home Repair</a></li>
+						<li><a data-target="#inactivity">Inactivity Quiet</a></li>
+						<li><a data-target="#lawn">Lawn and Garden</a></li>
+						<li><a data-target="#miscellaneous">Miscellaneous</a></li>
+						<li><a data-target="#music">Music Playing</a></li>
+						<li><a data-target="#occupation">Occupation</a></li>
+						<li><a data-target="#sports">Sports</a></li>
+						<li><a data-target="#transportation">Transportation</a></li>
+						<li><a data-target="#water">Water Activities</a></li>
+						<li><a data-target="#winter">Winter Activities</a></li>
+						<li><a data-target="#religious">Religious Activities</a></li>
+						<li><a data-target="#volunteer">Volunteer Activities</a></li>
+					</ul>
+				</div>
+				<!-- Content -->
+				<div class="col-md-9">
+					<div class="tab-content">
+						<div class="tab-pane active" id="bicycling">someshit here...Bicycling11111</div>
+						<div class="tab-pane" id="conditioning">someshit here...Conditioning2222222</div>
+						<div class="tab-pane" id="dancing">someshit here...Dancing333333</div>
+						<div class="tab-pane" id="fishing">someshit here...Fishing4444444</div>
+						<div class="tab-pane" id="homes">someshit here...555555</div>
+						<div class="tab-pane" id="homeRepair">someshit here...6666666</div>
+						<div class="tab-pane" id="inactivity">someshit here...7777777</div>
+						<div class="tab-pane" id="lawn">someshit here...Lawn888888</div>
+						<div class="tab-pane" id="miscellaneous">someshit here...Lawn999999</div>
+						<div class="tab-pane" id="music">someshit here...10</div>
+						<div class="tab-pane" id="occupation">someshit here...11</div>
+						<div class="tab-pane" id="sports">someshit here...12</div>
+						<div class="tab-pane" id="transportation">someshit here...13</div>
+						<div class="tab-pane" id="water">someshit here...14</div>
+						<div class="tab-pane" id="winter">someshit here...15</div>
+						<div class="tab-pane" id="religious">someshit here...16</div>
+						<div class="tab-pane" id="volunteer">someshit here...17</div>
+
+					</div>
+				</div>
+
+			</div>	
         </div>
     </div>
 </div>
+<!-- Enable the tabs -->
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
 </script>  
-
+<script type="text/javascript">
+  $('#myTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  });
+</script>
