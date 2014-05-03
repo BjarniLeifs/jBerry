@@ -20,10 +20,7 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 	};
 
 	$scope.register = function(){
-<<<<<<< HEAD
-=======
 		console.log("Inside loginController");
->>>>>>> 512ca18c28b13ca8eb0660272b1d43900bb799db
 		if(!$scope.reg)
 			return;
 
