@@ -45,9 +45,6 @@ app.get('/', function(req, res) {
   res.sendfile(path.join(clientDir, 'index.html'));
 });
 
-var server = http.createServer(app);
-
-
 //---Connect to database and search for BLÓMKÁL, hrátt. Then print out the result---
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 
@@ -63,3 +60,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err,
         return results;
     });
 });
+
+var server = http.createServer(app);
+

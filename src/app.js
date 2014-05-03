@@ -6,10 +6,20 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		controller: "MainController",
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
+<<<<<<< HEAD
 		controller: "LogInController",
 	}).when("/createBlog", {
 		templateUrl: "templates/createBlog.html",
 		controller: "blogController",
+=======
+		controller: "loginController",
+	}).when("/createBlog", {
+		templateUrl: "templates/createBlog.html",
+		controller: "blogController",
+	}).when("/blogs", {
+		templateUrl: "templates/blogs.html",
+		controller: "blogController",
+>>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
 	}).when("/profile", {
 		templateUrl: "templates/profile.html",
 		controller: "profileController",
@@ -24,5 +34,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		controller: "foodController",
 	}).otherwise({ redirectTo: "/" });
 	//$locationProvider.html5Mode(true);
+<<<<<<< HEAD
 }]);
 
+=======
+}]);
+>>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
