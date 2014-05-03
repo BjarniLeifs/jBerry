@@ -45,13 +45,11 @@ app.get('/', function(req, res) {
   res.sendfile(path.join(clientDir, 'index.html'));
 });
 
-<<<<<<< HEAD
-var server = http.createServer(app);
-=======
+
 var server = http.createServer(app);
 
 // some comment
->>>>>>> 85bbeef411ac9fecab312fae133d85caa419e74a
+
 
 
 
