@@ -41,11 +41,14 @@ passport.deserializeUser(Account.deserializeUser());
 // mongoose
 //mongoose.connect('mongodb://localhost:27017');
 
+var server = http.createServer(app);
+
 app.get('/', function(req, res) {
   res.sendfile(path.join(clientDir, 'index.html'));
 });
 
 //---Connect to database and search for BLÓMKÁL, hrátt. Then print out the result---
+
 //var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 
 //MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
@@ -61,5 +64,4 @@ app.get('/', function(req, res) {
     //});
 //});
 
-var server = http.createServer(app);
 
