@@ -9,7 +9,9 @@
     "connect-mongo": "*",
     "passport": "*",
     "passport-local": "*",
-    "passport-local-mongoose": "*"
+    "passport-local-mongoose": "*",
+    "connect-flash" : "~0.1.1", 
+    "bcrypt-nodejs" : "latest" 
   },
   "devDependencies": {
     "grunt": "^0.4.2",
