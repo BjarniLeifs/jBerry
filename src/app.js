@@ -7,8 +7,8 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
 		controller: "loginController",
-	}).when("/createBlog", {
-		templateUrl: "templates/createBlog.html",
+	}).when("/newblog", {
+		templateUrl: "templates/newBlog.html",
 		controller: "blogController",
 	}).when("/blogs", {
 		templateUrl: "templates/blogs.html",
