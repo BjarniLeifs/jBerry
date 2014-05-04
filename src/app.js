@@ -1,4 +1,4 @@
-var app = angular.module("BerryApp", ["ngRoute"]);
+var app = angular.module("BerryApp", ["ngRoute", "ui.bootstrap"]);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.when("/", {
@@ -19,6 +19,10 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/nutritionopz", {
 		templateUrl: "templates/nutritionopz.html",
 		controller: "nutritionopzController",
+	}).when("/recipes/browse", {
+		templateUrl: "templates/recipes/browse.html",
+		controller: "browseController",
 	}).otherwise({ redirectTo: "/" });
+	
 	//$locationProvider.html5Mode(true);
 }]);
