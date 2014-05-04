@@ -1,3 +1,6 @@
 app.controller("statisticController", ["$scope", "$location", function($scope, $location) {
-$.jqplot('chartdiv',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]]);
+$.jqplot('chartdiv',  [[34.53, 56.32, 25.1, 18.6]], {series:[{renderer:$.jqplot.BarRenderer}]});
+
+
+
 }]);
