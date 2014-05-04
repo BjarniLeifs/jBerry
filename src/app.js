@@ -7,8 +7,16 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
 		controller: "loginController",
+	}).when("/newblog", {
+		templateUrl: "templates/newBlog.html",
+		controller: "blogController",
+	}).when("/blogs", {
+		templateUrl: "templates/blogs.html",
 	}).when("/createBlog", {
 		templateUrl: "templates/createBlog.html",
+		controller: "blogController",
+	}).when("/blogs", {
+		templateUrl: "templates/blogs.html",
 		controller: "blogController",
 	}).when("/profile", {
 		templateUrl: "templates/profile.html",
@@ -22,6 +30,15 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/recipes/browse", {
 		templateUrl: "templates/recipes/browse.html",
 		controller: "browseController",
+	}).when("/measurements", {
+		templateUrl: "templates/measurements.html",
+		controller: "measurementsController",
+	}).when("/food", {
+		templateUrl: "templates/food.html",
+		controller: "foodController",
+	}).when("/statistic", {
+		templateUrl: "templates/statistic.html",
+		controller: "statisticController",
 	}).otherwise({ redirectTo: "/" });
 	
 	//$locationProvider.html5Mode(true);

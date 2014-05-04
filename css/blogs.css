@@ -1,0 +1,18 @@
+.input-group-addon.primary {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.input-group-addon.success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.inputgroup-addon-textbox {
+  margin: 0 20%;
+}
+.btn-success {
+  float: right;
+  margin-right: 20%;
+  margin-top: 2%;
+}

@@ -1,0 +1,7 @@
+#Container-Center {
+  margin-left: 200%;
+  background-color: red;
+}
+#Container-Center #Container-Center-blog {
+  padding-left: 50%;
+}
