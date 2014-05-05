@@ -1,8 +1,8 @@
-// /models/profile.js
+// /models/food.js
 // load the things we need
 var mongoose = require('mongoose');
 
-// define the schema for our profile model
+// define the schema for our food model
 var foodSchema = mongoose.Schema({
 
 	"Nafn"									: String,

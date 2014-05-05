@@ -48,7 +48,7 @@ module.exports = function(app, passport, mongoose) {
 
   app.post('/api/profile/make/:name', function(req, res) {
     res.send("Updating: " + req.params.name);
-        var newProfile = new Profile();
+    var newProfile = new Profile();
     console.log(req.body);
     // set the user's local credentials
     newProfile.fNname = req.body.fName;
@@ -69,9 +69,9 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.get('/api/profile/public/:name', function(req, res) {
-    Profile.findOne({}, function(err, data){
-      console.log(data);
-    })
+    Profile.find({}, function(err, data){
+      res.send(data);
+    });
   });
 
 };
