@@ -1,4 +1,4 @@
-app.controller("bodymeasurementsController", ["$scope", "$location", function($scope, $location) {
+app.controller("skinfoldController", ["$scope", "$location", function($scope, $location) {
 
 
 

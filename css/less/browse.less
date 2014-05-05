@@ -110,6 +110,82 @@
 				position: relative;
 				height: 100%;
 
+				.block {
+					margin: 3em auto;
+					width: 45em;
+					height: 14em;
+					border: 1px solid #000;
+					background-color: #fff;
+					border-radius: 5px;
+					background: -webkit-linear-gradient(top,silver 0,#8d8d8d 100%);
+
+					&:hover {
+						box-shadow: -1px 0px 13px rgba(255, 255, 255, 1);
+					}
+
+					.identify {
+						width: 30%;
+						height: 100%;
+						display: inline-block;
+						float: left;
+						padding: 1%;
+						border-radius: 0px 5px 5px 0px;
+
+						.title-container {
+							height: 26%;
+							.title{
+								font-size: 1.8em;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								font-weight: bolder;
+								text-align: left;
+								margin-top: -6px;
+							}
+
+							.subtitle {
+								font-size: 0.9em;
+								font-style: italic;
+								margin-left: 15px;
+								margin-top: -8px;
+							}
+						}
+
+						.side-image {
+							width: 9.8em;
+							height: 9.8em;
+							padding: 5%;
+							background: url(img/skyr.jpg) no-repeat;
+							background-size: 100% 100%;
+							margin-top: 5px;
+							border-radius: 100px;
+							border: 1px solid #ccc;
+						}
+					}
+
+					.info {
+						width: 70%;
+						height: 100%;
+						float: right;
+						display: inline-block;
+						padding: 2%;
+
+						table {
+							width: 100%;
+							thead {
+								td {
+
+								}
+							}
+
+							tr {
+								td {
+
+								}
+							}
+						}
+					}
+				}
+
 				#alphaOrder {
 					position: absolute;
 					right: 0;
@@ -209,26 +285,34 @@
 									float: right
 								}
 
-								slider {
+								.slider {
 									width: 90%;
+									display: inline-block;
+									position: relative;
+									height: 7px;
+									margin: 25px 5px;
+									vertical-align: middle;
+									background: -webkit-linear-gradient(top, #c0c0c0 0, #8d8d8d 100%);
+									box-shadow: inset 2px 2px 5px;
+									border-radius: 1em/1em;
+									border: 0;
+									color: #ccc;
 
-									.pointer {
+									div {
+										background: #2fa1d6;
+									}
+
+									a {
+										cursor: pointer;
+										width: 20px;
+										height: 20px;
 										top: -7px;
-										background-color:#303030;
-
-										&:after {
-											top: 5px;
-											left: 5px;
-											background-color:#303030;
-										}
-									}
-
-									.bar {
-										background:#2fa1d6;
-									}
-
-									.bar.selection {
-										background:red;
+										background-color: #fff;
+										border: 1px solid #000;
+										z-index: 2;
+										-webkit-border-radius: 1em/1em;
+										border-radius: 1em/1em;
+										outline: 0;
 									}
 								}
 							}
