@@ -43,8 +43,8 @@ app.listen(port);
 console.log('The magic happens on port ' + port);
 
 //---Connect to database and search for BLÓMKÁL, hrátt. Then print out the result---
-
 //var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+
 
 //MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
   //  if(err) throw err;
@@ -58,3 +58,4 @@ console.log('The magic happens on port ' + port);
       //  return results;
     //});
 //});
+
