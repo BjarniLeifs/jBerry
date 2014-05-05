@@ -42,38 +42,3 @@ require('./routes/blogR.js')(app, passport, mongoose);
 // launch 
 app.listen(port);
 console.log('The magic happens on port ' + port);
-
-
-
-//----make a connection to mongoose, need to verify this----
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error'));
-// db.once('open', function callback() {
-//   //yay!
-// });
-
-var Matis = require('./models/food');
-
-//---able to search the database by querying part of a name, in upper- and lowercase----
-app.get('/api/food/getByName', function(req, res) {
-  var re = new RegExp(req.query.name, 'i');
-  Matis.find({Nafn:re}, function(err, results) {
-    res.send(results);
-  });
-});
-
-
-//---able search using: localhost:3000/api/food/getByName?name=someItem---
-// var MongoClient = require('mongodb').MongoClient, format = require('util').format;
-
-// app.get('/api/food/getByName', function(req, res) {
-//     MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
-//       if(err){ throw err;}
-//       var name = req.query.name;
-//       var collection = db.collection('mainGrunnur');
-
-//       collection.find({Nafn:name}).toArray(function(err, results) {
-//           res.send(results);
-//       });
-//     });
-// });
