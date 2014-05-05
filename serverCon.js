@@ -48,25 +48,29 @@ app.get('/', function(req, res) {
 });
 
 //---Connect to database and search for BLÓMKÁL, hrátt. Then print out the result---
-// var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 
 // MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
-//     console.log("inni mongo client");
 //     if(err){ throw err;}
-//     console.log("eftir error");
 
 //     var collection = db.collection('mainGrunnur');
 
-//     // Locate all the entries using find
 //     collection.find({"Nafn":"BLÓMKÁL, hrátt"}).toArray(function(err, results) {
-//         // Let's close the db
-//         //db.close();
 //         return results;
 //     });
 // });
 
+app.get('/api/food/getByName', function(req, res) {
+    MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
+      if(err){ throw err;}
+      var name = req.query.name;
+      var collection = db.collection('mainGrunnur');
 
-
+      collection.find({Nafn:name}).toArray(function(err, results) {
+          res.send(results);
+      });
+    });
+});
 
 
 
