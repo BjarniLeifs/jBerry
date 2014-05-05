@@ -68,6 +68,10 @@ module.exports = function(app, passport, mongoose) {
 
   });
 
+  app.get('/api/isLoggedIn', isLoggedIn, function(req, res) {
+    res.send("Pong!");
+  });
+
   app.get('/api/profile/public/:name', function(req, res) {
     Profile.find({}, function(err, data){
       res.send(data);
