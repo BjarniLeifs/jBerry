@@ -13,6 +13,9 @@ var express  = require('express'),
 var clientDir = path.join(__dirname, '/');
 var configDB = require('./config/database.js');
 
+// configuration
+//mongoose.connect(configDB.url); // connect to our database
+
 require('./config/passport')(passport); // pass passport for configuration
 
 app.configure(function() {
@@ -32,36 +35,10 @@ app.configure(function() {
 });
 
 // routes 
-require('./routes/userR.js')(app, passport, mongoose); // load our routes and pass in our app and fully configured passport
-require('./routes/foodR.js')(app);
+require('./routes/userR.js')(app, passport, mongoose);
+require('./routes/foodR.js')(app, passport, mongoose);
+require('./routes/blogR.js')(app, passport, mongoose);
 
 // launch 
 app.listen(port);
 console.log('The magic happens on port ' + port);
-
-// configuration
-//mongoose.connect(configDB.url); // connect to our database
-
-
-//----make a connection to mongoose, need to verify this----
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error'));
-// db.once('open', function callback() {
-//   //yay!
-// });
-
-
-//---search using: localhost:3000/api/food/getByName?name=someItem---
-// var MongoClient = require('mongodb').MongoClient, format = require('util').format;
-
-// app.get('/api/food/getByName', function(req, res) {
-//     MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
-//       if(err){ throw err;}
-//       var name = req.query.name;
-//       var collection = db.collection('mainGrunnur');
-
-//       collection.find({Nafn:name}).toArray(function(err, results) {
-//           res.send(results);
-//       });
-//     });
-// });

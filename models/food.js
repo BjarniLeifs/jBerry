@@ -1,8 +1,8 @@
-// /models/profile.js
+// /models/food.js
 // load the things we need
 var mongoose = require('mongoose');
 
-// define the schema for our profile model
+// define the schema for our food model
 var foodSchema = mongoose.Schema({
 
 	"Nafn"									: String,
@@ -52,6 +52,6 @@ var foodSchema = mongoose.Schema({
 	"cis-Fjölómettaðar fitus. n-6"			: Number,
 	"cis-Fjölómettaðar fitus. n-3"			: Number
 
-}, {collection : 'Matis'});
+}, {collection : 'mainGrunnur'});
 
 module.exports = mongoose.model('Matis', foodSchema);
