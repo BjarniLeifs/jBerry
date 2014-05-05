@@ -32,7 +32,7 @@ app.controller("browseController", ["$scope", "$location", function($scope, $loc
 	};
 
 	$scope.getName = function(name, index) {
-		if(!(name.indexOf(", ") > -1))
+		if(name.indexOf(", ") <= -1)
 			return name.toLowerCase();
 
 		var names = name.split(", ");
