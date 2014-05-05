@@ -7,18 +7,20 @@
 		<div id="Container-Left" class="col-md-2 column">
 			<div id="Container-Left-Menu">
 				<div class="accordion-group">
-					<div class="accordion-heading">
+					<div class="accordion-heading header">
 						<p>Tasks</p>
-					</div>col
+					</div>
 				</div>
-				
 				<div class="accordion-group">
+
+				<!-- Task - 1 [Profile]-->
+
 					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-target="#Planer" data-parent="#Container-Left-Menu">
-							<span class="glyphicon glyphicon-book"></span><p>Planner</p>
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Profile" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-user"></span><p>Profile</p></div>
 						</a>
 					</div>
-					<div id="Planer" class="accordion-body collapse" style="height:0px;">
+					<div id="Profile" class="accordion-body collapse" style="height:0px;">
 						<div class="accordion-inner">
 							<ul>
 								<li>
@@ -30,12 +32,15 @@
 							</ul>
 						</div>
 					</div>
+
+					<!-- Task - 2 [Stats]-->
+
 					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-target="#Statics" data-parent="#Container-Left-Menu">
-							<span class="glyphicon glyphicon-cog"></span><p>Statics</p>
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Stats" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-stats"></span><p>Stats</p></div>
 						</a>
 					</div>
-					<div id="Statics" class="accordion-body collapse" style="height:0px;">
+					<div id="Stats" class="accordion-body collapse" style="height:0px;">
 						<div class="accordion-inner">
 							<ul>
 								<li>
@@ -47,9 +52,58 @@
 							</ul>
 						</div>
 					</div>
+
+					<!-- Task - 3 [Recipes]-->
+
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Recipes" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-book"></span><p>Recipes</p></div>
+						</a>
+					</div>
+					<div id="Recipes" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									<a ng-href="/#/recipes/browse">Browse Recipes</a>
+								</li>
+								<li>
+									Create Recipes
+								</li>
+								<li>
+									My Recipes
+								</li>
+								<li>
+									My Favorite Recipes
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Task - 4 [Planner]-->
+
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Planner" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-calendar"></span><p>Planner</p></div>
+						</a>
+					</div>
+					<div id="Planner" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									SubName-1
+								</li>
+								<li>
+									SubName-2
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Task - 5 [Food]-->
+
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse" data-target="#Food" data-parent="#Container-Left-Menu">
-							<span class="glyphicon glyphicon-cutlery"></span><p>Food</p>
+							<div class="cell"><span class="glyphicon glyphicon-cutlery"></span><p>Food</p></div>
 						</a>
 					</div>
 					<div id="Food" class="accordion-body collapse" style="height:0px;">
@@ -64,6 +118,53 @@
 							</ul>
 						</div>
 					</div>
+
+						<!-- Task - 6 [Trainners]-->
+
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Trainner" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-eye-open"></span><p>Trainners</p></div>
+						</a>
+					</div>
+					<div id="Trainner" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									SubName-1
+								</li>
+								<li>
+									SubName-2
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Task - 7 [Measurements]-->
+
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-target="#Measurement" data-parent="#Container-Left-Menu">
+							<div class="cell"><span class="glyphicon glyphicon-list-alt"></span><p>Measurements</p></div>
+						</a>
+					</div>
+					<div id="Measurement" class="accordion-body collapse" style="height:0px;">
+						<div class="accordion-inner">
+							<ul>
+								<li>
+									Brows
+								</li>
+								<li>
+									Create
+								</li>
+								<li>
+									My 
+								</li>
+								<li>
+									Create
+								</li>
+							</ul>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

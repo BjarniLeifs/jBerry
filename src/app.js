@@ -1,4 +1,4 @@
-var app = angular.module("BerryApp", ["ngRoute"]);
+var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'uiSlider']);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.when("/", {
@@ -27,6 +27,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/nutritionopz", {
 		templateUrl: "templates/nutritionopz.html",
 		controller: "nutritionopzController",
+	}).when("/recipes/browse", {
+		templateUrl: "templates/recipes/browse.html",
+		controller: "browseController",
 	}).when("/measurements", {
 		templateUrl: "templates/measurements.html",
 		controller: "measurementsController",
@@ -37,5 +40,6 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "templates/statistic.html",
 		controller: "statisticController",
 	}).otherwise({ redirectTo: "/" });
+	
 	//$locationProvider.html5Mode(true);
 }]);

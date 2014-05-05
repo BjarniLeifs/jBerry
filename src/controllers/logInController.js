@@ -10,7 +10,8 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 		userFactory.validUser($scope.email, $scope.pass).success(function(data, status, headers, config){
 			console.log(status);
 			if(status === 200) {
-				//$location.path("/#/");
+				$location.path("/#/");
+				$scope.$apply();
 			}
 		}).error(function(){
 			console.log("Error");

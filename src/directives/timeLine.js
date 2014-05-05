@@ -2,21 +2,19 @@ app.directive('timeLine', ['$compile', function($compile) {
 	var tmp = "<table>";
 
 	function getTemplate(dObj) {
-		var hours;
+		var hour = dObj.hour - 2;
 
-		for(var i = dObj.hour-2; i < dObj.hour+4; i++) {
-			hours = (i > 9)?i+':00':'0'+i+':00';
-
-			if(dObj.hour !== i)
-				tmp += "<tr><td class='hours'>"+hours+"</td>";
+		for(var i = 0; i < 6; i++, hour++) {
+			if(dObj.hour !== hour)
+				tmp += "<tr><td class='hours'>"+getHour(hour)+"</td>";
 			else
-				tmp += "<tr><td class='hours now'>"+hours+"</td>";
+				tmp += "<tr><td class='hours now'>"+getHour(hour)+"</td>";
 
-			for(var j = 0; j <= 6; j++) {
+			for(var j = 0; j < 6; j++) {
 				if(dObj.minutes !== j)
-					tmp += "<td class='cell-minutes'><span  class='minutes'>"+j+"0</span></td>";
+					tmp += "<td class='cell-minutes'><span  class='minutes'>"+getMinute(hour, j)+"</span></td>";
 				else 
-					tmp += "<td class='cell-minutes'><span class='minutes now'>"+j+"</span></td>";
+					tmp += "<td class='cell-minutes'><span class='minutes now'>"+getMinute(hour, j)+"</span></td>";
 
 			}
 			tmp += "</tr>";
@@ -24,6 +22,22 @@ app.directive('timeLine', ['$compile', function($compile) {
 		tmp += "</table>";
 
 		return tmp;
+	}
+
+	function getHour(hour) {
+		hour = ((hour < 0)?hour + 24:hour);
+		hour = ((hour >= 24)?hour - 24:hour);
+
+		return (hour > 9)?hour+':00':'0'+hour+':00';
+	}
+
+
+	function getMinute(hour, minute) {
+		hour = ((hour < 0)?hour + 24:hour);
+		hour = ((hour >= 24)?hour - 24:hour);
+		hour = (hour > 9)?hour+':':'0'+hour+':';
+
+		return (minute > 9)?hour+minute:hour+minute+'0';
 	}
 
 	return {
@@ -36,7 +50,7 @@ app.directive('timeLine', ['$compile', function($compile) {
 			$compile(elem.contents());
 
 			$('tr').hover(function() {
-				$(this).find('.cell-minutes').slideDown('fast');
+				$(this).find('.cell-minutes').stop().slideDown('fast');
 			}, function() {
 				$(this).find('.cell-minutes').slideUp('fast');
 			});

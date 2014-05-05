@@ -12,9 +12,9 @@
 	bottom: 0;
 
 	#Container-Head {
-		background-color: @banner;
 		height: 42px;
-		border-bottom: 1px solid black;
+		background-color: #fff;
+		border: 1px solid #999;
 	}
 
 	#Container-Left {
@@ -24,7 +24,6 @@
 		background-color: @lightBase;
 
 		#Container-Left-Menu {
-
 			.accordion-group {
 			    margin-bottom: 0px;
 			    border:0px;
@@ -40,7 +39,7 @@
 					margin-left: 10px;
 			    }
 			}    
-			
+
 			.accordion-heading {
 				height: 40px;
 				border-bottom: 1px solid #000;
@@ -79,34 +78,16 @@
 					cursor: pointer;
 					color: black;
 
-					&:hover {
-						color:@font;
+					a {
+						color: #000;
+
+						&:hover {
+							color:@font;
+							text-decoration: none;
+						}
 					}
 				}
 			}
-		}
-
-		.list-group-item {
-			margin: 0;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 1.1;
-			color: white;
-			background-color: @lightBase;
-			border-radius: 0px !important;
-			border: none;
-			cursor: pointer;
-
-			&:hover {
-				color:black;
-			}
-		}
-
-		.list-selected {
-			background-color: black;
-			color:black;
-			border: solid black;
-			border-width: 2px 0px 2px 2px;
 		}
 	}
 	
