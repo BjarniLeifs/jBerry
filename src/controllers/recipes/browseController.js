@@ -4,7 +4,9 @@ app.controller("browseController", ["$scope", "$location", function($scope, $loc
 	$scope.$item = undefined;
 	$scope.$model = undefined;
 	$scope.$label = undefined;
-		
+
+	$scope.option = {A:350, B:900, C:400};
+	$scope.optionD = {min: 200, max: 700};
 
 	$scope.onSelect = function ($item, $model, $label) {
 		$scope.$item = $item;
@@ -13,5 +15,9 @@ app.controller("browseController", ["$scope", "$location", function($scope, $loc
 
 		console.log("Item:" + $item + ", Model:" + $model + ", label:" + $label);
 	};
+
+	$scope.currencyFormatting = function(value) { 
+		return value.toString() + " $" 
+	}
 
 }]);

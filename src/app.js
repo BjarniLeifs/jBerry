@@ -1,4 +1,4 @@
-var app = angular.module("BerryApp", ["ngRoute", "ui.bootstrap"]);
+var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'uiSlider']);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.when("/", {
