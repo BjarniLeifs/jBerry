@@ -40,7 +40,7 @@ app.listen(port);
 console.log('The magic happens on port ' + port);
 
 // configuration
-mongoose.connect(configDB.url); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database
 
 
 //----make a connection to mongoose, need to verify this----
