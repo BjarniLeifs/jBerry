@@ -36,7 +36,7 @@ app.configure(function() {
 
 // routes 
 require('./routes/userR.js')(app, passport, mongoose);
-require('./routes/foodR.js')(app, passport, mongoose);
+require('./routes/foodR.js')(app, mongoose);
 require('./routes/blogR.js')(app, passport, mongoose);
 
 // launch 
@@ -52,15 +52,7 @@ console.log('The magic happens on port ' + port);
 //   //yay!
 // });
 
-var Matis = require('./models/food');
 
-//---able to search the database by querying part of a name, in upper- and lowercase----
-app.get('/api/food/getByName', function(req, res) {
-  var re = new RegExp(req.query.name, 'i');
-  Matis.find({Nafn:re}, function(err, results) {
-    res.send(results);
-  });
-});
 
 
 //---able search using: localhost:3000/api/food/getByName?name=someItem---
