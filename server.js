@@ -14,7 +14,7 @@ var clientDir = path.join(__dirname, '/');
 var configDB = require('./config/database.js');
 
 // configuration
-mongoose.connect(configDB.url); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -43,20 +43,37 @@ require('./routes/blogR.js')(app, passport, mongoose);
 app.listen(port);
 console.log('The magic happens on port ' + port);
 
-//---Connect to database and search for BLÓMKÁL, hrátt. Then print out the result---
-//var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 
 
-//MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
-  //  if(err) throw err;
+//----make a connection to mongoose, need to verify this----
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error'));
+// db.once('open', function callback() {
+//   //yay!
+// });
 
-  //  var collection = db.collection('mainGrunnur');
+var Matis = require('./models/food');
 
-    // Locate all the entries using find
-    //collection.find({"Nafn":"BLÓMKÁL, hrátt"}).toArray(function(err, results) {
-        // Let's close the db
-        //db.close();
-      //  return results;
-    //});
-//});
+//---able to search the database by querying part of a name, in upper- and lowercase----
+app.get('/api/food/getByName', function(req, res) {
+  var re = new RegExp(req.query.name, 'i');
+  Matis.find({Nafn:re}, function(err, results) {
+    res.send(results);
+  });
+});
 
+
+//---able search using: localhost:3000/api/food/getByName?name=someItem---
+// var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+
+// app.get('/api/food/getByName', function(req, res) {
+//     MongoClient.connect('mongodb://127.0.0.1:27017/matisGagnagrunnur', function(err, db) {
+//       if(err){ throw err;}
+//       var name = req.query.name;
+//       var collection = db.collection('mainGrunnur');
+
+//       collection.find({Nafn:name}).toArray(function(err, results) {
+//           res.send(results);
+//       });
+//     });
+// });
