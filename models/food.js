@@ -52,6 +52,6 @@ var foodSchema = mongoose.Schema({
 	"cis-Fjölómettaðar fitus. n-6"			: Number,
 	"cis-Fjölómettaðar fitus. n-3"			: Number
 
-}, {collection : 'mainGrunnur'});
+}, {collection : 'matis'});
 
 module.exports = mongoose.model('Matis', foodSchema);
