@@ -36,9 +36,13 @@ app.controller("browseController", ["$scope", "$location", function($scope, $loc
 			return name.toLowerCase();
 
 		var names = name.split(", ");
-		$scope.food[index].subName = names[1];
+		$scope.food[index].subName = $scope.toTitle(names[1]);
 
-		return (names[0].toLowerCase()).charAt(0).toUpperCase() + names[0].slice(1);
+		return $scope.toTitle(names[0]);
+	};
+
+	$scope.toTitle = function(name) {
+		return (name.toLowerCase()).charAt(0).toUpperCase() + name.slice(1);
 	};
 
 }]);
