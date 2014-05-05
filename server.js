@@ -50,8 +50,18 @@ mongoose.connect(configDB.url); // connect to our database
 //   //yay!
 // });
 
+var Matis = require('./models/food');
 
-//---search using: localhost:3000/api/food/getByName?name=someItem---
+//---able to search the database by querying part of a name, in upper- and lowercase----
+app.get('/api/food/getByName', function(req, res) {
+  var re = new RegExp(req.query.name, 'i');
+  Matis.find({Nafn:re}, function(err, results) {
+    res.send(results);
+  });
+});
+
+
+//---able search using: localhost:3000/api/food/getByName?name=someItem---
 // var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 
 // app.get('/api/food/getByName', function(req, res) {
