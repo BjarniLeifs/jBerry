@@ -35,7 +35,8 @@ app.configure(function() {
 });
 
 // routes 
-require('./routes.js')(app, passport, mongoose); // load our routes and pass in our app and fully configured passport
+require('./routes/userR.js')(app, passport, mongoose); // load our routes and pass in our app and fully configured passport
+require('./routes/foodR.js')(app);
 
 // launch 
 app.listen(port);
