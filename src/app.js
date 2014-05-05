@@ -39,6 +39,12 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/statistic", {
 		templateUrl: "templates/statistic.html",
 		controller: "statisticController",
+	}).when("/bodymeasurements", {
+		templateUrl: "templates/bodymeasurements.html",
+		controller: "bodymeasurementsController",
+	}).when("/skinfold", {
+		templateUrl: "templates/skinfold.html",
+		controller: "skinfoldController",
 	}).otherwise({ redirectTo: "/" });
 	
 	//$locationProvider.html5Mode(true);

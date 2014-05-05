@@ -28,7 +28,7 @@ app.controller("browseController", ["$scope", "$location", function($scope, $loc
 	};
 
 	$scope.currencyFormatting = function(value) { 
-		return value.toString() + " $"; 
+		return value.toString() + " $";
 	};
 
 	$scope.getName = function(name, index) {

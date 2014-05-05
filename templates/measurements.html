@@ -3,7 +3,7 @@
         <li class="active"><a data-target="#home" data-toggle="tab">Home</a></li>
         <li><a data-target="#measurements" data-toggle="tab">Measurements</a></li>
         <li><a data-target="#skinfoldMeasurements" data-toggle="tab">Skinfold Measurements</a></li>
-        <li><a data-target="#metabolicRate" data-toggle="tab">Metabolic Rate</a></li>
+        <li><a data-target="#basalMetabolicRate" data-toggle="tab">Basal Metabolic Rate</a></li>
         <li><a data-target="#activityMets" data-toggle="tab">Activity Mets</a></li>
     </ul>
     <div id="my-tab-content" class="tab-content">
@@ -17,48 +17,29 @@
         </div>
         <div class="tab-pane" id="measurements">
             <h1>Measurements</h1>
-            <img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto">
-            <form role="form">
-			  	<div class="form-group">
-			    	<label for="todaysweight">Weight:</label>
-			    		<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br>
-			    	<label for="todaysbf">BF%:</label>
-			    		<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="todaysbf" placeholder=""> %<br>
-			    	<label for="neck">Neck:</label>
-			   			<input type="number" min="0.0" step="0.1" max="1000"  name="neck" placeholder=""> cm<br>
-			   		<label for="chest">Chest:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="chest" placeholder=""> cm<br>
-			   		<label for="bicep">Bicep:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="bicep" placeholder=""> cm<br>
-			   		<label for="forearm">Forearm:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="forearm" placeholder=""> cm<br>
-			   		<label for="waist">Waist:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="waist" placeholder=""> cm<br>
-			   		<label for="hips">Hips:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="hips" placeholder=""> cm<br>
-			   		<label for="uThigh">Upper Thigh:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="uThigh" placeholder=""> cm<br>
-			   		<label for="mThigh">Middle Thigh:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="mThigh" placeholder=""> cm<br> 
-					<label for="Calf">Calf:</label>
-						<input type="number" min="0.0" step="0.1" max="1000"  name="Calf" placeholder=""> cm<br>
-				</div>
-			  	<button type="submit" class="btn btn-default">Submit</button>
-			</form>
+            
+ 
         </div>
         <div class="tab-pane" id="skinfoldMeasurements">
             <h1>Skinfold Measurements</h1>
             <p>Skinfold Measurements Skinfold Measurements</p>
         </div>
-        <div class="tab-pane" id="metabolicRate">
-            <h1>Metabolic Rate</h1>
+        <div class="tab-pane" id="basalMetabolicRate">
+            <h1>Basal Metabolic Rate</h1>
             <p>Metabolic Rate Metabolic Rate Metabolic Rate</p>
             <form role="form">
 			  	<div class="form-group">
 			    	<label for="todaysweight">Weight:</label>
-			    		<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br>
+			    	<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br>
 			    	<label for="todaysheight">Height:</label>
-			    		<input type="number" id="todaysheight" min="0.0" step="0.1" max="1000"  name="hCm" placeholder=""> cm<br>
+			    	<input type="number" id="todaysheight" min="0.0" step="0.1" max="1000"  name="hCm" placeholder=""> cm<br>
+			    	<label for="todaysheight">Age:</label>
+			    	<input type="number" id="age" min="0.0" step="0.1" max="1000"  name="age" placeholder=""> old<br>
+			    	<select name="sex">
+						<option value="man">Man</option>
+						<option value="woman">Woman</option>
+					</select>
+
 				</div>
 			  	<button type="submit" class="btn btn-default">Submit</button>
 			</form>
