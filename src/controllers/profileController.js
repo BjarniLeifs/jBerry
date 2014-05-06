@@ -7,7 +7,7 @@ app.controller("profileController", ["$scope", "$location",
 		email: "",
 		height: "",
 		weight: ""
-	}
+	};
 
 	$scope.timeline = {
 		autor: "",
@@ -15,7 +15,7 @@ app.controller("profileController", ["$scope", "$location",
 		text: "",
 		date: "",
 		tags: []
-	}
+	};
 
 	profileFactory.getTimelineData().
 	then(function(data){

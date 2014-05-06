@@ -17,7 +17,32 @@
 
 			<div class="row clearfix browse">
 				<div class="col-md-12 column">
-				
+					<div class="block animate-repeat" ng-repeat="foodItem in food | filter:selected">
+						<div class="identify">
+							<div class="title-container">
+								<div class="title" ng-bind="getName(foodItem.Name, $index)"></div>
+								<div class="subtitle"> {{foodItem.subName}} </div>
+							</div>
+							<div class="side-image"></div>
+						</div>
+						<div class="info">
+							<table>
+							  <thead>
+							    <th>Name</th>
+							    <th>Unit</th>
+							    <th>Amount</th>
+							  </thead>
+							  <tr>
+							    <td>Prótein</td>
+							    <td>{{foodItem.Protein}}</td>
+							  </tr>
+							  <tr>
+							    <td>Fita</td>
+							    <td>{{foodItem.Fita}}</td>
+							  </tr>
+							</table>
+						</div>
+					</div>
 				</div>
 				<div id="alphaOrder" class="col-md-1 column">
 					<div class="letter">A</div>
@@ -73,33 +98,33 @@
 							</li>
 							<li class="cr number range">
 								<div>
-									<span class="name">Range A</span>
+									<span class="name">Range A - {{option.A}}</span>
 									<div class="c">
-										<slider floor="0" ceiling="1000" step="50" precision="2" ng-model="option.A"></slider>
+										<div class="slider" ui-slider min="0" max="50" ng-model="option.A"></div>
 									</div>
 								</div>
 							</li>
 							<li class="cr number range">
 								<div>
-									<span class="name">Range B</span>
+									<span class="name">Range B - {{option.B}}</span>
 									<div class="c">
-										<slider floor="0" ceiling="1000" step="50" precision="2" ng-model="option.B"></slider>
+										<div class="slider" ui-slider min="0" max="50" ng-model="option.B"></div>
 									</div>
 								</div>
 							</li>
 							<li class="cr number range">
 								<div>
-									<span class="name">Range C</span>
+									<span class="name">Range C - {{option.C}}</span>
 									<div class="c">
-										<slider floor="0" ceiling="1000" step="50" precision="2" ng-model="option.C" translate="currencyFormatting"></slider>
+										<div class="slider" ui-slider min="0" max="50" ng-model="option.C"></div>
 									</div>
 								</div>
 							</li>
 							<li class="cr number range">
 								<div>
-									<span class="name">Range D</span>
+									<span class="name">Range D - {{option.D}}</span>
 									<div class="c">
-										<slider floor="0" ceiling="1000" step="50" precision="2" ng-model-low="optionD.min" ng-model-high="optionD.max"></slider>
+										<div class="slider" ui-slider="{range: true}" min="0" max="100" step="0.01" use-decimals ng-model="option.D"></div>
 									</div>
 								</div>
 							</li>

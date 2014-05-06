@@ -20,7 +20,7 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 				return deferred.promise;
 			},
 
-			getTimelineData: function(){
+			getUser: function(){
 				var deferred = $q.defer();
 				var request = $http({
 					method: "GET",
