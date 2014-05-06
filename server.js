@@ -14,7 +14,7 @@ var clientDir = path.join(__dirname, '/');
 var configDB = require('./config/database.js');
 
 // configuration
-//mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -41,5 +41,4 @@ require('./routes/blogR.js')(app, passport, mongoose);
 
 // launch 
 app.listen(port);
-
 console.log('The magic happens on port ' + port);
