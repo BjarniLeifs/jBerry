@@ -1,0 +1,15 @@
+.image{
+	float:left;
+	margin-top:250px;
+	padding:12px;
+	width:200px;
+}
+.text{
+	float:left;
+	margin-top:250px;
+	padding:12px;
+	margin-bottom:50px;
+	width:35%;
+	font-weight:bold;
+	font-size:13px;
+}
