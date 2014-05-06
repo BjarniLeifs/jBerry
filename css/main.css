@@ -178,6 +178,24 @@
   -webkit-animation-fill-mode: forwards;
   animation: filler 2s 1;
 }
+#Container .container-main #Container-Center .animate-repeat.ng-move,
+#Container .container-main #Container-Center .animate-repeat.ng-enter,
+#Container .container-main #Container-Center .animate-repeat.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+#Container .container-main #Container-Center .animate-repeat.ng-leave.ng-leave-active,
+#Container .container-main #Container-Center .animate-repeat.ng-move,
+#Container .container-main #Container-Center .animate-repeat.ng-enter {
+  opacity: 0;
+  max-height: 0;
+}
+#Container .container-main #Container-Center .animate-repeat.ng-leave,
+#Container .container-main #Container-Center .animate-repeat.ng-move.ng-move-active,
+#Container .container-main #Container-Center .animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+  max-height: 40px;
+}
 #Container .container-main #Container-Center .block {
   width: 35em;
   height: 15em;

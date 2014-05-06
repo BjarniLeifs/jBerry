@@ -18,24 +18,30 @@
 			<div class="row clearfix browse">
 				<div class="col-md-12 column">
 					<table class="table">
-						  <thead>
-						    <th>Name</th>
-						    <th>Prótein</th>
-						    <th>Fita</th>
-						    <th>Kolvetni</th>
-						    <th>Sykrur</th>
-						    <th>Trefjaefni</th>
-						    <th>Trans-Fitusýrur</th>
-						  </thead>
-						  <tr class="row animate-repeat" ng-repeat="foodItem in food | filter:selected">
-						    <td>{{foodItem.nafn}}</td>
-						    <td>{{foodItem['Prótein']}}</td>
-						    <td>{{foodItem['Fita']}}</td>
-						    <td>{{foodItem['Kolvetni, alls']}}</td>
-						    <td>{{foodItem['Sykrur']}}</td>
-						    <td>{{foodItem['Trefjaefni']}}</td>
-						    <td>{{foodItem['trans-Fitusýrur']}}</td>
-						  </tr>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Prótein</th>
+								<th>Fita</th>
+								<th>Kolvetni</th>
+								<th>Sykrur</th>
+								<th>Trefjaefni</th>
+								<th>Trans-Fitusýrur</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="animate-repeat" ng-repeat="foodItem in food | filter:selected">
+								<td>{{$index + 1}}</td>
+								<td>{{foodItem.Name}}</td>
+								<td>{{foodItem['Prótein']}}</td>
+								<td>{{foodItem['Fita']}}</td>
+								<td>{{foodItem['Kolvetni, alls']}}</td>
+								<td>{{foodItem['Sykrur']}}</td>
+								<td>{{foodItem['Trefjaefni']}}</td>
+								<td>{{foodItem['trans-Fitusýrur']}}</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 				<div id="alphaOrder" class="col-md-1 column">
