@@ -23,7 +23,6 @@ module.exports = function(app, passport, mongoose) {
         if (err)
             throw err;
     });
-    res.send(req.body);
   });
 
   app.get('/api/blog', function(req, res) {
