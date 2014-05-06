@@ -15,7 +15,6 @@ module.exports = function(app, passport, mongoose) {
   });
 
   // process the login form
-  // app.post('/login', do all our passport stuff here);
   app.post('/api/login', passport.authenticate('local-login', {
     successRedirect : '/IamLogIn', // redirect to the secure profile section
     failureRedirect : '/NoDiceLogIn', // redirect back to the signup page if there is an error
@@ -28,7 +27,9 @@ module.exports = function(app, passport, mongoose) {
     function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-      res.redirect('/api/users/' + req.body.name);
+    var newProfile = new Profile();
+    newProfile.email = req.body.email;
+    res.redirect('/api/users/' + req.body.name);
   });
 
   // =====================================
@@ -39,20 +40,27 @@ module.exports = function(app, passport, mongoose) {
     res.redirect('/');
   });
 
-  app.get('/ping', isLoggedIn, function(req, res) {
+  app.get('/ping', function(req, res) {
+    console.log(req.user);
     res.send("Pong!");
   });
 
 
 // Profile
 
-  app.post('/api/profile/make/:name', function(req, res) {
-    res.send("Updating: " + req.params.name);
+  app.put('/api/profile/update/:name', function(req, res) {
+    var userinn;
+    User.findOne({name : req.params.name}, function(err, data) {
+      console.log(data);
+      userinn = data;
+    });
+
+    res.send(userinn);
+    /*
     var newProfile = new Profile();
     console.log(req.body);
     // set the user's local credentials
     newProfile.fNname = req.body.fName;
-    newProfile.email = req.body.email;
     newProfile.birthDay = new Date();
     newProfile.height = req.body.height;
     newProfile.weight = req.body.weight;
@@ -62,6 +70,7 @@ module.exports = function(app, passport, mongoose) {
         if (err)
             throw err;
     });
+    */
   });
 
   app.get('/api/profile/:name', function(req, res) {
