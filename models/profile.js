@@ -6,13 +6,14 @@ var mongoose = require('mongoose');
 var profileSchema = mongoose.Schema({
 
 	userID		: String,
+	userName	: String,
     email       : String,
     firstName   : String,
     lastName    : String,
-    age         : Number,
     birthDay    : Date,
     height      : Number,
-    weight      : Number
+    weight      : Number,
+    trainerID	: String
 
 }, {collection : 'Profiles'});
 
