@@ -23,13 +23,13 @@ module.exports = function(app, passport, mongoose) {
  
 
   // process the signup form
-  app.post('/api/register',  passport.authenticate('local-signup'), 
-    function(req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
+  app.post('/api/register', passport.authenticate('local-signup'), function(req, res) {
+    console.log("Inn i register");
+    console.log(req.user);
     var newProfile = new Profile();
+    newProfile.userID = req.user._id;
     newProfile.email = req.body.email;
-    res.redirect('/api/users/' + req.body.name);
+    res.send("User: " + req.body.name + " registered");
   });
 
   // =====================================
@@ -48,28 +48,31 @@ module.exports = function(app, passport, mongoose) {
 
 // Profile
 
-  app.put('/api/profile/update/:name', function(req, res) {
-    var userinn;
-    User.findOne({name : req.params.name}, function(err, data) {
+  app.put('/api/profile/update', function(req, res) {
+    Profile.findOne({"userID" : req.user._id}, function(err, data) {
+      if(err)
+        throw err;
+
+      // set profile variables
+      newProfile.firstName = req.body.firstName;
+      newProfile.lastName = req.body.lastName;
+      newProfile.birthDay = req.body.birthDay;
+      newProfile.height = req.body.height;
+      newProfile.weight = req.body.weight;
+
+      // save the user
+      newProfile.save(function(err) {
+          if (err)
+              throw err;
+      });
       console.log(data);
-      userinn = data;
+      res.send(200, "Profile updated");
     });
 
-    res.send(userinn);
+    
     /*
     var newProfile = new Profile();
-    console.log(req.body);
-    // set the user's local credentials
-    newProfile.fNname = req.body.fName;
-    newProfile.birthDay = new Date();
-    newProfile.height = req.body.height;
-    newProfile.weight = req.body.weight;
-
-    // save the user
-    newProfile.save(function(err) {
-        if (err)
-            throw err;
-    });
+ 
     */
   });
 

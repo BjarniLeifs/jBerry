@@ -4,17 +4,20 @@ var mongoose = require('mongoose');
 
 // define the schema for our blog model
 var blogSchema = mongoose.Schema({
-  title:  String,
-  author: String,
-  body:   String,
+
+  userID  : String,
+  title   : String,
+  author  : String,
+  body    : String,
   comments: [{ commenter : String, body: String, date: Date }],
-  date: { type: Date, default: Date.now },
-  edited: Boolean,
-  meta: {
-    votes: Number,
-    favs:  Number
+  date    : { type: Date, default: Date.now },
+  edited  : Boolean,
+  meta    : {
+    votes : Number,
+    favs  : Number
   },
-  tags : []
+  tags    : []
+
 }, {collection : 'Blog'});
 
 module.exports = mongoose.model('Blog', blogSchema);
