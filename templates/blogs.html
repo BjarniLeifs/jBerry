@@ -1,96 +1,91 @@
-<div class="Container-Center"> 
-<div class="col-md-8 column">
+<div id="blogContainer" class="col-md-8 column"> 
 	<div class="row">
-			<div  class="Container-Center-blog"> 
-				<div class="span8">
-					<div class="row">
-						<div class="Container-Center-blog-title">
-							<div class="span8">
-								<h4 style="float: left, "><strong>Author: {{author}} </strong></h4>
-								
-
-							</div>
-
+			
+				<div id="blogContainer-menu" class="profileContainer-fluid well span6">
+					
+						<div style=""class="blogContainer-menu-art-title">
+					    	<h1>Here comes title</h1>
+					    </div>
+					    <div class="imgUser">
+							<img src="http://placehold.it/40x35	" alt=""> {{ N A M E }}
 						</div>
-					</div>
-
-					<div  class="row">
-						<div class="Container-Center-blog-main">
-							<div class="span2">
-								<div class="Container-Center-blog-main-pic">
-									<a href="#" class="thumbnail">
-										<img src="http://placehold.it/260x180" alt="">
-									</a>
-								</div>
-							</div>
-
-							<div class="span6">      
-								<div class="Container-Center-blog-main-text">
-
-
-									<ul>
-										<li ng-repeate="blog in blogs">
-											{{blog.title}}
-										</li>
-									    
-									</ul>
-
-
-
-									<h4 style="float: left; margin: 1%;"><strong>{{jBerry.title}}</strong></h4>
-									
-									
-									<p><a class="btn">Read more</a></p>
-									
-
-									<h4 style="float: left; margin: 1%;"><strong>{{title}}</strong></h4>
-									<p>
-										Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.
-									</p>
-									
-									<p><a class="btn">Read more</a></p>
-									<script>
-									$(document).ready(function(){
-							
-									  $(".btn").click(function(){
-									    $("p").slideDown();
-									  });
-									});
-									</script>
-
-								</div>
-							</div>
-						</div>
-					</div>	
-
-					<div class="row">
-						<div class="Container-Center-blog-tags">
-							<div class="span8">
-								
-								<p>
-									
-									<i class="icon-calendar"></i> {{date}}
-									| <i class="icon-comment"></i> <a href="#">{{comments}}</a>
-									| <i class="icon-share"></i> <a href="#">{{shares}}</a>
-									| <i class="icon-tags"></i> Tags : 
-									<a ng-repeate="tag in tags">
-										<span class="label label-info">{{tag}}</span></a> 
-									
-									
-									
-								</p>
-							</div>
-						</div>
-					</div>
+					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
+					    'Yes, we went to school in the sea, though you mayn't believe it—'
+					    'I never said I didn't!' interrupted Alice.
+					    'You did,' said the Mock Turtle.</p>
+					
+					<span class="badge">Posted date.now</span>
+					<div class="pull-right">
+						<span class="label label-default">{{alice}}</span> 
+						<span class="label label-primary">{{story}}</span> 
+						<span class="label label-success">{{blog}}</span> 
+						<span class="label label-info">{{personal}}</span> 
+						<span class="label label-warning">{{Warning}}</span>
+						<span class="label label-danger">{{Danger}}</span>
+					</div>         
+				    <hr>
+				
 				</div>
-			</div>
-		</div>
-		<hr>
+
+				<div class="profileContainer-fluid well span6">
+				
+						<div style=""class="blogContainer-menu-art-title">
+					    	<h1>Here comes title</h1>
+					    </div>
+					    <div class="imgUser">
+							<img src="http://placehold.it/40x35" alt=""> {{ N A M E }}
+						</div>
+					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
+					    'Yes, we went to school in the sea, though you mayn't believe it—'
+					    'I never said I didn't!' interrupted Alice.
+					    'You did,' said the Mock Turtle.</p>
+					
+					<span class="badge">Posted date.now</span>
+					<div class="pull-right">
+						<span class="label label-default">{{alice}}</span> 
+						<span class="label label-primary">{{story}}</span> 
+						<span class="label label-success">{{blog}}</span> 
+						<span class="label label-info">{{personal}}</span> 
+						<span class="label label-warning">{{Warning}}</span>
+						<span class="label label-danger">{{Danger}}</span>
+					</div>         
+				
+				    <hr>
+				</div>
 
 
+
+				<div class="profileContainer-fluid well span6">
+				
+						<div style=""class="blogContainer-menu-art-title">
+					    	<h1>Here comes title</h1>
+					    </div>
+					    <div class="imgUser">
+							<img src="http://placehold.it/40x35	" alt=""> {{ N A M E }}
+						</div>
+					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
+					    'Yes, we went to school in the sea, though you mayn't believe it—'
+					    'I never said I didn't!' interrupted Alice.
+					    'You did,' said the Mock Turtle.</p>
+					
+					<span class="badge">Posted date.now</span>
+					<div class="pull-right">
+						<span class="label label-default">{{alice}}</span> 
+						<span class="label label-primary">{{story}}</span> 
+						<span class="label label-success">{{blog}}</span> 
+						<span class="label label-info">{{personal}}</span> 
+						<span class="label label-warning">{{Warning}}</span>
+						<span class="label label-danger">{{Danger}}</span>
+					</div>         
+			
+				    <hr>
+				</div>
+
+
+
+
+			</div>	
 	</div>
-
 </div>
 
-</div>
 

@@ -4,9 +4,9 @@ app.controller("blogController", ["$scope", "$location", "$http", "blogFactory",
 
 		$scope.jBerry = {
 			title: "",
-			tags : [],
-			textbox : "",
-			blogs : []
+			body : "",
+			tags : []
+			
 		};
 
 
