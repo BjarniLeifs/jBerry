@@ -1,6 +1,6 @@
 var Matis = require('../models/food');
 
-module.exports = function(app, mongoose) {
+module.exports = function(app) {
 
 	//---able to search the database by querying part of a name, in upper- and lowercase----
 	app.get('/api/food/getByName/:name', function(req, res) {
@@ -9,5 +9,4 @@ module.exports = function(app, mongoose) {
 			res.send(results);
 		});
 	});
-
 };
