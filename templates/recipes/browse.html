@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="browseController">
 	<div class="row clearfix main">
 		<div id="main-container" class="col-md-8 column">
 			<div class="row clearfix search">
@@ -26,7 +26,7 @@
 							<div class="side-image"></div>
 						</div>
 						<div class="info">
-							<table>
+							<table class="table">
 							  <thead>
 							    <th>Name</th>
 							    <th>Unit</th>
@@ -34,11 +34,33 @@
 							  </thead>
 							  <tr>
 							    <td>Prótein</td>
+							    <td>.g</td>
 							    <td>{{foodItem.Protein}}</td>
 							  </tr>
 							  <tr>
 							    <td>Fita</td>
+							    <td>.g</td>
 							    <td>{{foodItem.Fita}}</td>
+							  </tr>
+							   <tr>
+							    <td>Kolvetni, alls</td>
+							    <td>.g</td>
+							    <td>{{foodItem['Kolvetni, alls']}}</td>
+							  </tr>
+							  <tr>
+							    <td>Sykrur</td>
+							    <td>.g</td>
+							    <td>{{foodItem.Sykrur}}</td>
+							  </tr>
+							  <tr>
+							    <td>Trefjaefni</td>
+							    <td>.g</td>
+							    <td>{{foodItem.Trefjaefni}}</td>
+							  </tr>
+							  <tr>
+							    <td>Trans-Fitusýrur</td>
+							    <td>.g</td>
+							    <td>{{foodItem['trans-Fitusýrur']}}</td>
 							  </tr>
 							</table>
 						</div>
@@ -79,7 +101,7 @@
 				<li class="section">
 					<div class="section-container">
 						<ul>
-							<li class="title">Title Task</li>
+							<li class="title">Food Browser</li>
 							<li class="cr boolean">
 								<div>
 									<span class="name">Boolean A</span>

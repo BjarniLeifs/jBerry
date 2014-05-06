@@ -1,6 +1,7 @@
 .container {
 	position: absolute;
 	width: 100% !important;
+	padding: 0;
 	top: 0;
 	bottom: 0;
 
@@ -45,7 +46,7 @@
 						width: 775px;
 
 					    input {
-				    	    width: 45em;
+				    	    width: 40em;
 						    height: 2.5em;
 						    padding: 10px 5px;
 						    float: left;    
@@ -111,16 +112,22 @@
 				height: 100%;
 
 				.block {
+					display: none;
 					margin: 3em auto;
-					width: 45em;
+					width: 60%;
 					height: 14em;
 					border: 1px solid #000;
-					background-color: #fff;
-					border-radius: 5px;
-					background: -webkit-linear-gradient(top,silver 0,#8d8d8d 100%);
+					background: #EEEFF3;
+					border-bottom: 1px solid #BBBBBD;
+					border-top: 1px solid #FFF;
+					float: left;
+					-webkit-box-shadow: inset 5px 0 6px -6px rgba(0,0,0,.4);
+					-moz-box-shadow: inset 5px 0 6px -6px rgba(0,0,0,.4);
+					box-shadow: inset 5px 0 6px -6px rgba(0,0,0,.4);
 
 					&:hover {
 						box-shadow: -1px 0px 13px rgba(255, 255, 255, 1);
+						background-color: #D6D8DF;
 					}
 
 					.identify {
@@ -171,15 +178,29 @@
 
 						table {
 							width: 100%;
-							thead {
-								td {
+							border-top: 10px solid black;
+							background-color: #fff;
+							border-bottom: 10px solid black;
 
+							thead {
+								font-weight: bold;
+								th {
+									padding-left: 5px;
+								}
+
+								th:not(:first-child) {
+									text-align: center;
 								}
 							}
 
 							tr {
+								border-bottom: 1px solid black;
 								td {
+									padding-left: 5px;
+								}
 
+								td:not(:first-child) {
+								    text-align: center;
 								}
 							}
 						}
@@ -189,7 +210,7 @@
 				#alphaOrder {
 					position: absolute;
 					right: 0;
-					top: 2px;
+					top: 10px;
 					width: 48px;
 					height: 100%;
 					border-left: 1px solid #2c2c2c;
@@ -197,8 +218,8 @@
 
 					.letter {
 						color: #fff;
-						margin-bottom: 5px;
-						font-size: 1.1em;
+						margin-bottom: 6px;
+						font-size: 0.8em;
 						width: 100%;
 						padding-left: 15px;
 						padding-right: 15px;

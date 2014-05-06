@@ -94,6 +94,14 @@
 	#Container-Center {
 		height: 94%;
 		overflow: overlay;
+		padding: 0;
+		overflow: hidden;
+
+		&.filler {
+		   -webkit-animation: filler 2s 1;
+		  -webkit-animation-fill-mode: forwards;
+		  animation: filler 2s 1;
+		}
 
 		.block {
 			width: 35em;
@@ -121,6 +129,16 @@
 		height: 100%;
 		border-left: 1px solid black;
 		padding: 0;
+		position: absolute;
+		right: 0;
+
+		&.slider {
+		  -webkit-animation: slide 2s 1;
+		  -webkit-animation-fill-mode: forwards;
+		  animation: slide 2s 1;
+		}
+
+
 		time-line {
 			table {
 				width: 100%;
@@ -172,5 +190,28 @@
 
 
 		}
+	}
+}
+
+@-webkit-keyframes slide
+{
+	from {
+		opacity: 1;
+		right: 0px;
+	}
+	to {
+		opacity: 0;
+		right: -16.666666666666666666666666666667%
+
+	}
+}
+
+@-webkit-keyframes filler
+{
+	from {
+		width: 66.66666667%;
+	}
+	to {
+		width: 83.333333333333333333333333333333%;
 	}
 }
