@@ -12,7 +12,7 @@ app.controller("blogController", ["$scope", "$location", "$http", "blogFactory",
 
 		blogFactory.getBlogs().
 		then(function(data){
-			$scope.blogs = data;
+			$scope.jBerry = data;
 			console.log("got some Blogs: " + data.title);
 		}, function(errorMessage){
 			console.log("Error geting blogs in controller " + errorMessage);
