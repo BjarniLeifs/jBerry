@@ -24,6 +24,27 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
+  app.put('/api/blog/meta/votes', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.votes += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
+  });
+
+  app.put('/api/blog/meta/favs', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.favs += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+      //Update user side
+    });
+  });
+
   app.get('/api/blog', function(req, res) {
     Blog.find({}, function(err, data){
       console.log(data);
