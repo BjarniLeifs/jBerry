@@ -7,12 +7,9 @@ module.exports = function(app, passport, mongoose) {
 
   app.post('/api/blog', function(req, res) {
     var newBlog = new Blog();
-    console.log("Title: " + req.body.title);
-    console.log("Body: " + req.body.body);
-
     newBlog.title = req.body.title;
     newBlog.body = req.body.body;
-    newBlog.author = req.user.name;
+    newBlog.author = req.user.local.name;
     newBlog.edited = false;
     newBlog.meta.votes = 0;
     newBlog.meta.favs = 0;

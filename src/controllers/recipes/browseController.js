@@ -22,14 +22,24 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 		return value.toString() + " $";
 	};
 
-	$scope.getName = function(name, index) {
-		if(name.indexOf(", ") <= -1)
-			return name.toLowerCase();
-
+	$scope.getName = function(name) {
 		var names = name.split(", ");
-		$scope.food[index].subName = $scope.toTitle(names[1]);
 
 		return $scope.toTitle(names[0]);
+	};
+
+	$scope.getSubName = function(name) {
+		if(name.indexOf(", ") <= -1)
+			return "";
+
+		var names = name.split(", ");
+		var subTitle = names[1];
+
+		for (var i = 2; i < names.length; i++) {
+			subTitle += '/' + names[i];
+		}
+
+		return $scope.toTitle(subTitle);
 	};
 
 	$scope.toTitle = function(name) {

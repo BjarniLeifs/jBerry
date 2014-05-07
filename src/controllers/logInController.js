@@ -4,7 +4,7 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 	$scope.pass = "";
 
 	$scope.connect = function(){
-		if(!($scope.email && $scope.pass))
+		if(!($scope.email || $scope.pass))
 			return;
 		console.log($scope.email);
 		userFactory.validUser($scope.email, $scope.pass).success(function(data, status, headers, config){
