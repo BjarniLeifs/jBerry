@@ -2,10 +2,15 @@ var Matis = require('../models/food');
 
 module.exports = function(app) {
 
-	//---able to search the database by querying part of a name, in upper- and lowercase----
+	//Search name 
 	app.get('/api/food/getByName/:name', function(req, res) {
+		//var ret = new RegExp('^'+req.params.name, 'i');
+
 		var re = new RegExp(req.params.name, 'i');
-		Matis.find({Nafn:re}, function(err, results) {
+
+		var q = Matis.find({Name: {$regex : ".*"+ req.params.name +".*"}}).limit(50);
+
+		q.exec(function(err, results) {
 			res.send(results);
 		});
 	});

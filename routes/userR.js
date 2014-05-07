@@ -68,26 +68,24 @@ module.exports = function(app, passport, mongoose) {
       console.log(data);
       res.send(200, "Profile updated");
     });
-
-    
-    /*
-    var newProfile = new Profile();
- 
-    */
   });
 
   app.get('/api/profile/:name', function(req, res) {
+    Profile.findOne({"userName" : req.params.name}, function(err, data) {
+      if(err)
+        throw err;
 
+      var sendData = {
+        "firstName" : data.firstName,
+        "lastName"  : data.lastName,
+        "birthDay"  : data.birthDay
+      };
+      res.send(sendData);
+    });
   });
 
   app.get('/api/isLoggedIn', isLoggedIn, function(req, res) {
-    res.send("Pong!");
-  });
-
-  app.get('/api/profile/public/:name', function(req, res) {
-    Profile.find({}, function(err, data){
-      res.send(data);
-    });
+    res.send(200);
   });
 
 };
@@ -100,5 +98,5 @@ function isLoggedIn(req, res, next) {
     return next();
 
   // if they aren't redirect them to the home page
-  res.redirect('/notLoggedIn');
+  res.redirect('/');
 }
