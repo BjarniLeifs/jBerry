@@ -17,44 +17,32 @@
 
 			<div class="row clearfix browse">
 				<div class="browse-container col-md-12 column">
-					<div class="browse-block" class="animate-repeat" ng-repeat="foodItem in food | filter:selected">
+					<div class="browse-block" class="animate-repeat" ng-repeat="foodItem in food | filter:selected" ng-class="getType(foodItem['Fæðuflokkur'])">
 						<div class="title-container">
 							<h2 class="title" ng-bind='getName(foodItem.Name)'></h2>
 							<span class="subTitle" ng-bind='getSubName(foodItem.Name)'></span>
 						</div>
 						<div class="info">
-							<div class="info-container">
-								<span class="head">Protein:</span> 
-								<span class="value">{{foodItem['Prótein']}}</span>
+							<div class="info-row">
+								<div class="info-container">
+									<span class="head">Protein:<span class="value">{{foodItem['Prótein']}}</span></span>
+								</div>
 							</div>
 
-							<div class="info-container">
-								<span class="head">Fat:</span> 
-								<span class="value">{{foodItem['Fita']}}</span>
+							<div class="info-row">
+								<div class="info-container">
+									<span class="head">Fat:<span class="value">{{foodItem['Fita']}}</span></span> 
+								</div>
 							</div>
 
-							<div class="info-container">
-								<span class="head">Carbs:</span>
-								<span class="value">{{foodItem['Kolvetni, alls']}}</span>
-							</div>
-
-							<div class="info-container">
-								<spn class="head">Sugar:</span> 
-								<span class="value">{{foodItem['Sykur']}}</span>
-							</div>
-
-							<div class="info-container">
-								<span class="head">Fiber:</span> 
-								<span class="value">{{foodItem['Trefjaefni']}}</span>
-							</div>
-
-							<div class="info-container">
-								<span class="head">Trans:</span> 
-								<span class="value">{{foodItem['trans-Fitusýrur']}}</span>
+							<div class="info-row">
+								<div class="info-container">
+									<span class="head">Carbs: <span class="value">{{foodItem['Kolvetni, alls']}}</span></span>
+								</div>
 							</div>
 						</div>
-
 					</div>
+					<div style="clear: left;"></div>
 				</div>
 				<div id="alphaOrder" class="col-md-1 column">
 					<div class="letter">A</div>
