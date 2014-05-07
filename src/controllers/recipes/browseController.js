@@ -37,7 +37,7 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 
 		for (var i = 2; i < names.length; i++) {
 			subTitle += '/' + names[i];
-		};
+		}
 
 		return $scope.toTitle(subTitle);
 	};
