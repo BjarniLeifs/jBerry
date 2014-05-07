@@ -16,33 +16,45 @@
 			</div>
 
 			<div class="row clearfix browse">
-				<div class="col-md-12 column">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Name</th>
-								<th>Prótein</th>
-								<th>Fita</th>
-								<th>Kolvetni</th>
-								<th>Sykrur</th>
-								<th>Trefjaefni</th>
-								<th>Trans-Fitusýrur</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="animate-repeat" ng-repeat="foodItem in food | filter:selected">
-								<td>{{$index + 1}}</td>
-								<td>{{foodItem.Name}}</td>
-								<td>{{foodItem['Prótein']}}</td>
-								<td>{{foodItem['Fita']}}</td>
-								<td>{{foodItem['Kolvetni, alls']}}</td>
-								<td>{{foodItem['Sykrur']}}</td>
-								<td>{{foodItem['Trefjaefni']}}</td>
-								<td>{{foodItem['trans-Fitusýrur']}}</td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="browse-container col-md-12 column">
+					<div class="browse-block" class="animate-repeat" ng-repeat="foodItem in food | filter:selected">
+						<div class="title-container">
+							<h2 class="title" ng-bind='getName(foodItem.Name)'></h2>
+							<span class="subTitle" ng-bind='getSubName(foodItem.Name)'></span>
+						</div>
+						<div class="info">
+							<div class="info-container">
+								<span class="head">Protein:</span> 
+								<span class="value">{{foodItem['Prótein']}}</span>
+							</div>
+
+							<div class="info-container">
+								<span class="head">Fat:</span> 
+								<span class="value">{{foodItem['Fita']}}</span>
+							</div>
+
+							<div class="info-container">
+								<span class="head">Carbs:</span>
+								<span class="value">{{foodItem['Kolvetni, alls']}}</span>
+							</div>
+
+							<div class="info-container">
+								<spn class="head">Sugar:</span> 
+								<span class="value">{{foodItem['Sykur']}}</span>
+							</div>
+
+							<div class="info-container">
+								<span class="head">Fiber:</span> 
+								<span class="value">{{foodItem['Trefjaefni']}}</span>
+							</div>
+
+							<div class="info-container">
+								<span class="head">Trans:</span> 
+								<span class="value">{{foodItem['trans-Fitusýrur']}}</span>
+							</div>
+						</div>
+
+					</div>
 				</div>
 				<div id="alphaOrder" class="col-md-1 column">
 					<div class="letter">A</div>
