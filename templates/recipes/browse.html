@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" ng-controller="browseController">
 	<div class="row clearfix main">
 		<div id="main-container" class="col-md-8 column">
 			<div class="row clearfix search">
 				<div id="main-container-search" class"=col-md-12 colum">
 					<form class="form-wrapper cf">
-				        <input type="text" placeholder="Search here..." ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label)"  required>
+				        <input type="text" placeholder="Search here..." ng-model="selected" ng-change="updateTypeHead()" typeahead="state for state in states | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label)"  required>
 
 				        <div class="input-group-btn">
 					        <button class="btn btn-primary" type="submit">
@@ -17,32 +17,26 @@
 
 			<div class="row clearfix browse">
 				<div class="col-md-12 column">
-					<div class="block animate-repeat" ng-repeat="foodItem in food | filter:selected">
-						<div class="identify">
-							<div class="title-container">
-								<div class="title" ng-bind="getName(foodItem.Name, $index)"></div>
-								<div class="subtitle"> {{foodItem.subName}} </div>
-							</div>
-							<div class="side-image"></div>
-						</div>
-						<div class="info">
-							<table>
-							  <thead>
-							    <th>Name</th>
-							    <th>Unit</th>
-							    <th>Amount</th>
-							  </thead>
-							  <tr>
-							    <td>Prótein</td>
-							    <td>{{foodItem.Protein}}</td>
-							  </tr>
-							  <tr>
-							    <td>Fita</td>
-							    <td>{{foodItem.Fita}}</td>
-							  </tr>
-							</table>
-						</div>
-					</div>
+					<table class="table">
+						  <thead>
+						    <th>Name</th>
+						    <th>Prótein</th>
+						    <th>Fita</th>
+						    <th>Kolvetni</th>
+						    <th>Sykrur</th>
+						    <th>Trefjaefni</th>
+						    <th>Trans-Fitusýrur</th>
+						  </thead>
+						  <tr class="row animate-repeat" ng-repeat="foodItem in food | filter:selected">
+						    <td>{{foodItem.nafn}}</td>
+						    <td>{{foodItem['Prótein']}}</td>
+						    <td>{{foodItem['Fita']}}</td>
+						    <td>{{foodItem['Kolvetni, alls']}}</td>
+						    <td>{{foodItem['Sykrur']}}</td>
+						    <td>{{foodItem['Trefjaefni']}}</td>
+						    <td>{{foodItem['trans-Fitusýrur']}}</td>
+						  </tr>
+					</table>
 				</div>
 				<div id="alphaOrder" class="col-md-1 column">
 					<div class="letter">A</div>
@@ -79,7 +73,7 @@
 				<li class="section">
 					<div class="section-container">
 						<ul>
-							<li class="title">Title Task</li>
+							<li class="title">Food Browser</li>
 							<li class="cr boolean">
 								<div>
 									<span class="name">Boolean A</span>

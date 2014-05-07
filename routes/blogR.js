@@ -12,7 +12,7 @@ module.exports = function(app, passport, mongoose) {
 
     newBlog.title = req.body.title;
     newBlog.body = req.body.body;
-    newBlog.author = req.body.author;
+    newBlog.author = req.user.name;
     newBlog.edited = false;
     newBlog.meta.votes = 0;
     newBlog.meta.favs = 0;
@@ -23,7 +23,6 @@ module.exports = function(app, passport, mongoose) {
         if (err)
             throw err;
     });
-    res.send(req.body);
   });
 
   app.get('/api/blog', function(req, res) {

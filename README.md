@@ -18,3 +18,7 @@ git commit -m "Changed this here" (einhver lýsandi, lítill texti)
 git pull origin master
 git push origin master
 Þá á þetta að vera komið ef ekkert merge vesen varð, það er eitthvað sem við hugsum um þegar/ef það kemur.
+
+# How to setup matis database in mongo
+	
+	mongoimport --db jBerry --collection matis --file /path/to/matisDbNold.json

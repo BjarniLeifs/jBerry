@@ -3,7 +3,7 @@
 		<div class="col-md-12 column">
 		</div>
 	</div>
-	<div class="row clearfix" style=" height: 100%;">
+	<div class="container-main row clearfix">
 		<div id="Container-Left" class="col-md-2 column">
 			<div id="Container-Left-Menu">
 				<div class="accordion-group">
@@ -64,7 +64,7 @@
 						<div class="accordion-inner">
 							<ul>
 								<li>
-									<a ng-href="/#/recipes/browse">Browse Recipes</a>
+									<a ng-click ="setTemplate('recipes/browse.html', true)">Browse Recipes</a>
 								</li>
 								<li>
 									Create Recipes
@@ -168,21 +168,22 @@
 				</div>
 			</div>
 		</div>
+			<div id="Container-Center" class="col-md-8 column" ng-repeat="template in templates" ng-class="{'filler': !isSideBar}">
+				<div ng-include="template.url" > 
+					<div class="block food">
 
-		<div id="Container-Center" class="col-md-8 column">
-				<div class="block food">
+					</div>
 
+					<div class="block post">
+
+					</div>
+
+					<div class="block proPost">
+
+					</div>
 				</div>
-
-				<div class="block post">
-
-				</div>
-
-				<div class="block proPost">
-
-				</div>
-		</div>
-		<div id="Container-Right" class="col-md-2 column">
+			</div>
+		<div id="Container-Right" class="col-md-2 column" ng-class="{'slider': !isSideBar}">
 			<time-line></time-line> 
 		</div>
 	</div>

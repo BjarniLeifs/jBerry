@@ -1,7 +1,7 @@
 app.factory("blogFactory", ["$location", "$http", "$q", 
 	function($location, $http, $q){
 		var data = "";
-                //			return $http.post("http://localhost:3000/api/register", {name : newUser.name, email : newUser.email, password : newUser.password});
+//return $http.post("http://localhost:3000/api/register", {name : newUser.name, email : newUser.email, password : newUser.password});
 
 		var obj = {
 			postBlog: function(data){
