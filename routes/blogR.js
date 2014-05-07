@@ -5,6 +5,8 @@ var Blog = require('../models/blog');
 
 module.exports = function(app, passport, mongoose) {
 
+  //Blogs
+
   app.post('/api/blog', function(req, res) {
     var newBlog = new Blog();
     newBlog.title = req.body.title;
@@ -27,6 +29,22 @@ module.exports = function(app, passport, mongoose) {
       console.log(data);
       res.send(data);
     }).sort({title : 'desc'});
+  });
+
+  // Comments
+
+  app.put('/api/blog/comment', function(req, res) {
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      var newComment = {
+        commenter : req.user.local.name,
+        body: req.body.comment
+      };
+      data.comments.push(newComment);
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
   });
 
 };
