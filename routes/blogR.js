@@ -5,6 +5,8 @@ var Blog = require('../models/blog');
 
 module.exports = function(app, passport, mongoose) {
 
+  //Blogs
+
   app.post('/api/blog', function(req, res) {
     var newBlog = new Blog();
     newBlog.title = req.body.title;
@@ -22,11 +24,48 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
+  app.put('/api/blog/meta/votes', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.votes += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
+  });
+
+  app.put('/api/blog/meta/favs', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.favs += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+      //Update user side
+    });
+  });
+
   app.get('/api/blog', function(req, res) {
     Blog.find({}, function(err, data){
       console.log(data);
       res.send(data);
     }).sort({title : 'desc'});
+  });
+
+  // Comments
+
+  app.put('/api/blog/comment', function(req, res) {
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      var newComment = {
+        commenter : req.user.local.name,
+        body: req.body.comment
+      };
+      data.comments.push(newComment);
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
   });
 
 };
