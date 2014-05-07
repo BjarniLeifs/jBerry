@@ -1,4 +1,4 @@
-<div id="content">
+<div ng-controller="statisticController" id="content">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
         <li class="active"><a data-target="#defaultz" data-toggle="tab">Default</a></li> 
         <li><a data-target="#miniral" data-toggle="tab">Miniral</a></li>
@@ -12,7 +12,7 @@
             <div class="tab-pane active" id="defaultz">
                 <div class="col-md-12">
                     fyrir stuff
-                    <div id="chart1" style="height:400px;width:900px; "></div>
+                    <!--<div id="chart1" style="height:400px;width:900px; "></div>-->
                     eftir stuff
                 </div>
                 <div class="col-md-12">
@@ -213,11 +213,4 @@
             </div>
         </div>
     </div>
-</div>  
-<!-- Enable the tabs -->
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('#tabs').tab();
-    });
-</script>  
-
+</div> 

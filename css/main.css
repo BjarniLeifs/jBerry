@@ -488,40 +488,45 @@ body {
 }
 .container .main #main-container .browse .browse-container .browse-block {
   position: relative;
-  width: 45%;
+  width: 29%;
   min-height: 1px;
   _height: 1px;
   float: left;
   padding: 10px;
-  background: #FFF;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  height: 15em;
-  border: 1px solid black;
-  margin: 2em 2% 2em 2%;
+  height: 4.2em;
+  margin: 1em 2% 0.5em 2%;
+  overflow: hidden;
+  cursor: pointer;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
 }
 .container .main #main-container .browse .browse-container .browse-block:hover {
   -webkit-box-shadow: 0 0 10px #999;
   -moz-box-shadow: 0 0 10px #999;
   box-shadow: 0 0 10px #999;
+  height: 5.5em;
 }
 .container .main #main-container .browse .browse-container .browse-block .title-container {
-  padding: 5px;
   text-align: center;
 }
 .container .main #main-container .browse .browse-container .browse-block .title-container .title {
-  color: #333;
   margin: 0;
   font-size: 180%;
   font-weight: bolder;
+  padding-bottom: 15px;
 }
 .container .main #main-container .browse .browse-container .browse-block .title-container .subTitle {
-  color: #858585;
-  padding-left: 15px;
   position: relative;
-  top: -3px;
+  top: -15px;
   font-style: italic;
+  white-space: nowrap;
+  text-align: left;
 }
 .container .main #main-container .browse .browse-container .browse-block .info {
   width: 100%;
