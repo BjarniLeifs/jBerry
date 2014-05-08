@@ -1,0 +1,275 @@
+.container {
+  position: absolute;
+  width: 100% !important;
+  top: 0;
+  bottom: 0;
+}
+.container .main {
+  height: 100%;
+  background-color: #252525;
+}
+.container .main #main-container {
+  height: 100%;
+  border-right: 1px solid #2c2c2c;
+}
+.container .main #main-container .search {
+  height: 4.8em;
+}
+.container .main #main-container .search #main-container-search {
+  border-bottom: 1px solid #2c2c2c;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.container .main #main-container .search #main-container-search .row {
+  height: 4.8em;
+}
+.container .main #main-container .search #main-container-search .cf {
+  zoom: 1;
+}
+.container .main #main-container .search #main-container-search .cf:before,
+.container .main #main-container .search #main-container-search .cf:after {
+  content: "";
+  display: table;
+}
+.container .main #main-container .search #main-container-search .cf:after {
+  clear: both;
+}
+.container .main #main-container .search #main-container-search .form-wrapper {
+  padding: 15px;
+  margin: auto;
+  width: 775px;
+}
+.container .main #main-container .search #main-container-search .form-wrapper input {
+  width: 45em;
+  height: 2.5em;
+  padding: 10px 5px;
+  float: left;
+  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: 0;
+  background: #eee;
+}
+.container .main #main-container .search #main-container-search .form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+}
+.container .main #main-container .search #main-container-search .form-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+.container .main #main-container .search #main-container-search .form-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+.container .main #main-container .search #main-container-search .form-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+.container .main #main-container .search #main-container-search .form-wrapper button {
+  overflow: visible;
+  position: relative;
+  float: left;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 2.5em;
+  width: 70px;
+  font: 700 15px/40px 'lucida sans', 'trebuchet MS', Tahoma;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 0 10px 10px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+.container .main #main-container .search #main-container-search .form-wrapper button:hover {
+  color: #000;
+}
+.container .main #main-container .search #main-container-search .form-wrapper .dropdown-menu {
+  width: 33.7em;
+  font-size: 20px;
+}
+.container .main #main-container .browse {
+  position: relative;
+  height: 100%;
+}
+.container .main #main-container .browse .block {
+  margin: 3em auto;
+  width: 45em;
+  height: 14em;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(top, #c0c0c0 0, #8d8d8d 100%);
+}
+.container .main #main-container .browse .block:hover {
+  box-shadow: -1px 0px 13px #ffffff;
+}
+.container .main #main-container .browse .block .identify {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  padding: 1%;
+  border-radius: 0px 5px 5px 0px;
+}
+.container .main #main-container .browse .block .identify .title-container {
+  height: 26%;
+}
+.container .main #main-container .browse .block .identify .title-container .title {
+  font-size: 1.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bolder;
+  text-align: left;
+  margin-top: -6px;
+}
+.container .main #main-container .browse .block .identify .title-container .subtitle {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-left: 15px;
+  margin-top: -8px;
+}
+.container .main #main-container .browse .block .identify .side-image {
+  width: 9.8em;
+  height: 9.8em;
+  padding: 5%;
+  background: url(img/skyr.jpg) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 5px;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+}
+.container .main #main-container .browse .block .info {
+  width: 70%;
+  height: 100%;
+  float: right;
+  display: inline-block;
+  padding: 2%;
+}
+.container .main #main-container .browse .block .info table {
+  width: 100%;
+}
+.container .main #main-container .browse #alphaOrder {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 48px;
+  height: 100%;
+  border-left: 1px solid #2c2c2c;
+  padding: 0;
+}
+.container .main #main-container .browse #alphaOrder .letter {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+.container .main #main-container .browse #alphaOrder .letter:hover {
+  color: orange;
+  text-shadow: -1px 0px 13px #ffffff;
+}
+.container .main #sidebar {
+  height: 100%;
+  padding: 0;
+}
+.container .main #sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  clear: both;
+}
+.container .main #sidebar .menu .section {
+  padding: 0;
+  border-bottom: 0;
+}
+.container .main #sidebar .menu .section .section-container {
+  color: #eee;
+  font: 11px 'Lucida Grande', sans-serif;
+  text-shadow: 0 -1px 0 #111111;
+}
+.container .main #sidebar .menu .section .section-container .title {
+  padding-left: 16px;
+  padding-top: 5px;
+  height: 36px;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.8em;
+  font-weight: bolder;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+}
+.container .main #sidebar .menu .section .section-container .cr {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2c2c2c;
+  padding: 8px;
+}
+.container .main #sidebar .menu .section .section-container .cr:hover {
+  background: #111;
+}
+.container .main #sidebar .menu .section .section-container .cr .name {
+  cursor: default;
+  float: left;
+  clear: left;
+  width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-align: left;
+  margin-top: 7px;
+}
+.container .main #sidebar .menu .section .section-container .cr .c input[type=checkbox] {
+  margin-top: 9px;
+}
+.container .main #sidebar .menu .section .section-container .cr .c input[type=text] {
+  color: #2fa1d6;
+  background: #303030;
+  outline: none;
+  border: 0;
+  margin-top: 4px;
+  padding: 3px;
+  width: 100%;
+  float: right;
+}
+.container .main #sidebar .menu .section .section-container .cr .c .slider {
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  height: 7px;
+  margin: 25px 5px;
+  vertical-align: middle;
+  background: -webkit-linear-gradient(top, #c0c0c0 0, #8d8d8d 100%);
+  box-shadow: inset 2px 2px 5px;
+  border-radius: 1em;
+  border: 0;
+  color: #ccc;
+}
+.container .main #sidebar .menu .section .section-container .cr .c .slider div {
+  background: #2fa1d6;
+}
+.container .main #sidebar .menu .section .section-container .cr .c .slider a {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  top: -7px;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 2;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  outline: 0;
+}
+.container .main #sidebar .menu .section .section-container .boolean {
+  border-left: 3px solid #806787;
+  cursor: pointer;
+}
+.container .main #sidebar .menu .section .section-container .number {
+  border-left: 3px solid #2fa1d6;
+}
