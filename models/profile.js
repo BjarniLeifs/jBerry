@@ -13,8 +13,8 @@ var profileSchema = mongoose.Schema({
     birthDay    : Date,
     height      : Number,
     weight      : Number,
-    trainerID	: String
-    messages	: [{senderID : String, title : String, message : String, time : {type : Date, default: Date.now}}]
+    trainerID	: String,
+    messages	: [{senderID : String, title : String, message : String, date: { type: Date, default: Date.now }}]
 
 }, {collection : 'Profiles'});
 
