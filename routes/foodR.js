@@ -10,8 +10,6 @@ module.exports = function(app) {
 
 		Matis.find({Name:re}).limit(50).setOptions({lean:true}).exec(function(err, results) {
 			results.sort(function(a, b) {
-				console.log(a.Name.toLowerCase().indexOf(req.params.name.toLowerCase()));
-				console.log(re);
 				return a.Name.toLowerCase().indexOf(req.params.name.toLowerCase()) - b.Name.toLowerCase().indexOf(req.params.name.toLowerCase());
 			});
 			res.send(results);
