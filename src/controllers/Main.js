@@ -1,12 +1,14 @@
 app.controller("MainController", ["$scope", "$location", function($scope, $location) {
-	$scope.templates = [{url: '/templates/statistic.html'}];
+	$scope.templates = [{url: '/templates/home.html', lastPath:'home.html'}];
 	$scope.isSideBar = true;
 
 	$scope.setTemplate = function(path, hide) {
-		$scope.templates = [{url: "/templates/" + path}];
+		if($scope.templates[0].lastPath != path)
+			$scope.templates = [{url: "/templates/" + path, lastPath:path}];
 
 		if(hide !== undefined)
-			$scope.isSideBar = !$scope.isSideBar;
+			if($scope.isSideBar !== hide)
+				$scope.isSideBar = hide;
 	};
 
 	$scope.getTemplate = function() {

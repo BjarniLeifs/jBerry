@@ -17,7 +17,7 @@
 
 			<div class="row clearfix browse">
 				<div class="browse-container col-md-12 column">
-					<div class="block-container move-animation" ng-repeat="foodItem in food | filter:selected">
+					<div ng-repeat="foodItem in food | filter:selected" class="block-container move-animation">
 						<div class="browse-block">
 							<div class="tag" ng-class="getType(foodItem['Fæðuflokkur'])"></div>
 							<div class="title-container">

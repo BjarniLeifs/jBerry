@@ -29,6 +29,10 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    isTrainer        : Boolean,
+    trainer          : {
+        customers    : [{userID : String}]
     }
 
 });
