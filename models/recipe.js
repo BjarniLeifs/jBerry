@@ -14,7 +14,8 @@ var recipeSchema = mongoose.Schema({
     height      : Number,
     weight      : Number,
     steps		: [],
-    ingredients	: []
+    ingredients	: [{produce : String, amount : Number, unit : String}],
+    tags		: []
 
 }, {collection : 'Recipes'});
 

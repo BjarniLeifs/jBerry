@@ -4,7 +4,7 @@
 			<div class="row clearfix search">
 				<div id="main-container-search" class"=col-md-12 colum">
 					<form class="form-wrapper cf">
-				        <input type="text" placeholder="Search here..." ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label)"  required>
+				        <input type="text" placeholder="Search here..." ng-model="selected" ng-change="updateTypeHead()" focus>
 
 				        <div class="input-group-btn">
 					        <button class="btn btn-primary" type="submit">
@@ -16,83 +16,35 @@
 			</div>
 
 			<div class="row clearfix browse">
-				<div class="col-md-12 column">
-					<div class="block animate-repeat" ng-repeat="foodItem in food | filter:selected">
-						<div class="identify">
+				<div class="browse-container col-md-12 column">
+					<div class="block-container move-animation" ng-repeat="foodItem in food | filter:selected">
+						<div class="browse-block">
+							<div class="tag" ng-class="getType(foodItem['Fæðuflokkur'])"></div>
 							<div class="title-container">
-								<div class="title" ng-bind="getName(foodItem.Name, $index)"></div>
-								<div class="subtitle"> {{foodItem.subName}} </div>
+								<h2 class="title" ng-bind='getName(foodItem.Name)'></h2>
+								<span class="subTitle" ng-bind='getSubName(foodItem.Name)'></span>
 							</div>
-							<div class="side-image"></div>
-						</div>
-						<div class="info">
-							<table class="table">
-							  <thead>
-							    <th>Name</th>
-							    <th>Unit</th>
-							    <th>Amount</th>
-							  </thead>
-							  <tr>
-							    <td>Prótein</td>
-							    <td>.g</td>
-							    <td>{{foodItem.Protein}}</td>
-							  </tr>
-							  <tr>
-							    <td>Fita</td>
-							    <td>.g</td>
-							    <td>{{foodItem.Fita}}</td>
-							  </tr>
-							   <tr>
-							    <td>Kolvetni, alls</td>
-							    <td>.g</td>
-							    <td>{{foodItem['Kolvetni, alls']}}</td>
-							  </tr>
-							  <tr>
-							    <td>Sykrur</td>
-							    <td>.g</td>
-							    <td>{{foodItem.Sykrur}}</td>
-							  </tr>
-							  <tr>
-							    <td>Trefjaefni</td>
-							    <td>.g</td>
-							    <td>{{foodItem.Trefjaefni}}</td>
-							  </tr>
-							  <tr>
-							    <td>Trans-Fitusýrur</td>
-							    <td>.g</td>
-							    <td>{{foodItem['trans-Fitusýrur']}}</td>
-							  </tr>
-							</table>
+							<div class="info">
+								<div class="info-row">
+									<div class="info-container">
+										<span class="head">Protein:<span class="value">{{foodItem['Prótein']}}</span></span>
+									</div>
+								</div>
+
+								<div class="info-row">
+									<div class="info-container">
+										<span class="head">Fat:<span class="value">{{foodItem['Fita']}}</span></span> 
+									</div>
+								</div>
+
+								<div class="info-row">
+									<div class="info-container">
+										<span class="head">Carbs: <span class="value">{{foodItem['Kolvetni, alls']}}</span></span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div id="alphaOrder" class="col-md-1 column">
-					<div class="letter">A</div>
-					<div class="letter">B</div>
-					<div class="letter">C</div>
-					<div class="letter">D</div>
-					<div class="letter">E</div>
-					<div class="letter">F</div>
-					<div class="letter">G</div>
-					<div class="letter">H</div>
-					<div class="letter">I</div>
-					<div class="letter">J</div>
-					<div class="letter">K</div>
-					<div class="letter">L</div>
-					<div class="letter">M</div>
-					<div class="letter">N</div>
-					<div class="letter">O</div>
-					<div class="letter">P</div>
-					<div class="letter">Q</div>
-					<div class="letter">R</div>
-					<div class="letter">S</div>
-					<div class="letter">T</div>
-					<div class="letter">U</div>
-					<div class="letter">V</div>
-					<div class="letter">W</div>
-					<div class="letter">X</div>
-					<div class="letter">Y</div>
-					<div class="letter">Z</div>
 				</div>
 			</div>
 		</div>

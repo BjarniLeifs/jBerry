@@ -9,7 +9,7 @@ var blogSchema = mongoose.Schema({
   title   : String,
   author  : String,
   body    : String,
-  comments: [{ commenter : String, body: String, date: Date }],
+  comments: [{ commenter : String, body: String, date: { type: Date, default: Date.now }}],
   date    : { type: Date, default: Date.now },
   edited  : Boolean,
   meta    : {

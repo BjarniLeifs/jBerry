@@ -5,14 +5,13 @@ var Blog = require('../models/blog');
 
 module.exports = function(app, passport, mongoose) {
 
+  //Blogs
+
   app.post('/api/blog', function(req, res) {
     var newBlog = new Blog();
-    console.log("Title: " + req.body.title);
-    console.log("Body: " + req.body.body);
-
     newBlog.title = req.body.title;
     newBlog.body = req.body.body;
-    newBlog.author = req.user.name;
+    newBlog.author = req.user.local.name;
     newBlog.edited = false;
     newBlog.meta.votes = 0;
     newBlog.meta.favs = 0;
@@ -23,7 +22,27 @@ module.exports = function(app, passport, mongoose) {
         if (err)
             throw err;
     });
-    res.send(req.body);
+  });
+
+  app.put('/api/blog/meta/votes', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.votes += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
+  });
+
+  app.put('/api/blog/meta/favs', function(req, res){
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      data.meta.favs += 1;
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+      //Update user side
+    });
   });
 
   app.get('/api/blog', function(req, res) {
@@ -31,6 +50,22 @@ module.exports = function(app, passport, mongoose) {
       console.log(data);
       res.send(data);
     }).sort({title : 'desc'});
+  });
+
+  // Comments
+
+  app.put('/api/blog/comment', function(req, res) {
+    Blog.findOne({_id : req.body._id}, function(err, data){
+      var newComment = {
+        commenter : req.user.local.name,
+        body: req.body.comment
+      };
+      data.comments.push(newComment);
+      data.save(function(err) {
+        if (err)
+            throw err;
+      });
+    });
   });
 
 };

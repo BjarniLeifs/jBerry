@@ -13,7 +13,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/blogs", {
 		templateUrl: "templates/blogs.html",
 	}).when("/createBlog", {
-		templateUrl: "templates/createBlog.html",
+		templateUrl: "templates/newBlog.html",
 		controller: "blogController",
 	}).when("/blogs", {
 		templateUrl: "templates/blogs.html",
@@ -48,6 +48,12 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/skinfold", {
 		templateUrl: "templates/skinfold.html",
 		controller: "skinfoldController",
+	}).when("/skinfold", {
+		templateUrl: "templates/skinfold.html",
+		controller: "skinfoldController",
+	}).when("/metabolic", {
+		templateUrl: "templates/metabolic.html",
+		controller: "metabolicController",
 	}).otherwise({ redirectTo: "/" });
 	
 	//$locationProvider.html5Mode(true);
