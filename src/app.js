@@ -51,6 +51,12 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/skinfold", {
 		templateUrl: "templates/skinfold.html",
 		controller: "skinfoldController",
+	}).when("/skinfold", {
+		templateUrl: "templates/skinfold.html",
+		controller: "skinfoldController",
+	}).when("/metabolic", {
+		templateUrl: "templates/metabolic.html",
+		controller: "metabolicController",
 	}).otherwise({ redirectTo: "/" });
 	
 	//$locationProvider.html5Mode(true);
