@@ -29,6 +29,10 @@ module.exports = function(app, passport, mongoose) {
     var newProfile = new Profile();
     newProfile.userID = req.user._id;
     newProfile.email = req.body.email;
+    newProfile.save(function(err) {
+      if (err)
+          throw err;
+    });
     res.send("User: " + req.body.name + " registered");
   });
 
