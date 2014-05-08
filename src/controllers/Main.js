@@ -6,7 +6,7 @@ app.controller("MainController", ["$scope", "$location", function($scope, $locat
 		$scope.templates = [{url: "/templates/" + path}];
 
 		if(hide !== undefined)
-			$scope.isSideBar = !$scope.isSideBar;
+			$scope.isSideBar = hide;
 	};
 
 	$scope.getTemplate = function() {

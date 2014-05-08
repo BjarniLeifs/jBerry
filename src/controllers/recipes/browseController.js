@@ -60,19 +60,19 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 		if(num === 16 || num === 13)	//Orange
 			return 'block-orange';
 
-		if(num === 14)							//Light Blue
+		if(num === 14)					//Light Blue
 			return 'block-lightBlue';
 
-		if(num === 15)						//Gray
+		if(num === 15)					//Gray
 			return 'block-gray';
 
-		if(num === 17)						//Red/Brown
+		if(num === 17)					//Red/Brown
 			return 'block-redBrown';
 
-		if(num === 18)							//Pink
+		if(num === 18)					//Pink
 			return 'block-pink';
 
-		if(num === 19)							//Brown
+		if(num === 19)					//Brown
 			return 'block-brown';
 
 		return 'block-defult';

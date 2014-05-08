@@ -1,4 +1,4 @@
-var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'uiSlider', 'ui.slider']);
+var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'ui.slider']);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.when("/", {
@@ -18,9 +18,6 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/blogs", {
 		templateUrl: "templates/blogs.html",
 		controller: "blogController",
-	}).when("/profile", {
-		templateUrl: "templates/profile.html",
-		controller: "profileController",
 	}).when("/checkin", {
 		templateUrl: "templates/checkin.html",
 		controller: "checkinController",
@@ -33,28 +30,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/recipes/add", {
 		templateUrl: "templates/recipes/add.html",
 		controller: "addController",
-	}).when("/measurements", {
-		templateUrl: "templates/measurements.html",
-		controller: "measurementsController",
-	}).when("/food", {
-		templateUrl: "templates/food.html",
-		controller: "foodController",
-	}).when("/statistic", {
-		templateUrl: "templates/statistic.html",
-		controller: "statisticController",
-	}).when("/bodymeasurements", {
-		templateUrl: "templates/bodymeasurements.html",
-		controller: "bodymeasurementsController",
-	}).when("/skinfold", {
-		templateUrl: "templates/skinfold.html",
-		controller: "skinfoldController",
-	}).when("/skinfold", {
-		templateUrl: "templates/skinfold.html",
-		controller: "skinfoldController",
-	}).when("/metabolic", {
-		templateUrl: "templates/metabolic.html",
-		controller: "metabolicController",
-	}).otherwise({ redirectTo: "/" });
+	});
 	
 	//$locationProvider.html5Mode(true);
 }]);
