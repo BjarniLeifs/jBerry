@@ -7,17 +7,20 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/login", {
 		templateUrl: "templates/LogIn.html",
 		controller: "loginController",
+
+
 	}).when("/newblog", {
 		templateUrl: "templates/newBlog.html",
-		controller: "blogController",
+		controller: "newBlogController",
+
+
+
+	
+
 	}).when("/blogs", {
 		templateUrl: "templates/blogs.html",
-	}).when("/createBlog", {
-		templateUrl: "templates/newBlog.html",
 		controller: "blogController",
-	}).when("/blogs", {
-		templateUrl: "templates/blogs.html",
-		controller: "blogController",
+
 	}).when("/profile", {
 		templateUrl: "templates/profile.html",
 		controller: "profileController",

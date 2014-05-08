@@ -1,44 +1,41 @@
 app.controller("blogController", ["$scope", "$location", "$http", "blogFactory",
 	function($scope, $location, $http, blogFactory){
 
-		$scope.newBlog = {
-			title : "",
-			body : "",
-			tags : ""
-
-		};
-
-
-		blogFactory.getBlogs().
-		then(function(data){
-			$scope.jBerry = data;
-			console.log("got some Blogs: " + data.title);
-		}, function(errorMessage){
-			console.log("Error geting blogs in controller " + errorMessage);
-		});
-
-
+		$scope.blogs="";
+		var id = "";
+		var favs = "";
 		
-		$scope.AddBlog = function(){
-			if(!($scope.newBlog.title || $scope.newBlog.body)){
-				return;
-			}
-			var tagArray = $scope.newBlog.tags.split(" ");
-			var data = {
-				title : $scope.newBlog.title,
-				body : $scope.newBlog.body,
-				tags : tagArray
-			};
-			console.log(data);
-			blogFactory.postBlog(data).success(function(data, status, headers, config){
+		
+
+	console.log("AFLDFNLMDLKFS");
+		blogFactory.getBlogs().success(function(data, status, headers, config){
+			if(status === 200) {
 				console.log(status);
-				if(status === 200) {
-					$location.path("/blogs");
-					$scope.$apply();
-				}
+				console.log(data);
+				$scope.blogs = data;
+				
+				
+			}
+		}).error(function(){
+			console.log("Error");
+		}); 
+
+		$scope.favsCounter = function(_id){
+			
+			console.log("id: " + _id);
+			favs += 1;
+			console.log("favs: " + favs);
+			var data = {
+				id   : _id,
+				favs : favs
+			};
+			console.log("data in favsCount: " + data);
+			blogFactory.addFavs(data).success(function(data, status, headers, config){
+				console.log(status);
 				}).error(function(){
 					console.log("Error");
 				});
-			};
 
-	}]);
+		};
+}]);
+

@@ -1,4 +1,4 @@
-<div class="blogContainer">
+<div class="container">
     <div class="row">
         <h2>Create a new blog</h2>
     </div>
@@ -7,36 +7,36 @@
     
        <!-- <div class="container-blog">-->
             <div class="col-sm-offset-4 col-sm-4">
-                <form method="post">
+            <form method="post">
             <!--    <div class="container-blog-input"> -->
                     <div class="form-group">
                         <label for="validate-text">{{title}}</label>
                         <div class="input-group">
-                            <input ng-model="jBerry.title" type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Title" required>
-                            <span class="input-group-addon danger"><span class="glyphicon glyphicon-remove"></span></span>
-                        </div>
-                    </div> 
+                        <input ng-model="newBlog.title" type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Title" required>
+                        <span class="input-group-addon danger"><span class="glyphicon glyphicon-remove"></span></span>
+                    </div>
+               </div> 
 
                 <div class="form-group">
-                  <!--  <label for="validate-text">Tags</label>-->
+                    <label for="validate-text">Tags</label>
                     <div class="input-group">
-                        <input ng-model="jBerry.tags" type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Tags" required>
+                        <input ng-model="newBlog.tags" type="text" class="form-control" name="validate-text" id="validate-text" placeholder="Tags" required>
                         <span class="input-group-addon danger"><span class="glyphicon glyphicon-remove"></span></span>
                     </div>
                 </div>
 
             </div>
 
-<div class="col-sm-offset-4 col-sm-4">
+
            <div class="inputgroup-addon-textbox">
-                <textarea ng-model="jBerry.body" class="form-control animated" cols="10" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                <textarea ng-model="newBlog.body" class="form-control animated" cols="10" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
             </div>
 
             <div class"success-button">
-                <button ng-click="submitblog()" type="button" class="btn btn-labeled btn-success">
+                <button ng-click="AddBlog()" type="button" class="btn btn-labeled btn-success">
                 <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button>
         </div>
-                </div>
+                
                
                
             </form>
@@ -45,5 +45,4 @@
         </div>
     </div>
 </div>
-
 

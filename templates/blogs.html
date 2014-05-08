@@ -1,162 +1,51 @@
 <div id="blogContainer" class="col-md-8 column"> 
 	<div class="row">
-<<<<<<< HEAD
-			<div id="blogContainer-menu" class="menu">
-				<div class="menu-blog-fluid well span6">
-					
-						<div style=""class="menu-blog-fluid-title">
-					    	<h1>Here comes title</h1>
-					    </div>
-					    <div class="imgUser">
-							<img src="http://placehold.it/40x35	" alt=""> {{ N A M E }}
-						</div>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
-					
-					<span class="badge">Posted date.now</span>
-					<div class="pull-right">
-						<span class="label label-default">{{alice}}</span> 
-						<span class="label label-primary">{{story}}</span> 
+		<div id="blogContainer-menu" class="menu">
+			<div ng-repeat="blog in blogs" class="menu-blog-fluid well span6">
+				<div style=""class="menu-blog-fluid-title">
+					<h1> {{blog.title}}	</h1>
+				</div>
+				<!-- <div class="imgUser">
+					<img src="http://placehold.it/40x35" > {{}}
+				</div> -->
+				<p> {{blog.body}} </p>
+				<span class="badge">{{blog.date}}</span>
+				<div ng-repeat="tag in blog.tags"class="pull-right">
+					<span class="label label-primary">{{tag}}</span>
+					<!--<span class="label label-default">{{alice}}</span>  
 						<span class="label label-success">{{blog}}</span> 
 						<span class="label label-info">{{personal}}</span> 
 						<span class="label label-warning">{{Warning}}</span>
 						<span class="label label-danger">{{Danger}}</span>
-					</div>         
-				    <hr>
-					<ul>
-						<li>
-	        				<div class="heart well span2">
-		          				<span class="glyphicon glyphicon-heart"></span>
-		          				<span class="glyphicon-class">{{heartCounter}}</span>
-		          			</div>
-		          		</li>
-		          		<li>
-		          			<div class="comment well span2">
-								<span class="glyphicon glyphicon-comment"></span>
-	         					<span class="glyphicon-class">Write a comment</span>
-	         				
+					-->
+				</div>         
+				<hr>
+				<ul>
+					<li>
+							<button ng-click="favsCounter(blog._id)" style="padding-left: 10%;padding-right: 10%;" class="heart well span2">
+							<span class="glyphicon glyphicon-heart"></span>
+							<span class="glyphicon-class">{{ blog.meta.favs }}</span>
+						</button>
+					</li>
+					<li>
+						<div class="comment well span2">
+							<span class="glyphicon glyphicon-comment"></span>
+							<span class="glyphicon-class">Write a comment</span>
+							<div class="comment-showComment">
+								<div type="input" class="comment-showComment-field">
+									<div class="input-group" style="width: 100%;">
+										<input  type="text" class="form-control" name="validate-text" id="validate-text" style="border-radius: 21px;"placeholder="Do you have any comments?">
 
-	         					<div class="comment-showComment">
-	         						Here is some stuff shown...
+									</div>
 								</div>
 							</div>
-	        			</li>
-
-						
-					</ul>
-				</div>
-
-
-
-
-
-=======
-			<div  class="Container-Center-blog"> 
-				<div class="span8">
-					<div class="row">
-						<div class="Container-Center-blog-title">
-							<div class="span8">
-								<h4 style="float: left, "><strong>Author: {{author}} </strong></h4>
-							</div>
 						</div>
-					</div>
-					<div  class="row">
-						<div class="Container-Center-blog-main">
-							<div class="span2">
-								<div class="Container-Center-blog-main-pic">
-									<a href="#" class="thumbnail">
-										<img src="http://placehold.it/260x180" alt="">
-									</a>
-								</div>
-							</div>
-							<div class="span6">      
-								<div class="Container-Center-blog-main-text">
-									<ul>
-										<li ng-repeate="blog in blogs">
-											{{blog.title}}
-										</li>	    
-									</ul>
-
-									<h4 style="float: left; margin: 1%;"><strong>{{jBerry.title}}</strong></h4>
-									
-									<p><a class="btn">Read more</a></p>
-									
-									<h4 style="float: left; margin: 1%;"><strong>{{title}}</strong></h4>
-									<p>
-										Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque, ad nobis propriae quaerendum sea.
-									</p>
-									
-									<p><a class="btn">Read more</a></p>
-									<script>
-									$(document).ready(function(){
-							
-									  $(".btn").click(function(){
-									    $("p").slideDown();
-									  });
-									});
-									</script>
->>>>>>> 86400136e9b1e1f8fb5f504a1aca75e756b1c82e
-
-				<div class="profileContainer-fluid well span6">
-				
-						<div style=""class="blogContainer-menu-art-title">
-					    	<h1>Here comes title</h1>
-					    </div>
-					    <div class="imgUser">
-							<img src="http://placehold.it/40x35" alt=""> {{ N A M E }}
-						</div>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
-					
-					<span class="badge">Posted date.now</span>
-					<div class="pull-right">
-						<span class="label label-default">{{alice}}</span> 
-						<span class="label label-primary">{{story}}</span> 
-						<span class="label label-success">{{blog}}</span> 
-						<span class="label label-info">{{personal}}</span> 
-						<span class="label label-warning">{{Warning}}</span>
-						<span class="label label-danger">{{Danger}}</span>
-					</div>         
-				
-				    <hr>
-				</div>
+					</li>
 
 
-
-				<div class="profileContainer-fluid well span6">
-				
-						<div style=""class="blogContainer-menu-art-title">
-					    	<h1>Here comes title</h1>
-					    </div>
-					    <div class="imgUser">
-							<img src="http://placehold.it/40x35	" alt=""> {{ N A M E }}
-						</div>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
-					
-					<span class="badge">Posted date.now</span>
-					<div class="pull-right">
-						<span class="label label-default">{{alice}}</span> 
-						<span class="label label-primary">{{story}}</span> 
-						<span class="label label-success">{{blog}}</span> 
-						<span class="label label-info">{{personal}}</span> 
-						<span class="label label-warning">{{Warning}}</span>
-						<span class="label label-danger">{{Danger}}</span>
-					</div>         
-			
-				    <hr>
-				</div>
-
-
-
-
-			</div>	
+				</ul>
+			</div>
+		</div>	
 	</div>
 </div>
 
