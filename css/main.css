@@ -483,182 +483,233 @@ body {
 }
 .container .main #main-container .browse .browse-container {
   overflow: auto;
-  width: calc(100% - 48px);
+  width: 100%;
   height: 92%;
+  padding: 10px 0 10px 0;
 }
-.container .main #main-container .browse .browse-container .browse-block {
+.container .main #main-container .browse .browse-container .block-container {
+  width: calc(100% / 3 - 3px);
+  height: 4.8em;
   position: relative;
-  width: 29%;
+  display: inline-block;
+}
+.container .main #main-container .browse .browse-container .block-container .move-animation.ng-enter {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+.container .main #main-container .browse .browse-container .block-container .move-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.container .main #main-container .browse .browse-container .block-container .move-animation.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+.container .main #main-container .browse .browse-container .block-container .move-animation.ng-move.ng-move-active {
+  opacity: 1;
+}
+.container .main #main-container .browse .browse-container .block-container .move-animatio.ng-leave {
+  -webkit-animation: 0.5s hide;
+  -moz-animation: 0.5s hide;
+  -o-animation: 0.5s hide;
+  animation: 0.5s hide;
+}
+.container .main #main-container .browse .browse-container .block-container .browse-block {
+  display: inline-block;
+  z-index: 1000;
+  width: 100%;
   min-height: 1px;
-  _height: 1px;
   float: left;
   padding: 5px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  height: 3.8em;
-  margin: 1em 2% 0.5em 2%;
+  height: 4.8em;
   overflow: hidden;
   cursor: pointer;
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
-  transition: height 0.5s;
-  -webkit-transition: height 0.5s;
+  color: #fff;
+  background-color: #d2322d;
+  border-color: #d43f3a;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: inset 0 0 10px #000000;
+  -moz-transition-property: width, height, margin;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-property: width, height, margin;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-property: width, height, margin;
+  -o-transition-duration: 0.5s;
+  -transition-property: width, height, margin;
+  transition-duration: 0.5s;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-blue {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag {
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  border: 1px solid black !important;
+  position: absolute;
+  right: 10px;
+}
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-blue {
   color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-blue:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-blue:hover {
   color: #fff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-yellow {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-yellow {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-yellow:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-yellow:hover {
   color: #fff;
   background-color: #ed9c28;
   border-color: #d58512;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-green {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-green {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-green:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-green:hover {
   color: #fff;
   background-color: #47a447;
   border-color: #398439;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-red {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-red {
   color: #fff;
   background-color: #d9534f;
   border-color: #d43f3a;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-red:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-red:hover {
   color: #fff;
   background-color: #d2322d;
   border-color: #ac2925;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-orange {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-orange {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-orange:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-orange:hover {
   color: #fff;
   background-color: #ed9c28;
   border-color: #d58512;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-lightBlue {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-lightBlue {
   color: #fff;
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-lightBlue:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-lightBlue:hover {
   color: #fff;
   background-color: #39b3d7;
   border-color: #269abc;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-gray {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-gray {
   color: #fff;
   background-color: #848282;
   border-color: #626161;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-gray:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-gray:hover {
   background-color: #626161;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-redBrown {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-redBrown {
   color: #fff;
   background-color: #790000;
   border-color: #790000;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-redBrown:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-redBrown:hover {
   background-color: #ae5c5c;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-pink {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-pink {
   color: #fff;
   background-color: #ec528d;
   border-color: #357ebd;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-pink:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-pink:hover {
   background-color: #ec6a9c;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-brown {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-brown {
   color: #fff;
   background-color: #603913;
   border-color: #241b24;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-brown:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-brown:hover {
   background-color: #754c24;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-defult {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-defult {
   color: #fff;
   background-color: #000;
   border-color: #000;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-white {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-white {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
-.container .main #main-container .browse .browse-container .browse-block.block-white:hover {
+.container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-white:hover {
   color: #333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
-.container .main #main-container .browse .browse-container .browse-block:hover {
-  -webkit-box-shadow: 0 0 10px #999;
-  -moz-box-shadow: 0 0 10px #999;
-  box-shadow: 0 0 10px #999;
-  height: 9em;
+.container .main #main-container .browse .browse-container .block-container .browse-block:hover {
+  width: calc(120%);
+  height: 10em;
+  margin: -2.5em;
+  border: 2px solid black;
+  overflow: hidden;
+  -moz-transition-duration: .1s;
+  -webkit-transition-duration: .1s;
+  -o-transition-duration: .1s;
+  transition-duration: .1s;
+  z-index: 1000000;
+  position: relative;
+  background-color: #d9534f;
 }
-.container .main #main-container .browse .browse-container .browse-block .title-container {
+.container .main #main-container .browse .browse-container .block-container .browse-block .title-container {
   text-align: center;
-  height: 3.6em;
+  height: 4em;
 }
-.container .main #main-container .browse .browse-container .browse-block .title-container .title {
+.container .main #main-container .browse .browse-container .block-container .browse-block .title-container .title {
   margin: 0;
   font-size: 130%;
   font-weight: bolder;
   padding-bottom: 20px;
 }
-.container .main #main-container .browse .browse-container .browse-block .title-container .subTitle {
+.container .main #main-container .browse .browse-container .block-container .browse-block .title-container .subTitle {
   position: relative;
-  top: -20px;
+  top: -13px;
   font-style: italic;
   white-space: nowrap;
   text-align: left;
 }
-.container .main #main-container .browse .browse-container .browse-block .info {
+.container .main #main-container .browse .browse-container .block-container .browse-block .info {
   width: 100%;
   height: 60px;
 }
-.container .main #main-container .browse .browse-container .browse-block .info .info-row {
+.container .main #main-container .browse .browse-container .block-container .browse-block .info .info-row {
   width: 100%;
   height: 24px;
   display: inline;
 }
-.container .main #main-container .browse .browse-container .browse-block .info .info-row .info-container {
+.container .main #main-container .browse .browse-container .block-container .browse-block .info .info-row .info-container {
   float: left;
   display: inline-block;
   width: 100%;
 }
-.container .main #main-container .browse .browse-container .browse-block .info .info-row .info-container .head {
+.container .main #main-container .browse .browse-container .block-container .browse-block .info .info-row .info-container .head {
   font-weight: bolder;
 }
-.container .main #main-container .browse .browse-container .browse-block .info .info-row .info-container .head .value {
+.container .main #main-container .browse .browse-container .block-container .browse-block .info .info-row .info-container .head .value {
   font-style: italic;
   font-weight: normal;
-  float: right;
-}
-.container .main #main-container .browse .browse-container .browse-block img {
   float: right;
 }
 .container .main #main-container .browse #alphaOrder {
@@ -783,6 +834,38 @@ body {
 }
 .container .main #sidebar .menu .section .section-container .number {
   border-left: 3px solid #2fa1d6;
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 /* Statistic */
 #nutr-container {
