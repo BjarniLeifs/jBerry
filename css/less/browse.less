@@ -15,6 +15,8 @@
 
 			.search {
 				height: 4.8em;
+				background-color: #fff;
+				border-bottom: 1px solid #c6d0da;
 
 				#main-container-search {
 					border-bottom: 1px solid #2c2c2c;
@@ -53,6 +55,7 @@
 						    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
 						    border: 0;
 						    background: #eee;
+						    border: 1px solid #000;
 
 						    &:focus {
 						    	outline: 0;
@@ -92,6 +95,7 @@
 							text-transform: uppercase;
 							border-radius: 0 10px 10px 0;
 							text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+							border: 1px solid #000;
 							
 							&:hover {
 								color: #000;
@@ -110,13 +114,14 @@
 			.browse {
 				position: relative;
 				height: calc(~'100% - 4.8em');
+				background-color: #fff;
 
 				.browse-container {
 					overflow-y: auto;
 					overflow-x: hidden;
 					width: 100%;
 					height: 100%;
-					padding: 10px 0 10px 0;
+					padding: 10px;
 
 					.block-container {
 						width: calc(~'100% / 3 - 3px');
@@ -158,9 +163,11 @@
 						  animation:0.5s hide;
 						}
 
+
+
 						.browse-block {
 							display: inline-block;
-    						z-index: 1000;
+							z-index: 1000;
 							width: 100%;
 							min-height: 1px;
 							float: left;
@@ -168,12 +175,10 @@
 							height: 4.8em;
 							overflow: hidden;
 							cursor: pointer;
-							color: #fff;
-							background-color: #d2322d;
-							border-color: #d43f3a;
+							background-color: #f5f5f5;
+							border: 1px solid;
 							border-right: 1px solid transparent;
 							border-bottom: 1px solid transparent;
-							box-shadow: inset 0 0 10px #000000;
 							-moz-transition-property: width, height, margin;
 							-moz-transition-duration: 0.5s;
 							-webkit-transition-property: width, height, margin;
@@ -184,150 +189,152 @@
 							transition-duration: 0.5s;
 
 
+							&:nth-child(3) {
+								border-right: 1px solid #000;
+							}
 
-						.tag {
-							width: 15px;
-							height: 15px;
-							border-radius: 50px;
-							border: 1px solid black !important;
-							position: absolute;
-							right: 10px;
-		                        &.block-blue {
-		                        	color: #fff;
-									background-color: #428bca;
-									border-color: #357ebd;
+							.tag {
+								width: 15px;
+								height: 15px;
+								border-radius: 50px;
+								border: 1px solid black !important;
+								position: absolute;
+								right: 10px;
+			                        &.block-blue {
+			                        	color: #fff;
+										background-color: #428bca;
+										border-color: #357ebd;
 
-									&:hover {
+										&:hover {
+											color: #fff;
+											background-color: #3276b1;
+											border-color: #285e8e;
+										}
+			                        }
+
+			                       	&.block-yellow {
 										color: #fff;
-										background-color: #3276b1;
-										border-color: #285e8e;
-									}
-		                        }
+										background-color: #f0ad4e;
+										border-color: #eea236;
 
-		                       	&.block-yellow {
-									color: #fff;
-									background-color: #f0ad4e;
-									border-color: #eea236;
+										&:hover {
+											color: #fff;
+											background-color: #ed9c28;
+											border-color: #d58512;
+										}
+			                        }
 
-									&:hover {
+			                        &.block-green {
 										color: #fff;
-										background-color: #ed9c28;
-										border-color: #d58512;
-									}
-		                        }
+										background-color: #5cb85c;
+										border-color: #4cae4c;
 
-		                        &.block-green {
-									color: #fff;
-									background-color: #5cb85c;
-									border-color: #4cae4c;
+										&:hover {
+											color: #fff;
+											background-color: #47a447;
+											border-color: #398439;
+										}
+			                        }
 
-									&:hover {
+			                        &.block-red {
 										color: #fff;
-										background-color: #47a447;
-										border-color: #398439;
-									}
-		                        }
+										background-color: #d9534f;
+										border-color: #d43f3a;
 
-		                        &.block-red {
-									color: #fff;
-									background-color: #d9534f;
-									border-color: #d43f3a;
+										&:hover {
+											color: #fff;
+											background-color: #d2322d;
+											border-color: #ac2925;
+										}
+			                        }
 
-									&:hover {
+			                        &.block-orange {
 										color: #fff;
-										background-color: #d2322d;
-										border-color: #ac2925;
-									}
-		                        }
+										background-color: #f0ad4e;
+										border-color: #eea236;
 
-		                        &.block-orange {
-									color: #fff;
-									background-color: #f0ad4e;
-									border-color: #eea236;
+										&:hover {
+											color: #fff;
+											background-color: #ed9c28;
+											border-color: #d58512;
+										}
+			                        }
 
-									&:hover {
+			                        &.block-lightBlue {
 										color: #fff;
-										background-color: #ed9c28;
-										border-color: #d58512;
-									}
-		                        }
+										background-color: #5bc0de;
+										border-color: #46b8da;
 
-		                        &.block-lightBlue {
-									color: #fff;
-									background-color: #5bc0de;
-									border-color: #46b8da;
+										&:hover {
+											color: #fff;
+											background-color: #39b3d7;
+											border-color: #269abc;
+										}
+			                        }
 
-									&:hover {
-										color: #fff;
-										background-color: #39b3d7;
-										border-color: #269abc;
-									}
-		                        }
+			                        &.block-gray {
+			                        	color: #fff;
+										background-color: #848282;
+										border-color: #626161;
 
-		                        &.block-gray {
-		                        	color: #fff;
-									background-color: #848282;
-									border-color: #626161;
+										&:hover {
+											background-color: #626161;
+										}
+			                        }
 
-									&:hover {
-										background-color: #626161;
-									}
-		                        }
+			                       	&.block-redBrown {
+			                        	color: #fff;
+										background-color: #790000;
+										border-color: #790000;
 
-		                       	&.block-redBrown {
-		                        	color: #fff;
-									background-color: #790000;
-									border-color: #790000;
+										&:hover {
+											background-color: #ae5c5c;
+										}
+			                        }
 
-									&:hover {
-										background-color: #ae5c5c;
-									}
-		                        }
+			                        &.block-pink {
+			                        	color: #fff;
+										background-color: #ec528d;
+										border-color: #357ebd;
 
-		                        &.block-pink {
-		                        	color: #fff;
-									background-color: #ec528d;
-									border-color: #357ebd;
+										&:hover {
+											background-color: #ec6a9c;
+										}
+			                        }
 
-									&:hover {
-										background-color: #ec6a9c;
-									}
-		                        }
+			                        &.block-brown {
+			                        	color: #fff;
+										background-color: #603913;
+										border-color: #241b24;
 
-		                        &.block-brown {
-		                        	color: #fff;
-									background-color: #603913;
-									border-color: #241b24;
+										&:hover {
+											background-color: #754c24;
+										}
+			                        }
 
-									&:hover {
-										background-color: #754c24;
-									}
-		                        }
+			                        &.block-defult {
+			                        	color: #fff;
+										background-color: #000;
+										border-color: #000;
+			                        }
 
-		                        &.block-defult {
-		                        	color: #fff;
-									background-color: #000;
-									border-color: #000;
-		                        }
-
-		                        &.block-white {
-									color: #333;
-									background-color: #fff;
-									border-color: #ccc;
-
-									&:hover {
+			                        &.block-white {
 										color: #333;
-										background-color: #ebebeb;
-										border-color: #adadad;
-									}
-		                        }
-		                    }
+										background-color: #fff;
+										border-color: #ccc;
+
+										&:hover {
+											color: #333;
+											background-color: #ebebeb;
+											border-color: #adadad;
+										}
+			                        }
+			                    }
 
 							&:hover {
-								width: calc(100% * 1.2);
-								height: 10em;
-								margin: -2.5em;
-								border: 2px solid black;
+								width: calc(100%);
+								height: 9.6em;
+								margin-top: -4.8em;
 								overflow: hidden;
 								-moz-transition-duration: .1s;
 								-webkit-transition-duration: .1s;
@@ -335,7 +342,6 @@
 								transition-duration: .1s;
 								z-index: 1000000;
 								position: relative;
-								background-color: #d9534f;
 							}
 
 							.title-container {
