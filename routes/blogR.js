@@ -52,6 +52,19 @@ module.exports = function(app, passport, mongoose) {
     }).sort({title : 'desc'});
   });
 
+  app.post('/api/blogByTags', function(req, res) {
+    var blogs = [];
+    Blog.find({}, function(err, data){
+      for (var i = data.length - 1; i >= 0; i--) {
+        var isSuperset = data.every(isSupersetF(val, req.body.tags));
+        if(isSuperset)
+          blogs.push(data[i]);
+        isSuperset = false;
+      }
+      res.send(blogs);
+    }).sort({title : 'desc'});
+  });
+
   // Comments
 
   app.put('/api/blog/comment', function(req, res) {
@@ -69,6 +82,10 @@ module.exports = function(app, passport, mongoose) {
   });
 
 };
+
+function isSupersetF(val, reqTags) { 
+  return reqTags.indexOf(val) >= 0; 
+}
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {

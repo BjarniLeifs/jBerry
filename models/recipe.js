@@ -8,12 +8,7 @@ var recipeSchema = mongoose.Schema({
 	userID		: String,
     title       : String,
     body		: String,
-    lastName    : String,
-    age         : Number,
-    birthDay    : Date,
-    height      : Number,
-    weight      : Number,
-    steps		: [],
+    steps		: [{body : String}],
     ingredients	: [{produce : String, amount : Number, unit : String}],
     tags		: []
 
