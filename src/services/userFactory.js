@@ -1,4 +1,5 @@
-app.factory("userFactory", ["$location", "$http", "$q",function($location, $http, $q){
+app.factory("userFactory", ["$location", "$http", "$q",
+	function($location, $http, $q){
 	var user;
 
 	return {

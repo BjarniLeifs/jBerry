@@ -16,3 +16,13 @@
   margin-right: 20%;
   margin-top: 2%;
 }
+.blogContainer {
+  background-color: red;
+}
+#ContainerBlogs {
+  position: absolute;
+  width: 100% !important;
+  top: 0;
+  bottom: 0;
+  margin-left: 10%;
+}

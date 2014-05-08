@@ -10,10 +10,11 @@
 	width: 100%;
 	top: 0;
 	bottom: 0;
+	overflow: hidden;
 
 	#Container-Head {
 		height: 42px;
-		background-color: #fff;
+		background-color: #f5f5f5;
 		border: 1px solid #999;
 	}
 
@@ -25,73 +26,53 @@
 			height: 100%;
 			border-right: 1px solid black;
 			padding: 0;
-			background-color: @lightBase;
+			background-color: #f5f5f5;
 
 			#Container-Left-Menu {
-				.accordion-group {
-				    margin-bottom: 0px;
-				    border:0px;
-				    -webkit-border-radius: 0px;
-				    -moz-border-radius: 0px;
-				    border-radius: 0px;
+				.cp-fix {
+					position: absolute;
+					overflow-y: scroll;
+					width: 370px;
+					height: 100%;
+				}
 
-				    p {
-				    	display: inline-block;
-						font-size: 24px;
-						color: #000;
-						font-weight: bolder;
-						margin-left: 10px;
-				    }
-				}    
-
-				.accordion-heading {
-					height: 40px;
-					border-bottom: 1px solid #000;
-					background-color: @lightBase;
+				.cp-menu {
+					margin: 0;
+					padding: 0;
+					background: white;
+					color: #5f6f81;
+					list-style: none;
+					text-transform: none;
+					font-weight: 300;
+					font-family: 'Lato', Arial, sans-serif;
+					line-height: 60px;
+					border-bottom: 1px solid #c6d0da;
+					text-align: left;
+					font-size: 18px;
 
 					a {
-						color: #000; 
-						text-decoration:none;
-						font-weight:bold;
-						float: left;
-						margin-top: 6px;
-						margin-left: 10px;
-
-						p {
-							margin-left: 8px;
-							font-size: 1.2em;
-							cursor: pointer;
-
-							&:hover {
-								color:@font;
-							}
-						}
-					}
-				}  
-
-				.accordion-inner {
-					ul {
-						border-bottom: 1px solid #000;
-						margin-bottom: 0px;
+						display: block;
+						height: 100%;
+						color: #5f6f81;
+						text-decoration: none;
+						cursor: pointer;
 					}
 
 					li {
-						list-style: none;
-						margin-left: 8px;
-						font-weight: bold;
-						cursor: pointer;
-						color: black;
+						width: 100%;
+						box-shadow: inset 0 1px #c6d0da;
 
-						a {
-							color: #000;
-
-							&:hover {
-								color:@font;
-								text-decoration: none;
-							}
+						&:hover {
+							background: #5f6f81;
+							color: white;
 						}
 					}
+
+					li:not(:first-child) {
+						box-shadow: inset 0 1px #c6d0da;
+					}
 				}
+
 			}
 		}
 		
@@ -105,27 +86,6 @@
 			   -webkit-animation: filler 2s 1;
 			  -webkit-animation-fill-mode: forwards;
 			  animation: filler 2s 1;
-			}
-
-			.animate-repeat.ng-move,
-			.animate-repeat.ng-enter,
-			.animate-repeat.ng-leave {
-			  -webkit-transition:all linear 0.5s;
-			  transition:all linear 0.5s;
-			}
-
-			.animate-repeat.ng-leave.ng-leave-active,
-			.animate-repeat.ng-move,
-			.animate-repeat.ng-enter {
-			  opacity:0;
-			  max-height:0;
-			}
-
-			.animate-repeat.ng-leave,
-			.animate-repeat.ng-move.ng-move-active,
-			.animate-repeat.ng-enter.ng-enter-active {
-			  opacity:1;
-			  max-height:40px;
 			}
 
 			.block {
@@ -147,7 +107,6 @@
 					
 				}
 			}
-
 		}
 
 		#Container-Right {
@@ -215,6 +174,16 @@
 			}
 		}
 	}
+}
+
+
+.noView {
+	position: absolute;
+	top: 23%;
+	right: 20%;
+	color: #ccc;
+	font-weight: bolder;
+	font-size: 3em;
 }
 
 @-webkit-keyframes slide

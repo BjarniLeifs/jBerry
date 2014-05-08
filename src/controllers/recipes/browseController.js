@@ -9,15 +9,7 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 	$scope.optionD = {min: 200, max: 700};
 
 	$scope.onSelect = function ($item, $model, $label) {
-		$scope.$item = $item;
-		$scope.$model = $model;
-		$scope.$label = $label;
-
-		console.log("Item:" + $item + ", Model:" + $model + ", label:" + $label);
-	};
-
-	$scope.currencyFormatting = function(value) { 
-		return value.toString() + " $";
+		$scope.updateTypeHead();
 	};
 
 	$scope.getName = function(name) {
@@ -42,6 +34,52 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 
 	$scope.toTitle = function(name) {
 		return (name.toLowerCase()).charAt(0).toUpperCase() + name.slice(1);
+	};
+
+	$scope.getType = function(type) {
+		var num = parseInt(type, 10);
+
+		if(isNaN(num))
+			$scope.getTypeByName(type);
+
+		if(num < 4)						//Blue
+			return 'block-blue';
+
+		if(num === 4 || num === 5)		//Yellow
+			return 'block-yellow';
+
+		if(num === 6 || num === 7)		//Green
+			return 'block-green';
+
+		if(num === 8 || num === 9)		//Red
+			return 'block-red';
+
+		if(num > 10 && num < 13)		//White
+			return 'block-white';
+
+		if(num === 16 || num === 13)	//Orange
+			return 'block-orange';
+
+		if(num === 14)					//Light Blue
+			return 'block-lightBlue';
+
+		if(num === 15)					//Gray
+			return 'block-gray';
+
+		if(num === 17)					//Red/Brown
+			return 'block-redBrown';
+
+		if(num === 18)					//Pink
+			return 'block-pink';
+
+		if(num === 19)					//Brown
+			return 'block-brown';
+
+		return 'block-defult';
+	};
+
+	$scope.getTypeByName = function(type) {
+		console.log(type);
 	};
 
 	$scope.updateTypeHead = function() {
