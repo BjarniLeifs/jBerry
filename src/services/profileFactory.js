@@ -1,44 +1,37 @@
 app.factory("profileFactory", ["$location", "$http", "$q", 
 	function($location, $http, $q){
+		var data;
 
+		return { 
 
-		var obj = {
+			getBlogsData: function(data){
+				return $http.get("http://localhost:3000/api/blog");
+		},
 
-			getTimelineData: function(){
-				var deferred = $q.defer();
-				var request = $http({
-					method: "GET",
-					url: "http://#",
-				}).success(function(data, status, headers, config){
-					console.log("success geting all timelineBLOGS from factory");
-					console.log(data);
-					deferred.resolve(data);
-				}).error(function(data, status, headers, config){
-					console.log("fail geting timelineBLOGS in factory");
-					deferred.reject(request);
-				});
-				return deferred.promise;
+			addFavs: function(data){
+				console.log("id: " + data.id);	
+				return $http.put("http://localhost:3000/api/blog/meta/favs",
+				{_id : data.id});
 			},
 
-			getUser: function(){
-				var deferred = $q.defer();
-				var request = $http({
-					method: "GET",
-					url: "http://#",
-				}).success(function(data, status, headers, config){
-					console.log("success geting all userProfile from factory");
-					console.log(data);
-					deferred.resolve(data);
-				}).error(function(data, status, headers, config){
-					console.log("fail geting userProfile in factory");
-					deferred.reject(request);
+			addComments: function(data){
+				console.log("dataFactory: " + data.comment);	
+				return $http.put("http://localhost:3000/api/blog/comment",
+				{	_id		:data.id, 
+					comment	:data.comment
 				});
-				return deferred.promise;
 			},
+
+			getProfile: function(data, user){
+				console.log("get user factory" + data + " " + user);
+				return $http.get("http://localhost:3000/api/profile/:" + user);
+			},
+
+			changeProfile: function(data, user){
+				console.log("change profile factory" + data + " " + user);
+				return $http.put("http://localhost:3000/api/profile/update");
+			}
 
 
 		};
-
-		return obj;
-
-		}]);
+	}]);
