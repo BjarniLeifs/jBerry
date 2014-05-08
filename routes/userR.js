@@ -88,6 +88,19 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
+  app.get('/api/profile/:id', function(req, res) {
+    Profile.findOne({"userID" : req.params.id}, function(err, data) {
+      if(err)
+        throw err;
+      if(req.params.id === req.user._id) {
+        res.send(data);
+      }
+      else {
+        res.redirect('/');
+      }
+    });
+  });
+
   app.get('/api/isLoggedIn', isLoggedIn, function(req, res) {
     res.send(200);
   });

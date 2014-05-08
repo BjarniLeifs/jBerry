@@ -6,9 +6,12 @@ module.exports = function(app) {
 	//Search name 
 	app.get('/api/food/getByName/:name', function(req, res) {
 
-		var q = Matis.find({Name: {$regex : ".*"+ req.params.name +".*"}}).limit(50);
+		var re = new RegExp(req.params.name, 'i');
 
-		q.exec(function(err, results) {
+		Matis.find({Name:re}, {Name:1, Adalfl:1, _id:0}).limit(50).setOptions({lean:true}).exec(function(err, results) {
+			results.sort(function(a, b) {
+				return a.Name.toLowerCase().indexOf(req.params.name.toLowerCase()) - b.Name.toLowerCase().indexOf(req.params.name.toLowerCase());
+			});
 			res.send(results);
 		});
 	});

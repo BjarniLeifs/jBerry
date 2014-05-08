@@ -1,77 +1,218 @@
-<div id="content" ng-controller="measurementsController">
+<div id="content" ng-controller="skinfoldController">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li><a data-target="#basalMetabolicRate" data-toggle="tab">Basal Metabolic Rate</a></li>
-        <li><a data-target="#activityMets" data-toggle="tab">Activity Mets</a></li>
+        <li class="active"><a data-target="#how" data-toggle="tab">My Body </a></li>
+        <li><a data-target="#jkP7" data-toggle="tab">Jackson-Pollock 7-point</a></li>
+        <li><a data-target="#jkP4" data-toggle="tab">Jackson-Pollock 4-points</a></li>
+        <li><a data-target="#dWp4" data-toggle="tab">Durnin-Womersley 4-points</a></li>
+        <li><a data-target="#activityMets" data-toggle="tab"></a></li>
     </ul>
     <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane" id="basalMetabolicRate">
-            <h1>Basal Metabolic Rate</h1>
-            <form role="form">
-			  	<div class="form-group">
-			    	<label for="todaysweight">Weight:</label>
-			    	<input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br>
-			    	<label for="todaysheight">Height:</label>
-			    	<input type="number" id="todaysheight" min="0.0" step="0.1" max="1000"  name="hCm" placeholder=""> cm<br>
-			    	<label for="todaysheight">Age:</label>
-			    	<input type="number" id="age" min="0.0" step="0.1" max="1000"  name="age" placeholder=""><br>
-			    	<select name="sex">
-						<option value="man">Man</option>
-						<option value="woman">Woman</option>
-					</select>
-
-				</div>
-			  	<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-
+        <div class="tab-pane active" id="how">
+			<div class="col-md-9">
+	    		<div class="row">
+	      			<div class="col-md-4">
+	        			<img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto" />
+	      			</div>
+	      			<form role="form">
+			          	<div class="form-group">
+	      					<div class="col-md-4">
+					            <label for="todaysdate">Date:</label><br />
+					            <label for="todaysweight">Weight:</label><br />
+					            <label for="todaysbf">BF%:</label><br />          
+					            <label for="neck">Neck:</label><br />           
+					            <label for="shoulder">Shoulder:</label><br />           
+					            <label for="chest">Chest:</label><br /> 
+					            <label for="bicep">Bicep:</label><br />            
+					            <label for="forearm">Forearm:</label><br />
+					            <label for="waist">Waist:</label><br />             
+					            <label for="hips">Hips:</label><br />        
+					            <label for="uThigh">Upper Thigh:</label><br />   
+					            <label for="mThigh">Middle Thigh:</labe><br /> 
+					            <label for="Calf">Calf:</label><br />
+					            <p></p>
+		            			<button type="submit" class="btn btn-default">Submit</button>      
+	         				</div>
+		          			<div class="col-md-4">
+					            <input type="datetime-local" id="todaysdate" name="todaydate"><br />
+					            <input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br /> 
+					            <input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="todaysbf" placeholder=""> %<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="neck" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="shoulder" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="chest" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="bicep" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="forearm" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="waist" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="hips" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="uThigh" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="mThigh" placeholder=""> cm<br /> 
+					            <input type="number" min="0.0" step="0.1" max="1000"  name="Calf" placeholder=""> cm<br /> 
+		          			</div>
+	        			</div>
+	        		</form>
+	    		</div>
+	  		</div>     
         </div>
-        <div class="tab-pane" id="activityMets" width="20">
-            <h1>Activity Mets</h1>
-			<div class="row">
-				<!-- Navigation Buttons -->
-				<div class="col-md-3">
-					<ul class="nav nav-pills nav-stacked" id="myTabs">
-						<li class="active"><a data-target="#bicycling">Bicycling</a></li> 
-						<li><a data-target="#conditioning">Conditioning Exercise</a></li>
-						<li><a data-target="#dancing">Dancing</a></li>
-						<li><a data-target="#fishing">Fishing and Hunting</a></li>
-						<li><a data-target="#homes">Home Activities</a></li>
-						<li><a data-target="#homeRepair">Home Repair</a></li>
-						<li><a data-target="#inactivity">Inactivity Quiet</a></li>
-						<li><a data-target="#lawn">Lawn and Garden</a></li>
-						<li><a data-target="#miscellaneous">Miscellaneous</a></li>
-						<li><a data-target="#music">Music Playing</a></li>
-						<li><a data-target="#occupation">Occupation</a></li>
-						<li><a data-target="#sports">Sports</a></li>
-						<li><a data-target="#transportation">Transportation</a></li>
-						<li><a data-target="#water">Water Activities</a></li>
-						<li><a data-target="#winter">Winter Activities</a></li>
-						<li><a data-target="#religious">Religious Activities</a></li>
-						<li><a data-target="#volunteer">Volunteer Activities</a></li>
-					</ul>
-				</div>
-				<!-- Content -->
-				<div class="col-md-9">
-					<div class="tab-content">
-						<div class="tab-pane active" id="bicycling">someshit here...Bicycling11111</div>
-						<div class="tab-pane" id="conditioning">someshit here...Conditioning2222222</div>
-						<div class="tab-pane" id="dancing">someshit here...Dancing333333</div>
-						<div class="tab-pane" id="fishing">someshit here...Fishing4444444</div>
-						<div class="tab-pane" id="homes">someshit here...555555</div>
-						<div class="tab-pane" id="homeRepair">someshit here...6666666</div>
-						<div class="tab-pane" id="inactivity">someshit here...7777777</div>
-						<div class="tab-pane" id="lawn">someshit here...Lawn888888</div>
-						<div class="tab-pane" id="miscellaneous">someshit here...Lawn999999</div>
-						<div class="tab-pane" id="music">someshit here...10</div>
-						<div class="tab-pane" id="occupation">someshit here...11</div>
-						<div class="tab-pane" id="sports">someshit here...12</div>
-						<div class="tab-pane" id="transportation">someshit here...13</div>
-						<div class="tab-pane" id="water">someshit here...14</div>
-						<div class="tab-pane" id="winter">someshit here...15</div>
-						<div class="tab-pane" id="religious">someshit here...16</div>
-						<div class="tab-pane" id="volunteer">someshit here...17</div>
-					</div>
-				</div>
-			</div>	
+        <div class="tab-pane" id="jkP7">
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
+              <div class="thumbnail" ><input type="number" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldAbdomen.gif" alt="Abdomen" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldAbdomen" min="0" step="1" max="10000"  name="Abdomen" placeholder=" Abdomen"> mm
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldChest.gif" alt="Chest" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldChest" min="0" step="1" max="10000"  name="Chest" placeholder=" Chest"> mm     
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldAxilla.gif" alt="Axilla" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldAxilla" min="0" step="1" max="10000"  name="axilla" placeholder=" Axilla"> mm
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldSubscapula.gif" alt="Scapula" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldSubscapula" min="0" step="1" max="10000"  name=" Subscapula" placeholder=" Scapula"> mm
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep"> mm
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldThigh.gif" alt="Thigh" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldThigh" min="0" step="1" max="10000"  name="thigh" placeholder=" Thigh"> mm
+              </div> 
+            </div>
+            <div class="col-md-4" >
+              <table class="table table-striped">
+                <tr>     
+                  <td>Body Fat</td>
+                  <td>19</td>
+                  <td>%</td>
+                </tr> 
+                <tr>
+                  <td>Fat Mass</td>
+                  <td>18</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>Lean Mass</td>
+                  <td>77</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="jkP4">
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
+              <div class="thumbnail" ><input type="number" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldAbdomen.gif" alt="Abdomen" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldAbdomen" min="0" step="1" max="10000"  name="Abdomen" placeholder=" Abdomen"> mm
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep"> mm  
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldThigh.gif" alt="Thigh" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldThigh" min="0" step="1" max="10000"  name="thigh" placeholder=" Thigh"> mm
+              </div> 
+            </div>
+            <div class="col-md-4" >
+              <table class="table table-striped">
+                <tr>     
+                  <td>Body Fat</td>
+                  <td>19</td>
+                  <td>%</td>
+                </tr> 
+                <tr>
+                  <td>Fat Mass</td>
+                  <td>18</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>Lean Mass</td>
+                  <td>77</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="dWp4">
+          <h3>Durnin-Womersley 4-points</h3>
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
+              <div class="thumbnail" ><input type="number" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldSubscapula.gif" alt="Scapula" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldSubscapula" min="0" step="1" max="10000"  name=" Subscapula" placeholder=" Scapula"> mm
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep"> mm
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <img src="css/img/SkinfoldChest.gif" alt="Thigh" height="140px" width="140px" />
+              <div class="thumbnail"><input type="number" id="SkinfoldBicep" min="0" step="1" max="10000"  name="bicep" placeholder=" Bicep"> mm
+              </div> 
+            </div>
+            <div class="col-md-4" >
+              <table class="table table-striped">
+                <tr>     
+                  <td>Body Fat</td>
+                  <td>19</td>
+                  <td>%</td>
+                </tr> 
+                <tr>
+                  <td>Fat Mass</td>
+                  <td>18</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td>Lean Mass</td>
+                  <td>77</td>
+                  <td>kg</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
     </div>
 </div>
@@ -80,10 +221,7 @@
     jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
-</script>  
-<script type="text/javascript">
-  $('#myTabs a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  });
-</script>
+</script> 
+
+
+

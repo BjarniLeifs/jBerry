@@ -14,6 +14,7 @@ var profileSchema = mongoose.Schema({
     height      : Number,
     weight      : Number,
     trainerID	: String
+    messages	: [{senderID : String, title : String, message : String, time : {type : Date, default: Date.now}}]
 
 }, {collection : 'Profiles'});
 
