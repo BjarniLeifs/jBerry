@@ -5,90 +5,86 @@
 	</div>
 	<div class="container-main row clearfix">
 		<div id="Container-Left" class="col-md-2 column">
-			<div id="Container-Left-Menu">
-				<div class="accordion-group">
-					<div class="accordion-heading header">
-						<p>Tasks</p>
-					</div>
+			<nav id="Container-Left-Menu">
+				<div class="cp-fix">
+					<ul class="cp-menu">
+
+						<!-- Task - 1 [Profile]-->
+
+						<li class="cp-item" ng-click="setTemplate('Me/profile.html', true)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-user"></span><p>Profile</p>
+							</a>
+						</li>
+
+						<!-- Task - 2 [Stats]-->
+
+						<li class="cp-item" ng-click="setTemplate('stats/statistic.html', true)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-stats"></span><p>Stats</p>
+							</a>
+						</li>
+
+						<!-- Task - 3 [Recipes]-->
+
+						<li class="accordion-heading cp-item">
+							<a class="accordion-toggle" data-toggle="collapse" data-target="#Recipes" data-parent="#Container-Left-Menu">
+								<span class="glyphicon glyphicon-book"></span><p>Recipes</p>
+							</a>
+						</li>
+						<li id="Recipes" class="accordion-body collapse" style="height:0px;">
+							<div class="accordion-inner">
+								<ul class="cp-submenu">
+									<li ng-click="setTemplate('recipes/browse.html', true)">
+										Browse Recipes
+									</li>
+									<li ng-click="setTemplate('recipes/add.html', true)">
+										Create Recipes
+									</li>
+									<li ng-click="setTemplate('noView.html', true)">
+										My Recipes
+									</li>
+									<li ng-click="setTemplate('noView.html', true)">
+										My Favorite Recipes
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<!-- Task - 4 [Planner]-->
+
+						<li class="cp-item" ng-click="setTemplate('noView.html', true)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-calendar"></span><p>Planner</p>
+							</a>
+						</li>
+
+						<!-- Task - 5 [Food]-->
+
+						<li class="cp-item" ng-click="setTemplate('recipes/browse.html', false)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-cutlery"></span><p>Food</p>
+							</a>
+						</li>
+
+						<!-- Task - 6 [Trainners]-->
+
+						<li class="cp-item" ng-click="setTemplate('noView.html', true)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-eye-open"></span><p>Trainners</p>
+							</a>
+						</li>
+
+						<!-- Task - 7 [Measurements]-->
+
+						<li class="cp-item" ng-click="setTemplate('messurements/measurements.html', true)">
+							<a class="accordion-toggle">
+								<span class="glyphicon glyphicon-list-alt"></span><p>Measurements</p>
+							</a>
+						</li>
+					</ul>
 				</div>
-				<div class="accordion-group">
-
-				<!-- Task - 1 [Profile]-->
-
-					<div class="accordion-heading" ng-click="setTemplate('Me/profile.html', true)">
-						<a class="accordion-toggle">
-							<div class="cell"><span class="glyphicon glyphicon-user"></span><p>Profile</p></div>
-						</a>
-					</div>
-
-					<!-- Task - 2 [Stats]-->
-
-					<div class="accordion-heading" ng-click="setTemplate('stats/statistic.html', true)">
-						<a class="accordion-toggle">
-							<div class="cell"><span class="glyphicon glyphicon-stats"></span><p>Stats</p></div>
-						</a>
-					</div>
-
-					<!-- Task - 3 [Recipes]-->
-
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-target="#Recipes" data-parent="#Container-Left-Menu">
-							<div class="cell"><span class="glyphicon glyphicon-book"></span><p>Recipes</p></div>
-						</a>
-					</div>
-					<div id="Recipes" class="accordion-body collapse" style="height:0px;">
-						<div class="accordion-inner">
-							<ul>
-								<li ng-click="setTemplate('recipes/browse.html', true)">
-									Browse Recipes
-								</li>
-								<li ng-click="setTemplate('recipes/add.html', true)">
-									Create Recipes
-								</li>
-								<li ng-click="setTemplate('noView.html', true)">
-									My Recipes
-								</li>
-								<li ng-click="setTemplate('noView.html', true)">
-									My Favorite Recipes
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Task - 4 [Planner]-->
-
-					<div class="accordion-heading">
-						<a class="accordion-toggle" ng-click="setTemplate('noView.html', true)">
-							<div class="cell"><span class="glyphicon glyphicon-calendar"></span><p>Planner</p></div>
-						</a>
-					</div>
-
-					<!-- Task - 5 [Food]-->
-
-					<div class="accordion-heading" ng-click="setTemplate('recipes/browse.html', false)">
-						<a class="accordion-toggle">
-							<div class="cell"><span class="glyphicon glyphicon-cutlery"></span><p>Food</p></div>
-						</a>
-					</div>
-
-					<!-- Task - 6 [Trainners]-->
-
-					<div class="accordion-heading" ng-click="setTemplate('noView.html', true)">
-						<a class="accordion-toggle">
-							<div class="cell"><span class="glyphicon glyphicon-eye-open"></span><p>Trainners</p></div>
-						</a>
-					</div>
-
-					<!-- Task - 7 [Measurements]-->
-
-					<div class="accordion-heading" ng-click="setTemplate('messurements/measurements.html', true)">
-						<a class="accordion-toggle">
-							<div class="cell"><span class="glyphicon glyphicon-list-alt"></span><p>Measurements</p></div>
-						</a>
-					</div>
-
-				</div>
-			</div>
+			</nav>
 		</div>
 			<div id="Container-Center" class="col-md-8 column" ng-repeat="template in templates" ng-class="{'filler': !isSideBar}">
 				<div ng-include="template.url" > 
