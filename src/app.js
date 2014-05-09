@@ -20,7 +20,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "templates/checkin.html",
 		controller: "checkinController",
 	}).when("/nutritionopz", {
-		templateUrl: "templates/nutritionopz.html",
+		templateUrl: "templates/food/nutritionopz.html",
 		controller: "nutritionopzController",
 	}).when("/recipes/browse", {
 		templateUrl: "templates/recipes/browse.html",

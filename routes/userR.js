@@ -36,9 +36,7 @@ module.exports = function(app, passport, mongoose) {
     res.send("User: " + req.body.name + " registered");
   });
 
-  // =====================================
-  // LOGOUT ==============================
-  // =====================================
+  // LOGOUT
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
@@ -88,7 +86,7 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
-  app.get('/api/profile/:id', function(req, res) {
+  app.get('/api/profile', function(req, res) {
     Profile.findOne({"userID" : req.params.id}, function(err, data) {
       if(err)
         throw err;
