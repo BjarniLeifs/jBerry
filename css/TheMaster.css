@@ -206,40 +206,126 @@
   -webkit-animation-fill-mode: forwards;
   animation: slide 2s 1;
 }
-#Container .container-main #Container-Right time-line table {
+#Container .container-main #Container-Right time-line {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  font-size: 100%;
+  color: #5f6f81;
+  font-family: 'Lato', Arial, sans-serif;
 }
-#Container .container-main #Container-Right time-line table tr {
-  border-bottom: 1px dashed #ccc;
-  padding: 10px;
-  width: 100%;
+#Container .container-main #Container-Right time-line #timer {
+  margin: 0 auto;
 }
-#Container .container-main #Container-Right time-line table tr td {
-  width: 100%;
-  float: left;
+#Container .container-main #Container-Right time-line #timeline {
+  list-style: none;
+  margin: -15px 0 30px 15px;
+  padding-left: 30px;
+  border-left: 8px solid #4997cd;
 }
-#Container .container-main #Container-Right time-line table tr td:nth-child(even) {
-  background-color: #e1e1e1;
+#Container .container-main #Container-Right time-line #timeline li {
+  margin: 40px 0;
+  position: relative;
 }
-#Container .container-main #Container-Right time-line table tr td.hours {
-  padding: 10px;
-  font-weight: bolder;
-}
-#Container .container-main #Container-Right time-line table tr td.cell-minutes {
-  height: 30px;
+#Container .container-main #Container-Right time-line #timeline li .checkradio {
   display: none;
 }
-#Container .container-main #Container-Right time-line table tr td span.minutes {
-  padding: 7px 10px 7px 10px;
-  margin-top: 5px;
-  font-style: italic;
-  font-weight: lighter;
-  text-align: center;
-  line-height: 2.2em;
-  border-right: 1px solid #ccc;
+#Container .container-main #Container-Right time-line #timeline li .checkradio:checked + .relative label {
+  cursor: auto;
+  -webkit-transform: translateX(18px);
 }
-#Container .container-main #Container-Right time-line table tr td.now {
-  color: orange;
+#Container .container-main #Container-Right time-line #timeline li .checkradio:checked ~ .content {
+  max-height: 180px;
+  border-color: #000;
+  margin-right: 20px;
+  -webkit-transform: translateX(0px);
+  transition: max-height 0.4s linear, border-color 0.5s linear, -webkit-transform 0.2s linear;
+}
+#Container .container-main #Container-Right time-line #timeline li .checkradio:checked ~ .content p {
+  max-height: 200px;
+  color: #000;
+  transition: color 0.3s linear 0.3s;
+  font-size: 0.75em;
+}
+#Container .container-main #Container-Right time-line #timeline li .checkradio:checked + .relative .circle {
+  background: #ccc;
+}
+#Container .container-main #Container-Right time-line #timeline li .relative label {
+  font-size: 1em;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  top: 14px;
+  transition: -webkit-transform 0.2s linear;
+}
+#Container .container-main #Container-Right time-line #timeline li .relative .date {
+  margin-top: -10px;
+  top: 50%;
+  left: -158px;
+  font-size: 1.05em;
+  line-height: 20px;
+  position: absolute;
+}
+#Container .container-main #Container-Right time-line #timeline li .relative .circle {
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 5px solid #4997cd;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+#Container .container-main #Container-Right time-line #timeline li .content {
+  max-height: 20px;
+  padding: 45px 10px 0;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+}
+#Container .container-main #Container-Right time-line #timeline li .content p {
+  max-height: 0;
+  color: transparent;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+#Container .container-main #Container-Right time-line #timeline li .content:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  pointer-events: none;
+  right: 100%;
+  border-right-color: inherit;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+#Container .container-main #Container-Right time-line #timeline li .content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  pointer-events: none;
+  right: 100%;
+  border-right-color: #fff;
+  border-width: 17px;
+  top: 50%;
+  margin-top: -17px;
+}
+#Container .container-main #Container-Right time-line #timeline li p {
+  margin: 0 0 15px;
 }
 .noView {
   position: absolute;

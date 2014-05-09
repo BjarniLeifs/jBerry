@@ -1,25 +1,25 @@
-app.directive('timeLine', ['$compile', function($compile) {
-	var tmp = "<table>";
+app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) {
+	var tempText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+	var timeoutId;
+
 
 	function getTemplate(dObj) {
-		var hour = dObj.hour - 2;
+		var tmp = "<p id='timer'></p><ul id='timeline'>", type;
+		var types = ['workout', 'eat', 'alarm'];
 
-		for(var i = 0; i < 6; i++, hour++) {
-			if(dObj.hour !== hour)
-				tmp += "<tr><td class='hours'>"+getHour(hour)+"</td>";
-			else
-				tmp += "<tr><td class='hours now'>"+getHour(hour)+"</td>";
 
-			for(var j = 0; j < 6; j++) {
-				if(dObj.minutes !== j)
-					tmp += "<td class='cell-minutes'><span  class='minutes'>"+getMinute(hour, j)+"</span></td>";
-				else 
-					tmp += "<td class='cell-minutes'><span class='minutes now'>"+getMinute(hour, j)+"</span></td>";
 
-			}
-			tmp += "</tr>";
+		for(var i = 0; i < 24; i++) {
+			type = types[Math.floor((Math.random() * 2))];
+
+			tmp += "<li class ='"+ type +" '>";
+				tmp += "<input class='checkradio' id='work"+i+"' name='works' type='radio' checked=''>";
+				tmp += getRelative(i);
+				tmp += getContent(tempText);
+			tmp += "</li>";
 		}
-		tmp += "</table>";
+
+		tmp += "</ul>";
 
 		return tmp;
 	}
@@ -40,6 +40,45 @@ app.directive('timeLine', ['$compile', function($compile) {
 		return (minute > 9)?hour+minute:hour+minute+'0';
 	}
 
+	function checkTime(i) {
+		return ((i < 10)?"0" + i:i);
+	}
+
+	function getRelative(id) {
+		var str = "";
+
+			str += "<div class='relative'>";
+	    		str += "<label for='work"+id+"'>Lorem ipsum</label>";
+	    		str += "<span class='circle'></span>";
+	    	str += "</div>";
+
+		return str;
+	}
+
+	function getContent(text) {
+		var str = "";
+
+		str += "<div class='content'>";
+	      str += "<p>";
+	        str += text;
+	      str += "</p>";
+    	str += "</div>";
+
+    	return str;
+	}
+
+	function updateLater(elem) {
+		var d, h, m, s;
+
+        timeoutId = setInterval(function() {
+        	d = new Date(), h = d.getHours(), m = checkTime(d.getMinutes()), s = checkTime(d.getSeconds()); 
+
+        	elem.firstChild.innerHTML = h+":"+m+":"+s;
+        	updateLater(elem);
+        }, 1000);
+	}
+        
+
 	return {
 		restrict: 'E',
 		replace: 'true',
@@ -49,15 +88,11 @@ app.directive('timeLine', ['$compile', function($compile) {
 			elem.html(getTemplate({hour: h, minute:m, period:(h > 12)?'PM':'AM'}));
 			$compile(elem.contents());
 
-			$('tr').hover(function() {
-				$(this).find('.cell-minutes').stop().slideDown('fast');
-			}, function() {
-				$(this).find('.cell-minutes').slideUp('fast');
+			elem.bind('$destroy', function() {
+				clearInterval(timeoutId);
 			});
 
-			elem.bind('mouseover', function() {
-				elem.css('cursor', 'pointer');
-			});
+			updateLater(elem[0]);
 		}
 	};
 }]);
