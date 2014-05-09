@@ -1,14 +1,18 @@
 app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", 
 	function($scope, $location, $http, profileFactory) {
-	
-	$scope.profiles = "";
+		console.log("in controller");
+
+	$scope.profile = {
+		user : "",
+		firstName : "",
+		lastName : "",
+		email : "",
+		height : "",
+		weight : ""
+	};
+
 	$scope.timeline = "";
-
-	$scope.fuck = "FUUUUUUCK!";
-	console.log("in controller");
-
-
-
+	
 	profileFactory.getBlogsData().success(function(data, status,headers,config){
 		if(status === 200) {
 				console.log(status);
@@ -19,19 +23,27 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 			console.log("getBlogsData Error");
 	}); 
 
-	profileFactory.getProfile().success(function(data, status, headers,config){
-		if(status === 200){
-			console.log("got some profiles in controller" + user.firstName);
-			$scope.profiles = data;
-		}
+	profileFactory.getProfile().
+	success(function(data, status, headers,config){
+	
+			console.log("geting user: " + data)
+			$scope.profile = data;
+			console.log("got some profiles in controller");
+			//$scope.profile = data;
+
 	}).error(function(){
 			console.log("getProfile Error");
 		});
 
 	$scope.changeInfo = function(){
-		profileFactory.changeProfile().
-		success(function(data, status,headers,config){
-			// stuff
-		});
+		var data = $scope.profile;
+		console.log(data.firstName);
+
+		profileFactory.changeProfile(data)
+		.success(function(data, status,headers,config){
+			console.log(status);
+		}).error(function(){
+					console.log("Error");
+				});
 	};
 }]);

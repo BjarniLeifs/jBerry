@@ -23,14 +23,21 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 			},
 
 			getProfile: function(data){
-				console.log("get user factory" + data );
 				return $http.get("http://localhost:3000/api/profile/");
 			},
 
-			changeProfile: function(data, user){
-				console.log("change profile factory" + data + " " + user);
-				return $http.put("http://localhost:3000/api/profile/update");
-			}
+			changeProfile: function(data){
+				//console.log("change profile factory: " + data.firstName);
+				return $http.put("http://localhost:3000/api/profile/update",
+					{
+						firstName	: data.firstName,
+						lastName	: data.lastName,
+						height		: data.height,
+						weight		: data.weight,
+						email		: data.email 
+					});
+
+			},
 
 
 		};

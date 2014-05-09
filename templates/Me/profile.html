@@ -21,7 +21,7 @@
 				</div>
 			</div>	
 
-			<div  class="profileContainer-fluid well span6" ng-repeat="profile in profiles" >
+			<div  class="profileContainer-fluid well span6" >
 				<div class="profileContainer-left-userInfo" >
 					<div class="row-fluid">
 						<p>i am {{profile.user}}</p>
@@ -31,25 +31,65 @@
 						<p>i am {{profile.weight}}</p>
 					</div>
 				</div>
-				<div class="profileContainer-left-userPhoto-btn">
-					<div class="popover-markup"> 
-						<a class="trigger" data-placement="bottom">Change info</a> 
-						<div class="popInput">
-							<div class="head hide">What do you want to change Sindri..</div>
-							<div class="content hide">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="{{user.user}}">
-									<input type="text" class="form-control" placeholder="{{user.firstName}}">
-									<input type="text" class="form-control" placeholder="{{user.lastName}}">
-									<input type="text" class="form-control" placeholder="{{user.email}}">
-									<input type="text" class="form-control" placeholder="{{user.height}}">
-									<input type="text" class="form-control" placeholder="{{user.weight}}">
+
+				<!-- Small modal -->
+				<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-sm" style="width: 35%">
+
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"></button>
+								<h4 class="modal-title">What would you like to change {{profile.user}}</h4></div>
+								<div class="modal-body">
+									<div class="bootbox-body">
+										<form class="bootbox-form">
+											<input placeholder="First Name.." ng-model="profile.firstName" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+
+											<input placeholder="Last Name.." ng-model="profile.lastName"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Email Name.."  ng-model="profile.email"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Your height.." ng-model="profile.height"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Your weight.." ng-model="profile.weight"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+
+
+										</form>
+									</div>
 								</div>
-								<button type="submit" class="btn btn-default btn-block">Save!</button>
+								<div class="modal-footer">
+									<button data-bb-handler="cancel" type="button" class="btn btn-default">Cancel</button>
+									
+									<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
+								</div>
 							</div>
-						</div>
+					 <!--    <div class="modal-content">
+					    	<form role="form">
+							  <div class="form-group">
+							  	<div class="input-forms">
+								    <label for="exampleInputEmail1">First name</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Last name</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Email address</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Your height</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Your weight</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								</div>
+							  </div>
+							</form>
+						</div> -->
 					</div>
 				</div>
+
+
+
 			</div>
 		</div>
 	</div>
