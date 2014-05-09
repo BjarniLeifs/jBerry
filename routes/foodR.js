@@ -8,7 +8,7 @@ module.exports = function(app) {
 
 		var re = new RegExp(req.params.name, 'i');
 
-		Matis.find({Name:re}, {Name:1, Adalfl:1, _id:0}).limit(50).setOptions({lean:true}).exec(function(err, results) {
+		Matis.find({Name:re}).limit(50).setOptions({lean:true}).exec(function(err, results) {
 			results.sort(function(a, b) {
 				return a.Name.toLowerCase().indexOf(req.params.name.toLowerCase()) - b.Name.toLowerCase().indexOf(req.params.name.toLowerCase());
 			});
