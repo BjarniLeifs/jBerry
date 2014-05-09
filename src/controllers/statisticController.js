@@ -3,6 +3,26 @@ app.controller("statisticController", ["$scope", "$location", function($scope, $
 $(function () {
     $('.button-checkbox').each(function () {
 
+        $scope.data1 = [[3,7,9,1,4,6,8,2,5]];
+        $scope.data2 = [[8,7,2,1,3,4,6,8,5]];
+        $scope.data3 = [[9,8,7,6,5,4,3,2,1]];
+        $scope.data4 = [[3,7,9,1,4,6,8,2,5]];
+        $scope.data5 = [[8,8,8,8,0,8,8,8,8]];
+        $scope.data6 = [[9,0,9,0,9,0,9,0,9]];
+
+    $scope.chartOptions = { 
+      seriesDefaults: {
+        // Make this a pie chart.
+        renderer: jQuery.jqplot.PieRenderer, 
+        rendererOptions: {
+          // Put data labels on the pie slices.
+          // By default, labels show the percentage of the slice.
+          showDataLabels: true
+        }
+      }, 
+      legend: { show:true, location: 'e' }
+    };
+
         // Settings
         var $widget = $(this),
             $button = $widget.find('button'),
@@ -65,7 +85,7 @@ $(function () {
         init();
     });
 });
-
+/*
 $(document).ready(function(){
   var plot1 = $.jqplot ('chart1', [[3,7,9,1,4,6,8,2,5]]);
 });
@@ -84,5 +104,5 @@ $(document).ready(function(){
 $(document).ready(function(){
   var plot1 = $.jqplot ('chart6', [[3,7,9,1,4,6,8,2,5]]);
 });
-
+*/
 }]);
