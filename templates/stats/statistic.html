@@ -1,19 +1,20 @@
 <div ng-controller="statisticController" id="content">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a data-target="#defaultz" data-toggle="tab">Default</a></li> 
+        <li class="active"><a data-target="#nutrients" data-toggle="tab">Nutrients</a></li> 
         <li><a data-target="#miniral" data-toggle="tab">Miniral</a></li>
         <li><a data-target="#vitamin" data-toggle="tab">Vitamin</a></li>
         <li><a data-target="#fatAcid" data-toggle="tab">Fat Acid</a></li>
-        <li><a data-target="#body" data-toggle="tab">Body</a></li> 
+        <li><a data-target="#body" data-toggle="tab">Body</a></li>
+        <li><a data-target="#measurements" data-toggle="tab">Measurements</a></li> 
         <!-- 
             Option if more is needed.
-        <li><a data-target="#option" data-toggle="tab"></a></li>
+        
         <li><a data-target="#option" data-toggle="tab"></a></li> 
          -->
     </ul>
     <div class="col-md-12">
         <div class="tab-content">
-            <div class="tab-pane active" id="defaultz">
+            <div class="tab-pane active" id="nutrients">
                 <div class="col-md-12">
                     fyrir stuff
                     <!--<div id="chart1" style="height:400px;width:900px; "></div>-->
@@ -107,27 +108,27 @@
                 <div class="col-md-12">asdf</div>
                 <div class="col-md-12">
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">B2-vítamín (mg)</button>
+                        <button type="button" class="btn" data-color="primary">B2 - (mg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">B6-vítamín (mg)</button>
+                        <button type="button" class="btn" data-color="primary">B6 - (mg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">B-12 vítamín (µg)</button>
+                        <button type="button" class="btn" data-color="primary">B - 12 (µg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">C-vítamín (mg)</button>
+                        <button type="button" class="btn" data-color="primary">C - (mg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">D-vítamín (µg)</button>
+                        <button type="button" class="btn" data-color="primary">D - (µg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">E-vítamín (mg)</button>
+                        <button type="button" class="btn" data-color="primary">E - (mg)</button>
                         <input type="checkbox" class="hidden" />
                     </span>
                     <span class="button-checkbox">
@@ -215,6 +216,12 @@
 
                 </div>
 
+                
+            </div>
+            <div class="tab-pane" id="measurements">
+                <div class="col-md-12">
+                    
+                </div>    
                 <div class="col-md-12">
                     <span class="button-checkbox">
                         <button type="button" class="btn" data-color="primary">Neck</button>
@@ -259,9 +266,6 @@
                 </div>
             </div>
             <div class="tab-pane" id="option">
-                <!-- This is just and option if needed more... -->
-            </div>
-                <div class="tab-pane" id="option">
                 <!-- option if needed more -->
             </div>           
         </div>
