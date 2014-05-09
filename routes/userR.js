@@ -51,11 +51,12 @@ module.exports = function(app, passport, mongoose) {
 // Profile
 
   app.put('/api/profile/update', function(req, res) {
-    Profile.findOne({"userID" : req.user._id}, function(err, data) {
+    Profile.findOne({"glas@glas.is" : "glas@glas.is"}, function(err, data) {
       if(err)
         throw err;
 
       // set profile variables
+      var newProfile = new Profile();
       newProfile.firstName = req.body.firstName;
       newProfile.lastName = req.body.lastName;
       newProfile.birthDay = req.body.birthDay;
@@ -87,15 +88,18 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.get('/api/profile', function(req, res) {
-    Profile.findOne({"userID" : req.params.id}, function(err, data) {
+    console.log("USER: " + req.user);
+    Profile.findOne({"userID" : req.user.id}, function(err, data) {
+      console.log("USER: " + req.user);
       if(err)
         throw err;
-      if(req.params.id === req.user._id) {
-        res.send(data);
-      }
-      else {
-        res.redirect('/');
-      }
+      
+      // if(req.params.id === req.user._id) {
+      //   res.send(data);
+      // }
+      // else {
+      //   res.redirect('/');
+      // }
     });
   });
 

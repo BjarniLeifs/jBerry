@@ -1,189 +1,118 @@
-
-				<script>$("#popover1").popover('hide')</script>
-				<script>$("#popover2").popover('hide')</script>
-<script>
-	$('.popover-markup>.trigger').popover({
-    html: true,
-    title: function () {
-        return $(this).parent().find('.head').html();
-    },
-    content: function () {
-        return $(this).parent().find('.content').html();
-    }
-});
-				</script>
-
-
 <div id="profileContainer" class="profileContainer" ng-controller="profileController">
 	<div id="ProfileContrainer-Left" class="col-md-2 column">
 		<div class="profileContainer-left"> <br>
-
 			<div class="profileContainer-fluid well span6">
 				<div class="profileContainer-left-userPhoto" >
 					<div class="row-fluid">
 						<img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
 					</div>
 				</div>
-
-
-
-					<div class="popover-markup"> 
-						<a class="trigger" data-placement="bottom">Change pic</a> 
-						<div class="popInput">
-							<div class="head hide">Url..</div>
-					    	<div class="content hide">
-					        	<div class="form-group">
-					           		<input type="text" class="form-control" placeholder="Whats your url?">
-					        	</div>
-					        <button type="submit" class="btn btn-default btn-block">Submit</button>
-					    </div>
-				    </div>
-
-				</div>
-
-
-
-
-
-
-			</div>
-
-			<div class="profileContainer-fluid well span6">
-				<div class="profileContainer-left-userInfo" >
-					<div class="row-fluid">
-						<p>i am {{user.user}}</p>
-						<p>i am {{user.firstName}} {{user.lastName}}</p>
-						<p>i am {{user.email}}</p>
-						<p>i am {{user.height}}</p>
-						<p>i am {{user.weight}}</p>
+				<div class="popover-markup"> 
+					<a class="trigger" data-placement="bottom">Change pic</a> 
+					<div class="popInput">
+						<div class="head hide">Url..</div>
+						<div class="content hide">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Whats your url?">
+							</div>
+							<button type="submit" class="btn btn-default btn-block">Submit</button>
+						</div>
 					</div>
 				</div>
-				<div class="profileContainer-left-userPhoto-btn">
-					<div class="popover-markup"> 
-						<a class="trigger" data-placement="bottom">Change info</a> 
-						<div class="popInput">
-							<div class="head hide">What do you want to change Sindri..</div>
-					    	<div class="content hide">
-					        	<div class="form-group">
-					           		<input type="text" class="form-control" placeholder="{{user.user}}">
-					           		<input type="text" class="form-control" placeholder="{{user.firstName}}">
-					           		<input type="text" class="form-control" placeholder="{{user.lastName}}">
-					           		<input type="text" class="form-control" placeholder="{{user.email}}">
-					           		<input type="text" class="form-control" placeholder="{{user.height}}">
-					           		<input type="text" class="form-control" placeholder="{{user.weight}}">
-					        	</div>
-					        <button type="submit" class="btn btn-default btn-block">Save!</button>
-					    </div>
-				    </div>
+			</div>	
 
+			<div  class="profileContainer-fluid well span6" >
+				<div class="profileContainer-left-userInfo" >
+					<div class="row-fluid">
+						<p>i am {{profile.user}}</p>
+						<p>i am {{profile.firstName}} {{user.lastName}}</p>
+						<p>i am {{profile.email}}</p>
+						<p>i am {{profile.height}}</p>
+						<p>i am {{profile.weight}}</p>
+					</div>
 				</div>
 
+				<!-- Small modal -->
+				<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-sm" style="width: 35%">
+
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"></button>
+								<h4 class="modal-title">What would you like to change {{profile.user}}</h4></div>
+								<div class="modal-body">
+									<div class="bootbox-body">
+										<form class="bootbox-form">
+											<input placeholder="First Name.." ng-model="profile.firstName" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+
+											<input placeholder="Last Name.." ng-model="profile.lastName"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Email Name.."  ng-model="profile.email"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Your height.." ng-model="profile.height"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+											<input placeholder="Your weight.." ng-model="profile.weight"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
+
+
+										</form>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button data-bb-handler="cancel" type="button" class="btn btn-default">Cancel</button>
+									
+									<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
+								</div>
+							</div>
+					 <!--    <div class="modal-content">
+					    	<form role="form">
+							  <div class="form-group">
+							  	<div class="input-forms">
+								    <label for="exampleInputEmail1">First name</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Last name</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Email address</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Your height</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								    <label for="exampleInputEmail1">Your weight</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+								</div>
+							  </div>
+							</form>
+						</div> -->
+					</div>
 				</div>
+
+
+
 			</div>
 		</div>
 	</div>
-
-	<div id="ProfileContainer-Timeline" class="col-md-8 column">
-
+	<div ng-repeat="post in timeline" id="ProfileContainer-Timeline" class="col-md-8 column">
 		<div class="profileContainer-timeline">
 			<br><br>
 			<div class="profileContainer-fluid well span6">
-				<div class="profileContainer-timeline-feed">
-					<div ng-repeat="blog in blogs" class="col-md-12">
-					    <h1>{{timeline.title}}</h1>
-					    <h1>{{timeline.author}}</h1>
-					    <p>{{timeline.text}}</p>
-					</div>
-					<span class="badge">Posted {{timeline.date}}</span>
-					<div class="pull-right">
-						<div ng-repeat="tag in tags">
-							<span class="label label-default">{{timeline.tag}}</span>        
-					     </div>
-					 </div>
-				    <hr>
 
-
-
-				</div>
-			</div>
-
-
-
-			<div class="profileContainer-fluid well span6">
 				<div class="profileContainer-timeline-feed">
 					<div class="col-md-12">
-					    <h1>Here comes title</h1>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
+						<h1>{{post.title}}</h1>
+						<p>{{post.body}}</p>
 					</div>
+					<hr>
 					<span class="badge">Posted 2012-08-02 20:47:04</span>
-					<div class="pull-right">
-						<span class="label label-default">alice</span> 
-						<span class="label label-primary">story</span> 
-						<span class="label label-success">blog</span> 
-						<span class="label label-info">personal</span> 
-						<span class="label label-warning">Warning</span>
-						<span class="label label-danger">Danger</span>
+					<div ng-repeat="tag in post.tags" class="pull-right">
+
+						<span class="label label-success">{{tag}}</span> 
+
 					</div>         
 				</div>
-				    <hr>
-
-
-
-				</div>
-			</div>
-
-				<div class="profileContainer-fluid well span6">
-				<div class="profileContainer-timeline-feed">
-					<div class="col-md-12">
-					    <h1>Here comes title</h1>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
-					</div>
-					<span class="badge">Posted 2012-08-02 20:47:04</span>
-					<div class="pull-right">
-						<span class="label label-default">alice</span> 
-						<span class="label label-primary">story</span> 
-						<span class="label label-success">blog</span> 
-						<span class="label label-info">personal</span> 
-						<span class="label label-warning">Warning</span>
-						<span class="label label-danger">Danger</span>
-					</div>         
-				</div>
-				    <hr>
-
-
-
-				</div>
-
-				<div class="profileContainer-fluid well span6">
-				<div class="profileContainer-timeline-feed">
-					<div class="col-md-12">
-					    <h1>Here comes title</h1>
-					    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-					    'Yes, we went to school in the sea, though you mayn't believe it—'
-					    'I never said I didn't!' interrupted Alice.
-					    'You did,' said the Mock Turtle.</p>
-					</div>
-					<span class="badge">Posted 2012-08-02 20:47:04</span>
-					<div class="pull-right">
-						<span class="label label-default">alice</span> 
-						<span class="label label-primary">story</span> 
-						<span class="label label-success">blog</span> 
-						<span class="label label-info">personal</span> 
-						<span class="label label-warning">Warning</span>
-						<span class="label label-danger">Danger</span>
-					</div>         
-				</div>
-				    <hr>
-
-
-
-				</div>
+				<hr>
 			</div>
 		</div>
+	</div>
 </div>
