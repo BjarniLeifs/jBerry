@@ -1,39 +1,49 @@
-app.controller("profileController", ["$scope", "$location", 
-	function($scope, $location) {
-	$scope.user = {
-		user:"",
-		firstName: "",
-		lastName: "",
-		email: "",
-		height: "",
-		weight: ""
+app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", 
+	function($scope, $location, $http, profileFactory) {
+		console.log("in controller");
+
+	$scope.profile = {
+		user : "",
+		firstName : "",
+		lastName : "",
+		email : "",
+		height : "",
+		weight : ""
 	};
 
-	$scope.timeline = {
-		autor: "",
-		title: "",
-		text: "",
-		date: "",
-		tags: []
+	$scope.timeline = "";
+	
+	profileFactory.getBlogsData().success(function(data, status,headers,config){
+		if(status === 200) {
+				console.log(status);
+				console.log(data);
+				$scope.timeline = data;
+		}
+	}).error(function(){
+			console.log("getBlogsData Error");
+	}); 
+
+	profileFactory.getProfile().
+	success(function(data, status, headers,config){
+	
+			console.log("geting user: " + data);
+			$scope.profile = data;
+			console.log("got some profiles in controller");
+			//$scope.profile = data;
+
+	}).error(function(){
+			console.log("getProfile Error");
+		});
+
+	$scope.changeInfo = function(){
+		var data = $scope.profile;
+		console.log(data.firstName);
+
+		profileFactory.changeProfile(data)
+		.success(function(data, status,headers,config){
+			console.log(status);
+		}).error(function(){
+					console.log("Error");
+				});
 	};
-
-	profileFactory.getTimelineData().
-	then(function(data){
-		$scope.timeline = data;
-		console.log("got some timeline blog" + data.title);
-	}, function(errorMessage){
-		console.log("Error getting blog to timeline in controller: " + errorMessage);
-	});
-
-	profileFactory.getUser().
-	then(function(datsa){
-		$scope.user = data;
-		console.log("got some user in controller" + user.user);
-	},function(errorMessage){
-		console.log("Error geting user in controller: " + errorMessage);
-	});
-
-
-
-
 }]);

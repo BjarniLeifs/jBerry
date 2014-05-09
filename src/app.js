@@ -1,4 +1,4 @@
-var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'ui.slider']);
+var app = angular.module("BerryApp", ['ngRoute', 'ui.bootstrap', 'ui.slider', 'ui.chart']);
 
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.when("/", {
@@ -20,7 +20,7 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "templates/checkin.html",
 		controller: "checkinController",
 	}).when("/nutritionopz", {
-		templateUrl: "templates/nutritionopz.html",
+		templateUrl: "templates/food/nutritionopz.html",
 		controller: "nutritionopzController",
 	}).when("/recipes/browse", {
 		templateUrl: "templates/recipes/browse.html",
@@ -29,6 +29,8 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "templates/recipes/add.html",
 		controller: "addController",
 	});
+
+	// PUSSY AND COCKS
 	
 	//$locationProvider.html5Mode(true);
 }]);

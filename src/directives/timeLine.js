@@ -47,10 +47,10 @@ app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) 
 	function getRelative(id) {
 		var str = "";
 
-			str += "<div class='relative'>";
-	    		str += "<label for='work"+id+"'>Lorem ipsum</label>";
-	    		str += "<span class='circle'></span>";
-	    	str += "</div>";
+		str += "<div class='relative'>";
+			str += "<label for='work"+id+"'>Lorem ipsum</label>";
+			str += "<span class='circle'></span>";
+		str += "</div>";
 
 		return str;
 	}
@@ -59,22 +59,25 @@ app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) 
 		var str = "";
 
 		str += "<div class='content'>";
-	      str += "<p>";
-	        str += text;
-	      str += "</p>";
-    	str += "</div>";
+			str += "<p>";
+			str += text;
+			str += "</p>";
+		str += "</div>";
 
-    	return str;
+		return str;
 	}
 
 	function updateLater(elem) {
 		var d, h, m, s;
 
         timeoutId = setInterval(function() {
-        	d = new Date(), h = d.getHours(), m = checkTime(d.getMinutes()), s = checkTime(d.getSeconds()); 
+			d = new Date();
+			h = d.getHours(); 
+			m = checkTime(d.getMinutes());
+			s = checkTime(d.getSeconds());
 
-        	elem.firstChild.innerHTML = h+":"+m+":"+s;
-        	updateLater(elem);
+			elem.firstChild.innerHTML = h+":"+m+":"+s;
+			updateLater(elem);
         }, 1000);
 	}
         
