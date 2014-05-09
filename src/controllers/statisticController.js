@@ -1,7 +1,5 @@
 app.controller("statisticController", ["$scope", "$location", function($scope, $location) {
-$(document).ready(function(){
-  var plot1 = $.jqplot ('chart1', [[3,7,9,1,4,6,8,2,5]]);
-});
+
 $(function () {
     $('.button-checkbox').each(function () {
 
@@ -60,7 +58,7 @@ $(function () {
             updateDisplay();
 
             // Inject the icon if applicable
-            if ($button.find('.state-icon').length == 0) {
+            if ($button.find('.state-icon').length === 0) {
                 $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
             }
         }
@@ -68,6 +66,23 @@ $(function () {
     });
 });
 
-
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart1', [[3,7,9,1,4,6,8,2,5]]);
+});
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart2', [[3,7,9,1,4,6,8,2,5]]);
+});
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart3', [[3,7,9,1,4,6,8,2,5]]);
+});
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart4', [[3,7,9,1,4,6,8,2,5]]);
+});
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart5', [[3,7,9,1,4,6,8,2,5]]);
+});
+$(document).ready(function(){
+  var plot1 = $.jqplot ('chart6', [[3,7,9,1,4,6,8,2,5]]);
+});
 
 }]);
