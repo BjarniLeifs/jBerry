@@ -5,7 +5,7 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 	$scope.timeline = "";
 
 	$scope.fuck = "FUUUUUUCK!";
-console.log("in controller");
+	console.log("in controller");
 
 
 
@@ -16,16 +16,22 @@ console.log("in controller");
 				$scope.timeline = data;
 		}
 	}).error(function(){
-			console.log("Error");
+			console.log("getBlogsData Error");
 	}); 
 
-	profileFactory.getProfile().success(function(data, status,headers,config){
+	profileFactory.getProfile().success(function(data, status, headers,config){
 		if(status === 200){
-			console.log("got some profiles in controller" + user.user);
+			console.log("got some profiles in controller" + user.firstName);
 			$scope.profiles = data;
 		}
-		
 	}).error(function(){
-			console.log("Error");
-	});
+			console.log("getProfile Error");
+		});
+
+	$scope.changeInfo = function(){
+		profileFactory.changeProfile().
+		success(function(data, status,headers,config){
+			// stuff
+		});
+	};
 }]);
