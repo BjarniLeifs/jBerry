@@ -77,7 +77,6 @@ app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) 
 			s = checkTime(d.getSeconds());
 
 			elem.firstChild.innerHTML = h+":"+m+":"+s;
-			updateLater(elem);
         }, 1000);
 	}
         
