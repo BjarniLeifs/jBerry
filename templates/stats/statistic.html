@@ -1,11 +1,11 @@
 <div ng-controller="statisticController" id="content">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li ng-click='repaint(plotNutrients)' class="active"><a data-target="#nutrients" data-toggle="tab">Nutrients</a></li> 
-        <li ng-click='repaint(plotMiniral)'><a data-target="#miniral" data-toggle="tab">Miniral</a></li>
-        <li ng-click='repaint(plotVitamin)'><a data-target="#vitamin" data-toggle="tab">Vitamin</a></li>
-        <li ng-click='repaint(plotFatAcid)'><a data-target="#fatAcid" data-toggle="tab">Fat Acid</a></li>
-        <li ng-click='repaint(plotBody)'><a data-target="#body" data-toggle="tab">Body</a></li>
-        <li ng-click='repaint(plotMeasurements)'><a data-target="#measurements" data-toggle="tab">Measurements</a></li> 
+        <li ng-click="repaint('plotNutrients')" class="active"><a data-target="#nutrients" data-toggle="tab">Nutrients</a></li> 
+        <li ng-click="repaint('plotMiniral')"><a data-target="#miniral" data-toggle="tab">Miniral</a></li>
+        <li ng-click="repaint('plotVitamin')"><a data-target="#vitamin" data-toggle="tab">Vitamin</a></li>
+        <li ng-click="repaint('plotFatAcid')"><a data-target="#fatAcid" data-toggle="tab">Fat Acid</a></li>
+        <li ng-click="repaint('plotBody')"><a data-target="#body" data-toggle="tab">Body</a></li>
+        <li ng-click="repaint('plotMeasurements')"><a data-target="#measurements" data-toggle="tab">Measurements</a></li> 
         <!-- 
             Option if more is needed.
         
@@ -16,7 +16,7 @@
         <div class="tab-content">
             <div class="tab-pane active" id="nutrients">
                 <div class="col-md-12">
-                    <div ui-chart="data1" class="chart plotNutrients"></div>
+                    <div ui-chart="dataStorage.data1" class="chart plotNutrients"></div>
                 </div>
                 <div class="col-md-12">
                     <div class="row">
@@ -63,7 +63,7 @@
             </div>
             <div class="tab-pane" id="miniral">
                 <div class="col-md-12">
-                    <div ui-chart="data2" class="chart plotMiniral"></div>
+                    <div ui-chart="dataStorage.data2" class="chart plotMiniral"></div>
                 </div>
                 <div class="col-md-12">
                     <div class="row">
@@ -111,7 +111,7 @@
             <div class="tab-pane" id="vitamin">
                 <div class="col-md-12">
 
-                    <div ui-chart="data3" class="chart plotVitamin"></div>
+                    <div ui-chart="dataStorage.data3" class="chart plotVitamin"></div>
 
                 </div>
                 <div class="col-md-12">
@@ -160,7 +160,7 @@
             <div class="tab-pane" id="fatAcid">
                 <div class="col-md-12">
                     <!-- Chart -->
-                    <div ui-chart="data4" class="chart plotFatAcid"></div>
+                    <div ui-chart="dataStorage.data4" class="chart plotFatAcid"></div>
                     <!-- Chart -->
                 </div>
                 <div class="col-md-12">
@@ -197,7 +197,7 @@
             <div class="tab-pane" id="body">
                  <div class="col-md-12">
                     <!-- Chart -->
-                    <div ui-chart="data5" class="chart plotBody">></div>
+                    <div ui-chart="dataStorage.data5" class="chart plotBody">></div>
                     <!-- Chart -->
                 </div>
                 <div class="col-md-12">
@@ -233,7 +233,7 @@
             <div class="tab-pane" id="measurements">
                 <div class="col-md-12">
                     <!-- Chart -->
-                    <div ui-chart="data6" class="chart plotMeasurements"></div>
+                    <div ui-chart="dataStorage.data6" class="chart plotMeasurements"></div>
                     <!-- Chart -->
                 </div>    
                 <div class="col-md-12">

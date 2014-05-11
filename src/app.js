@@ -29,8 +29,6 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		templateUrl: "templates/recipes/add.html",
 		controller: "addController",
 	});
-
-	// PUSSY AND COCKS
 	
 	//$locationProvider.html5Mode(true);
 }]);

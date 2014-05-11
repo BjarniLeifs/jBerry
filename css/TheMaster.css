@@ -996,3 +996,7 @@ body {
   height: 115;
 }
 /* Statistic */
+.chart {
+  width: 100%;
+  height: 100%;
+}
