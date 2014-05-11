@@ -22,4 +22,5 @@ app.controller("statisticController", ["$scope", "$location", function($scope, $
             });
         }, 10);
     };
+
 }]);
