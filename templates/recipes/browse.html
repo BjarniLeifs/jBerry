@@ -29,19 +29,19 @@
 							<div class="info">
 								<div class="info-row">
 									<div class="info-container">
-										<span class="head">Protein:<span class="value">{{foodItem['Prótein']}}</span></span>
+										<span class="head">Protein:<span class="value" ng-bind="checkName(foodItem['Prótein'])"></span></span>
 									</div>
 								</div>
 
 								<div class="info-row">
 									<div class="info-container">
-										<span class="head">Fat:<span class="value">{{foodItem['Fita']}}</span></span> 
+										<span class="head">Fat:<span class="value" ng-bind="checkName(foodItem['Fita'])"></span></span> 
 									</div>
 								</div>
 
 								<div class="info-row">
 									<div class="info-container">
-										<span class="head">Carbs: <span class="value">{{foodItem['Kolvetni, alls']}}</span></span>
+										<span class="head">Carbs: <span class="value" ng-bind="checkName(foodItem['Kolvetni, alls'])"></span></span>
 									</div>
 								</div>
 							</div>

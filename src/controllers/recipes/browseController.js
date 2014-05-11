@@ -82,7 +82,22 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 		console.log(type);
 	};
 
+	$scope.checkName = function(value) {
+		if(value !== undefined && value !== null)
+			return value;
+
+		return '-';
+	};
+
 	$scope.updateTypeHead = function() {
+		//Handels Empty string
+		if($scope.selected === "") {
+			$scope.food = {};
+			return;
+		}
+
+
+
 		foodFactory.getFoodByName($scope.selected).success(function(data, status, headers, config){
 			if(status === 200) {
 				$scope.food = data;
