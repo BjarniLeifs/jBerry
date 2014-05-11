@@ -5,4 +5,12 @@ app.controller("statisticController", ["$scope", "$location", function($scope, $
     $scope.data4 = [[3,7,9,1,4,6,8,2,5]];
     $scope.data5 = [[8,8,8,8,0,8,8,8,8]];
     $scope.data6 = [[9,0,9,0,9,0,9,0,9]];
+
+    $scope.repaint = function(plotClass) {
+        var plots = $('.' + plotClass);
+
+        $(plots).each(function() {
+            console.log(this.id);
+        });
+    };
 }]);

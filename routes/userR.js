@@ -107,7 +107,7 @@ module.exports = function(app, passport, mongoose) {
       if(err)
         throw err;
       res.send(data);
-    })
+    });
   });
 
   app.post('/api/messages', function(req, res) {

@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var messageSchema = mongoose.Schema({
 
 	senderID	: String,
-	recID      	: String,
+	recID		: String,
     title       : String,
     message     : String,
     date        : { type: Date, default: Date.now },
