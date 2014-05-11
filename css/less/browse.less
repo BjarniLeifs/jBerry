@@ -124,11 +124,12 @@
 					padding: 10px;
 
 					.block-container {
-						width: calc(~'100% / 3 - 3px');
-						height: 4.8em;
+						width: calc(~'100% / 3 - 20px');
+						height: 31em;
 						position: relative;
 						display: inline-block;
 						float: left;
+						margin: 10px;
 
 					    .move-animation {
 					    	&.ng-enter {
@@ -163,22 +164,17 @@
 						  animation:0.5s hide;
 						}
 
-
-
 						.browse-block {
 							display: inline-block;
 							z-index: 1000;
 							width: 100%;
+							height: 100%;
 							min-height: 1px;
 							float: left;
-							padding: 5px;
-							height: 4.8em;
 							overflow: hidden;
 							cursor: pointer;
 							background-color: #f5f5f5;
 							border: 1px solid;
-							border-right: 1px solid transparent;
-							border-bottom: 1px solid transparent;
 							-moz-transition-property: width, height, margin;
 							-moz-transition-duration: 0.5s;
 							-webkit-transition-property: width, height, margin;
@@ -188,9 +184,13 @@
 							-transition-property: width, height, margin;
 							transition-duration: 0.5s;
 
-
-							&:nth-child(3) {
-								border-right: 1px solid #000;
+							.imgHeader {
+								height: 230px;
+								width: 230px;
+								margin: 20px auto;
+								margin-bottom: 5px;
+								border: 1px solid gray;
+								display: block;
 							}
 
 							.tag {
@@ -198,8 +198,10 @@
 								height: 15px;
 								border-radius: 50px;
 								border: 1px solid black !important;
-								position: absolute;
-								right: 10px;
+								position: relative;
+								float: right;
+								margin: 5px 5px 0px 0px;
+
 			                        &.block-blue {
 			                        	color: #fff;
 										background-color: #428bca;
@@ -332,9 +334,9 @@
 			                    }
 
 							&:hover {
-								width: calc(100%);
-								height: 9.6em;
-								margin-top: -4.8em;
+								width: 100%;
+								height: 31em;
+								margin-top: -1em;
 								overflow: hidden;
 								-moz-transition-duration: .1s;
 								-webkit-transition-duration: .1s;
@@ -342,11 +344,16 @@
 								transition-duration: .1s;
 								z-index: 1000000;
 								position: relative;
+								-webkit-box-shadow: 3px 3px 5px 6px #ccc;
 							}
 
 							.title-container {
 								text-align: center;
 								height: 4em;
+								background-color: #383838;
+								color: #fff;
+								border-top: 1px solid gray;
+								border-bottom: 1px solid gray;
 
 								.title {
 									margin: 0;
@@ -364,9 +371,17 @@
 								}
 							}
 
+							.info-text {
+								width: 100%;
+								padding: 5px;
+							}
+
 							.info {
 								width: 100%;
 								height: 60px;
+								padding: 5px;
+								color: #000;
+								border-top: 1px solid #c6d0da;
 
 								.info-row {
 									width: 100%;

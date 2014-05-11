@@ -107,6 +107,11 @@
   top: 0;
   bottom: 0;
   overflow: hidden;
+  font-family: 'Lato', Arial, sans-serif;
+  color: #5f6f81;
+  list-style: none;
+  text-transform: none;
+  font-weight: 300;
 }
 #Container .container-main {
   height: 100%;
@@ -583,11 +588,12 @@ body {
   padding: 10px;
 }
 .container .main #main-container .browse .browse-container .block-container {
-  width: calc(100% / 3 - 3px);
-  height: 4.8em;
+  width: calc(100% / 3 - 20px);
+  height: 31em;
   position: relative;
   display: inline-block;
   float: left;
+  margin: 10px;
 }
 .container .main #main-container .browse .browse-container .block-container .move-animation.ng-enter {
   -webkit-transition: 0.5s linear all;
@@ -619,16 +625,13 @@ body {
   display: inline-block;
   z-index: 1000;
   width: 100%;
+  height: 100%;
   min-height: 1px;
   float: left;
-  padding: 5px;
-  height: 4.8em;
   overflow: hidden;
   cursor: pointer;
   background-color: #f5f5f5;
   border: 1px solid;
-  border-right: 1px solid transparent;
-  border-bottom: 1px solid transparent;
   -moz-transition-property: width, height, margin;
   -moz-transition-duration: 0.5s;
   -webkit-transition-property: width, height, margin;
@@ -638,16 +641,22 @@ body {
   -transition-property: width, height, margin;
   transition-duration: 0.5s;
 }
-.container .main #main-container .browse .browse-container .block-container .browse-block:nth-child(3) {
-  border-right: 1px solid #000;
+.container .main #main-container .browse .browse-container .block-container .browse-block .imgHeader {
+  height: 230px;
+  width: 230px;
+  margin: 20px auto;
+  margin-bottom: 5px;
+  border: 1px solid gray;
+  display: block;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block .tag {
   width: 15px;
   height: 15px;
   border-radius: 50px;
   border: 1px solid black !important;
-  position: absolute;
-  right: 10px;
+  position: relative;
+  float: right;
+  margin: 5px 5px 0px 0px;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block .tag.block-blue {
   color: #fff;
@@ -757,9 +766,9 @@ body {
   border-color: #adadad;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block:hover {
-  width: calc(100%);
-  height: 9.6em;
-  margin-top: -4.8em;
+  width: 100%;
+  height: 31em;
+  margin-top: -1em;
   overflow: hidden;
   -moz-transition-duration: .1s;
   -webkit-transition-duration: .1s;
@@ -767,10 +776,15 @@ body {
   transition-duration: .1s;
   z-index: 1000000;
   position: relative;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block .title-container {
   text-align: center;
   height: 4em;
+  background-color: #383838;
+  color: #fff;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block .title-container .title {
   margin: 0;
@@ -785,9 +799,16 @@ body {
   white-space: nowrap;
   text-align: left;
 }
+.container .main #main-container .browse .browse-container .block-container .browse-block .info-text {
+  width: 100%;
+  padding: 5px;
+}
 .container .main #main-container .browse .browse-container .block-container .browse-block .info {
   width: 100%;
   height: 60px;
+  padding: 5px;
+  color: #000;
+  border-top: 1px solid #c6d0da;
 }
 .container .main #main-container .browse .browse-container .block-container .browse-block .info .info-row {
   width: 100%;

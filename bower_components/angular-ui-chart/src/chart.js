@@ -30,13 +30,6 @@ angular.module('ui.chart', [])
         scope.$watch(attrs.chartOptions, function () {
           renderChart();
         });
-
-        $(elem).closest('.nav-tabs').bind('active',
-          function(event, ui) {
-            if (plot._drawCount === 0) {
-              plot.replot();
-            }
-        });
       }
     };
   });
