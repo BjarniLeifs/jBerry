@@ -1,13 +1,11 @@
-app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) {
+app.directive('timeLine', ['$compile', function($compile) {
 	var tempText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
 	var timeoutId;
 
 
 	function getTemplate(dObj) {
-		var tmp = "<p id='timer'></p><ul id='timeline'>", type;
+		var tmp = "<p id='timer'>"+ dObj.hour + ":"+ checkTime(dObj.minute) +":" + checkTime(dObj.secounds) +"</p><ul id='timeline'>", type;
 		var types = ['workout', 'eat', 'alarm'];
-
-
 
 		for(var i = 0; i < 24; i++) {
 			type = types[Math.floor((Math.random() * 2))];
@@ -77,7 +75,6 @@ app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) 
 			s = checkTime(d.getSeconds());
 
 			elem.firstChild.innerHTML = h+":"+m+":"+s;
-			updateLater(elem);
         }, 1000);
 	}
         
@@ -86,9 +83,9 @@ app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) 
 		restrict: 'E',
 		replace: 'true',
 		link: function(scope, elem, attrs) {
-			var d = new Date(), h = d.getHours(), m = d.getMinutes(); 
+			var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(); 
 
-			elem.html(getTemplate({hour: h, minute:m, period:(h > 12)?'PM':'AM'}));
+			elem.html(getTemplate({hour: h, minute:m, secounds: s, period:(h > 12)?'PM':'AM'}));
 			$compile(elem.contents());
 
 			elem.bind('$destroy', function() {

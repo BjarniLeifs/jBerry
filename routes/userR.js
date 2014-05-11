@@ -2,6 +2,7 @@
 
 var User = require('../models/user');
 var Profile = require('../models/profile');
+var Messages = require('../models/messages');
 
 module.exports = function(app, passport, mongoose) {
 
@@ -24,8 +25,6 @@ module.exports = function(app, passport, mongoose) {
 
   // process the signup form
   app.post('/api/register', passport.authenticate('local-signup'), function(req, res) {
-    console.log("Inn i register");
-    console.log(req.user);
     var newProfile = new Profile();
     newProfile.userID = req.user._id;
     newProfile.email = req.body.email;
@@ -100,6 +99,47 @@ module.exports = function(app, passport, mongoose) {
       // else {
       //   res.redirect('/');
       // }
+    });
+  });
+
+  app.get('/api/messages', function(req, res) {
+    Messages.find({"recID" : req.user._id}, function(err, data) {
+      if(err)
+        throw err;
+      res.send(data);
+    });
+  });
+
+  app.post('/api/messages', function(req, res) {
+    var newMessage = new Messages();
+    newMessage.senderID = req.body.senderID;
+    newMessage.recID = req.body.recID;
+    newMessage.title = req.body.title;
+    newMessage.date = req.body.date;
+    newMessage.read = false;
+    newMessage.save(function(err) {
+      if (err)
+        throw err;
+    });
+  });
+
+  app.put('/api/profile/ReadMessages', function(req, res) {
+    Messages.findOne({"_id" : req.body.ID}, function(err, data) {
+      if(err)
+        throw err;
+
+      var newMessage = new Messages();
+      newMessage.senderID = req.body.senderID;
+      newMessage.recID = req.body.recID;
+      newMessage.title = req.body.title;
+      newMessage.date = req.body.date;
+      newMessage.read = true;
+
+      // save the user
+      newMessage.save(function(err) {
+          if (err)
+              throw err;
+      });
     });
   });
 
