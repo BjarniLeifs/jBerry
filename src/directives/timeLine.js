@@ -1,4 +1,4 @@
-app.directive('timeLine', ['$compile', function($compile, $timeout, dateFilter) {
+app.directive('timeLine', ['$compile', function($compile) {
 	var tempText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
 	var timeoutId;
 
