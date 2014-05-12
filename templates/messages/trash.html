@@ -1,0 +1,95 @@
+<div class="tab-pane active" id="trash">
+	<table class="table table-condensed table-hover">
+		<thead>
+			<tr>
+				<th class="span1"><input type="checkbox">
+					<button type="button" data-toggle="modal" data-target=".bs-example-modal-sm"	class="bn btn-labeled bn-write">
+    					<span class="btn-label"><i class="glyphicon glyphicon-pencil"></i>
+    					</span>Write
+    				</button>
+					<button type="button" class="bn btn-labeled bn-info">
+		                <span class="btn-label"><i class="glyphicon glyphicon-refresh"></i>
+		                </span>Refresh
+	            	</button>
+	            	<button type="button" class="bn btn-labeled bn-danger">
+		                <span class="btn-label"><i class="glyphicon glyphicon-trash"></i>
+		                </span>Trash
+	            	</button>
+	            <br />
+				</th>
+				<th class="span2"></th>
+				<th class="span2"></th>
+				<th class="span9"></th>
+				<th class="span2"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+				<td><strong>John Doe</strong></td>
+				<td><span class="label pull-right">Notifications</span></td>
+				<td><strong>Message body goes here</strong></td>
+				<td><strong>11:23 PM</strong></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+				<td>John Doe</td>
+				<td><span class="label pull-right">Notifications</span></td>
+				<td>Message body goes here</td>
+				<td>Sept4</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"> <a href="#"><i class="icon-star"></i></a></td>
+				<td><strong>John Doe</strong></td>
+				<td><span class="label pull-right">Notifications</span></td>
+				<td><strong>Message body goes here</strong></td>
+				<td><strong>Sept3</strong></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"> <a href="#"><i class="icon-star"></i></a></td>
+				<td><strong>John Doe</strong></td>
+				<td><span class="label pull-right">Notifications</span></td>
+				<td><strong>Message body goes here</strong></td>
+				<td><strong>Sept3</strong></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+
+
+<!-- Write a message -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm" style="width: 35%">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"></button>
+				<h4 class="modal-title">What would you like to change {{profile.user}}</h4></div>
+				<div class="modal-body">
+					<div class="bootbox-body">
+						<form class="bootbox-form">
+							<legend>To: </legend><input placeholder="Name.." ng-model="profile.firstName" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+							<legend>Subject: </legend><input placeholder="Subject.." ng-model="profile.firstName" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+							
+							<legend>Whats up?</legend>
+							<div class="required-field-block">
+					            <textarea rows="3" class="form-control" placeholder="Message"></textarea>
+					            <div class="required-icon">
+					                <div class="text">*</div>
+					            </div>
+					        </div>
+								
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button data-bb-handler="cancel" type="button" class="btn btn-default">Cancel</button>
+					
+					<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
+				</div>
+			</div>
+	</div>
+</div>
+
