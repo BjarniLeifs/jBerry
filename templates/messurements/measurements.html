@@ -1,56 +1,72 @@
 <div id="content" ng-controller="skinfoldController">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a data-target="#how" data-toggle="tab">My Body </a></li>
+        <li class="active"><a data-target="#body" data-toggle="tab">My Body </a></li>
         <li><a data-target="#jkP7" data-toggle="tab">Jackson-Pollock 7-point</a></li>
         <li><a data-target="#jkP4" data-toggle="tab">Jackson-Pollock 4-points</a></li>
         <li><a data-target="#dWp4" data-toggle="tab">Durnin-Womersley 4-points</a></li>
         <li><a data-target="#activityMets" data-toggle="tab"></a></li>
     </ul>
     <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane active" id="how">
-			<div class="col-md-9">
-	    		<div class="row">
-	      			<div class="col-md-4">
-	        			<img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto" />
-	      			</div>
-	      			<form role="form">
-			          	<div class="form-group">
-	      					<div class="col-md-4">
-					            <label for="todaysdate">Date:</label><br />
-					            <label for="todaysweight">Weight:</label><br />
-					            <label for="todaysbf">BF%:</label><br />          
-					            <label for="neck">Neck:</label><br />           
-					            <label for="shoulder">Shoulder:</label><br />           
-					            <label for="chest">Chest:</label><br /> 
-					            <label for="bicep">Bicep:</label><br />            
-					            <label for="forearm">Forearm:</label><br />
-					            <label for="waist">Waist:</label><br />             
-					            <label for="hips">Hips:</label><br />        
-					            <label for="uThigh">Upper Thigh:</label><br />   
-					            <label for="mThigh">Middle Thigh:</labe><br /> 
-					            <label for="Calf">Calf:</label><br />
-					            <p></p>
-		            			<button type="submit" class="btn btn-default">Submit</button>      
-	         				</div>
-		          			<div class="col-md-4">
-					            <input type="datetime-local" id="todaysdate" name="todaydate"><br />
-					            <input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="wKg" placeholder=""> kg<br /> 
-					            <input type="number" id="todaysweight" min="0.0" step="0.1" max="1000"  name="todaysbf" placeholder=""> %<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="neck" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="shoulder" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="chest" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="bicep" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="forearm" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="waist" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="hips" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="uThigh" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="mThigh" placeholder=""> cm<br /> 
-					            <input type="number" min="0.0" step="0.1" max="1000"  name="Calf" placeholder=""> cm<br /> 
-		          			</div>
-	        			</div>
-	        		</form>
-	    		</div>
-	  		</div>     
+      <div class="tab-pane active" id="body">
+  			<div class="col-md-12">
+  	    		<div class="row">
+  	      			<div class="body-display col-md-4">
+  	        			<img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto" />
+  	      			</div>
+                <div class="col-md-8">
+    	      			<form role="form" class="body-form" role="form">
+                        <div class="form-group">
+                          <label for="inputEmail">Weight:</label>
+                          <input type="email" class="form-control" id="weight" placeholder="Weight">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Body Fat:</label>
+                          <input type="password" class="form-control" id="bodyFat" placeholder="Body Fat">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Neck:</label>
+                          <input type="password" class="form-control" id="neck" placeholder="Neck">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Shoulder:</label>
+                          <input type="password" class="form-control" id="shoulder" placeholder="Shoulder">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Chest:</label>
+                          <input type="password" class="form-control" id="chest" placeholder="Chest">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Bicep:</label>
+                          <input type="password" class="form-control" id="bicep" placeholder="Bicep">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Forearm:</label>
+                          <input type="password" class="form-control" id="forearm" placeholder="Forearm">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Waist:</label>
+                          <input type="password" class="form-control" id="waist" placeholder="Waist">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Hips:</label>
+                          <input type="password" class="form-control" id="hips" placeholder="Hips">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Upper Thigh:</label>
+                          <input type="password" class="form-control" id="upperThigh" placeholder="Upper Thigh">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Middle Thigh:</label>
+                          <input type="password" class="form-control" id="middleThigh" placeholder="Middle Thigh">
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword">Calf:</label>
+                          <input type="password" class="form-control" id="calf" placeholder="Calf">
+                        </div>
+    	        		</form>
+                </div>
+  	    		</div>
+  	  		</div>     
         </div>
         <div class="tab-pane" id="jkP7">
           <div class="row">
