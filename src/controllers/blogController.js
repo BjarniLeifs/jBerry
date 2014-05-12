@@ -2,12 +2,7 @@ app.controller("blogController", ["$scope", "$location", "$http", "blogFactory",
 	function($scope, $location, $http, blogFactory){
 
 		$scope.blogs="";
-
-		console.log("blogController");
-
-
-
-
+		
 		blogFactory.getBlogs().success(function(data, status, headers, config){
 			if(status === 200) {
 				console.log(status);
