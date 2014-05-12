@@ -1,0 +1,7 @@
+<div id="MessageContainer">
+	<tabset>
+		<tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" >
+			<div ng-include="tab.url"></div>
+		</tab>
+	</tabset>
+</div>
