@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-12">
 		<form>
 			<div class="row">
 				<div class="col-md-8">
@@ -29,15 +29,59 @@
 						<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8">
-					2
+				<div class="col-md-2">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<table class="table table-striped" width="100%">
+									
+ 									<tr>
+ 										<th>Ingredient</th>
+ 										<th>Quantity</th>
+ 										<th>Measurement</th>
+ 										<th></th>	
+ 									</tr>
+ 									<tr>
+ 										<td>test1</td>
+ 										<td>123</td>
+ 										<td>gr</td>
+ 										<td><button type="button" class="btn btn-primary btn-xs">Edit/Remove</button></td>
+ 									</tr>
+ 									<tr>
+ 										<td>test2</td>
+ 										<td>1</td>
+ 										<td>bolli</td>
+ 										<td><button type="button" class="btn btn-primary btn-xs">Edit/Remove</button></td>
+ 									</tr>
+ 									<tr>
+ 										<td>
+ 											<input type="text" placeholder="Search for add in table..." ng-model="selected" ng-change="updateTypeHead()" focus>
+ 										</td>
+ 										<td><input type="number" min="0.0" step="0.01" max="1000"></td>
+ 										<td>
+ 											<select>
+ 												<option>tsk</option>
+ 												<option>g</option>
+ 												<option>kg</option>
+ 												<option>bolli</option>
+ 											</select>
+										</td>	
+ 										<td><button type="button" class="btn btn-primary btn-xs">Add</button></td>
+ 									</tr>
+								</table>
+							</div>
+						</div>
+					</div>	
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-8">
-					<textarea class="form-control" rows="3">asdfasdf</textarea>
+				<div class="form-group">
+					<div class="col-md-8">
+						<textarea class="form-control" rows="3">Directions.....Step 1</textarea>
+						<p>
+						<button type="button" class="btn btn-primary btn-xs">Add new step</button>
+						</p>
+					</div>
 				</div>
 			</div>
 			<div class="row">
