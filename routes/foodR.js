@@ -28,11 +28,11 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/recipe/:id', function(req, res) {
-		Recipe.findOne({"_id" : req.params.id}, function(err, data) {
-			if(err)
+	app.post('/api/recipe/get', function(req, res) {
+		Recipe.findOne({_id:req.body.id}).exec(function(err, result) {
+			if (err)
 				throw err;
-			res.send(data);
+			res.send(result);
 		});
 	});
 
