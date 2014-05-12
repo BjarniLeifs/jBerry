@@ -106,4 +106,17 @@ app.controller("browseController", ["$scope", "$location", "foodFactory", functi
 			console.log("Error");
 		});
 	};
+
+	$scope.showRecipe = function(id) {
+		foodFactory.getRecipeById(id).success(function(data, status, headers, config){
+			if (status === 200) {
+				$scope.recipeItem = data;
+				console.log(id);
+				console.log(data);
+				//$location.path('/login');
+			}
+		}).error(function() {
+			console.log("Error");
+		});
+	};
 }]);

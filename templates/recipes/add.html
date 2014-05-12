@@ -1,1 +1,99 @@
-<p>asdfaf</p>
+<div class="row">
+	<div class="col-md-12">
+		<form>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<span class="button-checkbox" checker>
+		                    <button type="button" class="btn" data-color="primary">Everyone</button>
+		                    <input type="checkbox" class="hidden" />
+		                </span>
+		                <span class="button-checkbox" checker>
+		                    <button type="button" class="btn" data-color="primary">Only me</button>
+		                    <input type="checkbox" class="hidden" />
+		                </span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Recipe Name" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+						<img src="http://www.iconsdb.com/icons/preview/moth-green/berry-xxl.png" alt="food" class="img-thumbnail" width="100%"  />
+						<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<table class="table table-striped" width="100%">
+									
+ 									<tr>
+ 										<th>Ingredient</th>
+ 										<th>Quantity</th>
+ 										<th>Measurement</th>
+ 										<th></th>	
+ 									</tr>
+ 									<tr>
+ 										<td>test1</td>
+ 										<td>123</td>
+ 										<td>gr</td>
+ 										<td><button type="button" class="btn btn-primary btn-xs">Edit/Remove</button></td>
+ 									</tr>
+ 									<tr>
+ 										<td>test2</td>
+ 										<td>1</td>
+ 										<td>bolli</td>
+ 										<td><button type="button" class="btn btn-primary btn-xs">Edit/Remove</button></td>
+ 									</tr>
+ 									<tr>
+ 										<td>
+ 											<input type="text" placeholder="Search for add in table..." ng-model="selected" ng-change="updateTypeHead()" focus>
+ 										</td>
+ 										<td><input type="number" min="0.0" step="0.01" max="1000"></td>
+ 										<td>
+ 											<select>
+ 												<option>tsk</option>
+ 												<option>g</option>
+ 												<option>kg</option>
+ 												<option>bolli</option>
+ 											</select>
+										</td>	
+ 										<td><button type="button" class="btn btn-primary btn-xs">Add</button></td>
+ 									</tr>
+								</table>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-8">
+						<textarea class="form-control" rows="3">Directions.....Step 1</textarea>
+						<p>
+						<button type="button" class="btn btn-primary btn-xs">Add new step</button>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					4
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					5
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
