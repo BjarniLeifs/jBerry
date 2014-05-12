@@ -32,7 +32,7 @@ module.exports = function(app) {
 		Recipe.findOne({"_id" : req.body.id}, function(err, data) {
 			if(err)
 				throw err;
-			res.send(data);
+			res.send(result);
 		});
 	});
 
