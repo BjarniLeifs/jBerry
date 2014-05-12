@@ -1,0 +1,25 @@
+<div class="row clearfix" ng-controller="CalendarCtrl">
+	<div  class="col-md-10 column calendar-container">
+		<div class="wraper">
+			<div id="calender" ui-calendar="{editable: true}" ng-model='eventSource'></div>
+		</div>
+	</div>
+	<div class="col-md-2 column list-container">
+		<div class="list">
+			<div class="lines"></div>
+			
+			<ul class='sublist'>
+				<li class='header'>Food:</li>
+				<li>Sandwich</li>
+			</ul>
+			<ul class='sublist'>
+				<li class='header'>Recipes:</li>
+				<li>French Chocolate Cake</li>
+			</ul>
+			<ul class='sublist'>
+				<li class='header'>Activities:</li>
+				<li>Cycling</li>
+			</ul>
+		</div>
+	</div>
+</div>
