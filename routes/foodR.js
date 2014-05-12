@@ -28,8 +28,8 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/api/recipe/:id', function(req, res) {
-		Recipe.findOne({"_id" : req.params.id}, function(err, data) {
+	app.post('/api/recipe/get', function(req, res) {
+		Recipe.findOne({"_id" : req.body.id}, function(err, data) {
 			if(err)
 				throw err;
 			res.send(data);
