@@ -17,8 +17,8 @@ module.exports = function(app, passport, mongoose) {
 
   // process the login form
   app.post('/api/login', passport.authenticate('local-login', {
-    successRedirect : '/IamLogIn', // redirect to the secure profile section
-    failureRedirect : '/NoDiceLogIn', // redirect back to the signup page if there is an error
+    successRedirect : '/#/', // redirect to the secure profile section
+    failureRedirect : '/#/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
  
@@ -38,7 +38,7 @@ module.exports = function(app, passport, mongoose) {
   // LOGOUT
   app.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/#/login');
   });
 
   app.get('/ping', function(req, res) {
@@ -50,12 +50,12 @@ module.exports = function(app, passport, mongoose) {
 // Profile
 
   app.put('/api/profile/update', function(req, res) {
-    Profile.findOne({"glas@glas.is" : "glas@glas.is"}, function(err, data) {
+    Profile.findOne({"email" : req.user.local.email}, function(err, data) {
       if(err)
         throw err;
 
       // set profile variables
-      var newProfile = new Profile();
+      var newProfile = data;
       newProfile.firstName = req.body.firstName;
       newProfile.lastName = req.body.lastName;
       newProfile.birthDay = req.body.birthDay;
@@ -88,8 +88,7 @@ module.exports = function(app, passport, mongoose) {
 
   app.get('/api/profile', function(req, res) {
     console.log("USER: " + req.user);
-    Profile.findOne({"userID" : req.user.id}, function(err, data) {
-      console.log("USER: " + req.user);
+    Profile.findOne({"userID" : req.user._id}, function(err, data) {
       if(err)
         throw err;
       
@@ -157,5 +156,5 @@ function isLoggedIn(req, res, next) {
     return next();
 
   // if they aren't redirect them to the home page
-  res.redirect('/');
+  res.redirect('/#/login');
 }

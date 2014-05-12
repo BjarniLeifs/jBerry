@@ -25,6 +25,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 	}).when("/recipes/browse", {
 		templateUrl: "templates/recipes/browse.html",
 		controller: "browseController",
+	}).when("/recipes/view/:id", {
+		templateUrl:"templates/recipes/view.html",
+		controller: "browseController",
 	}).when("/messages", {
 		templateUrl: "templates/messages/messages.html",
 		controller: "messagesController",

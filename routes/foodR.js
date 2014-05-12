@@ -16,6 +16,26 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get('/api/recipe/getByName/:name', function(req, res) {
+
+		var re = new RegExp(req.params.name, 'i');
+
+		Recipe.find({Name:re}).limit(50).setOptions({lean:true}).exec(function(err, results) {
+			results.sort(function(a, b) {
+				return a.Name.toLowerCase().indexOf(req.params.name.toLowerCase()) - b.Name.toLowerCase().indexOf(req.params.name.toLowerCase());
+			});
+			res.send(results);
+		});
+	});
+
+	app.get('/api/recipe/:id', function(req, res) {
+		Recipe.findOne({"_id" : req.params.id}, function(err, data) {
+			if(err)
+				throw err;
+			res.send(data);
+		});
+	});
+
 	app.post('/api/recipe', function(req, res) {
 		var newRecipe = new Recipe();
 		newRecipe.userID = req.user._id;
