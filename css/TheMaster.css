@@ -120,7 +120,7 @@
   height: 100%;
   border-right: 1px solid #c6d0da;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-fix {
   position: absolute;
@@ -1182,12 +1182,14 @@ bn.write {
   cursor: -webkit-grab;
   cursor: -moz-grab;
 }
-.list-container .list .sublist li:not(.header):active {
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-}
 .list-container .list .sublist .header {
   color: #362b36;
   padding-left: 40px;
   height: 36px;
+}
+.ui-draggable-dragging {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  background-color: #fff;
+  width: 100%;
 }
