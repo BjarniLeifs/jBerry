@@ -126,7 +126,7 @@ angular.module('ui.calendar', [])
             }
           }
         };
-        return self = {
+        self = {
           subscribe: function(scope, onChanged) {
             scope.$watch(getTokens, function(newTokens, oldTokens) {
               if (!onChanged || onChanged(newTokens, oldTokens) !== false) {
@@ -138,6 +138,8 @@ angular.module('ui.calendar', [])
           onChanged: angular.noop,
           onRemoved: angular.noop
         };
+
+        return self;
       };
 
       this.getFullCalendarConfig = function(calendarSettings, uiCalendarConfig){
