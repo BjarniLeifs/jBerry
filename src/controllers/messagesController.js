@@ -3,6 +3,11 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 		console.log("controller");
 		$scope.tabs = [
 		{
+			name:	"All emails",
+			url:	"templates/messages/allEmail.html"
+			
+		},
+		{
 			name:	"Inbox",
 			url:	"templates/messages/inbox.html",
 			active: true
@@ -16,14 +21,24 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 			name:	"Trash",
 			url:	"templates/messages/trash.html"
 		
-		},
-		{
-			name:	"All emails",
-			url:	"templates/messages/allEmail.html"
-			
 		}
+		
 		];
+		$scope.message = {
+			messageTo : "",
+			emailSubject : "",
+			emailBody : ""
+		};
 
+
+
+		$scope.sendMessage = function(){
+			console.log("controller sendMessage");
+			console.log($scope.message.messageTo);
+			var data ={
+
+			};
+		};
 
 
 
