@@ -1,7 +1,7 @@
 <div class="row clearfix" ng-controller="CalendarCtrl">
 	<div  class="col-md-10 column calendar-container">
-		<div class="wraper">
-			<div id="calender" ui-calendar="{editable: true}" ng-model='eventSource'></div>
+		<div class="wraper" ng-style='claendarWraper'>
+			<div id="calender" ui-calendar="calendarConfig" ng-model='eventSources' calendar="planner"></div>
 		</div>
 	</div>
 	<div class="col-md-2 column list-container">
@@ -10,15 +10,15 @@
 			
 			<ul class='sublist'>
 				<li class='header'>Food:</li>
-				<li>Sandwich</li>
+				<li type='food' ng-repeat="food in list.Food" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{revert: 'invalid'}">{{food.name}}</li>
 			</ul>
 			<ul class='sublist'>
 				<li class='header'>Recipes:</li>
-				<li>French Chocolate Cake</li>
+				<li type='recipes' ng-repeat="recipe in list.Recipes" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{revert: 'invalid'}">{{recipe.name}}</li>
 			</ul>
 			<ul class='sublist'>
 				<li class='header'>Activities:</li>
-				<li>Cycling</li>
+				<li type='activities' ng-repeat="act in list.Activities" data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{revert: 'invalid'}">{{act.name}}</li>
 			</ul>
 		</div>
 	</div>
