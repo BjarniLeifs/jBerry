@@ -476,6 +476,61 @@ body {
 body {
   overflow: hidden;
 }
+#addContainer {
+  position: absolute;
+  width: 100%;
+}
+#addContainer #addContainer-left {
+  margin-right: 0em;
+  margin-top: 4em;
+}
+#addContainer #addContainer-left #addContainer-see {
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-rName {
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-photo {
+  margin-left: 4em;
+  width: 10em;
+  height: 10em;
+}
+#addContainer #addContainer-left #addContainer-direction {
+  width: 86%;
+  margin-top: 3em;
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-direction #direction {
+  width: 100%;
+}
+#addContainer #addContainer-left #addContainer-direction #button-direction {
+  margin-top: 0.5em;
+}
+#addContainer #addContainer-left #addContainer-prep {
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-notes {
+  margin-left: 4em;
+  margin-top: 1em;
+}
+#addContainer #addContainer-left #addContainer-cat {
+  margin-top: 1em;
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-qD {
+  margin-top: 1em;
+  margin-left: 4em;
+}
+#addContainer #addContainer-left #addContainer-subsbutton {
+  margin-top: 1em;
+  margin-left: 4em;
+}
+#addContainer #addContainer-right {
+  width: 24em;
+  margin-left: 0em;
+  margin-top: 4em;
+  border: solid;
+}
 /* Recipes */
 .container {
   position: absolute;
@@ -1199,7 +1254,7 @@ bn.write {
   font-size: 16px;
   font-style: italic;
   height: 39px;
-  padding-left: 6px;
+  padding-left: 4px;
   padding-top: 9px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1209,6 +1264,7 @@ bn.write {
 .list-container .list .sublist li:not(.header) span {
   float: left;
   margin-right: 25px;
+  margin-top: 3px;
   color: #da3b3b;
   opacity: 0.2;
 }
