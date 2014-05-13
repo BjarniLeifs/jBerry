@@ -24,8 +24,7 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 		}
 		
 		];
-		$scope.message ={
-			console.log("fuck");
+		$scope.message = {
 			messageTo : "",
 			emailSubject : "",
 			emailBody : ""
