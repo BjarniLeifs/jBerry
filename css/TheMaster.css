@@ -1139,6 +1139,15 @@ bn.write {
   border-radius: 4px;
   text-align: center;
 }
+.calendar-container .wraper #calender .fc-event:hover {
+  cursor: -webkit-grab;
+}
+.calendar-container .wraper #calender .fc-event:active {
+  cursor: -webkit-grabbing;
+}
+.calendar-container .wraper #calender .fc-day {
+  cursor: pointer;
+}
 .calendar-container .wraper #calender .recipes {
   background: #dba26b;
 }
@@ -1190,14 +1199,28 @@ bn.write {
   font-size: 16px;
   font-style: italic;
   height: 39px;
-  padding-left: 45px;
+  padding-left: 6px;
   padding-top: 9px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.list-container .list .sublist:hover {
+.list-container .list .sublist li:not(.header) span {
+  float: left;
+  margin-right: 25px;
+  color: #da3b3b;
+  opacity: 0.2;
+}
+.list-container .list .sublist li:not(.header) span:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.list-container .list .sublist li:not(.header) div {
+  margin-left: 35px;
+  width: 75%;
+}
+.list-container .list .sublist li:not(.header) div:hover {
   cursor: -webkit-grab;
 }
 .list-container .list .sublist .header {

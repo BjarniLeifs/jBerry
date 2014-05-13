@@ -12,7 +12,7 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
     Activities: [
       {name: 'Cycling'}
     ]
-  }
+  };
 
   $scope.calendarConfig = {
     height: $(document).height() * 0.9,
@@ -23,18 +23,44 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
       right: 'month,agendaWeek,agendaDay'
     },
     droppable: "*",
-      drop: function(date, allDay, jsEvent, ui) {
-        $scope.$apply(function () {
-          $scope.events.push({
-            title: ui.helper[0].innerHTML,
-            start: date,
-            end: date,
-            className: [ui.helper[0].type]
-          });
+    drop: function(date, allDay, jsEvent, ui) {
+      $scope.$apply(function () {
+        $scope.events.push({
+          title: ui.helper[0].innerText,
+          start: date,
+          end: date,
+          className: [ui.helper[0].attributes[0].value]
         });
+      });
+    },
+    dayClick: function(date, allDay, jsEvent, view) {
+      if(allDay) {
+        if($(jsEvent.target).is('.fc-day')) {
+          $scope.planner.fullCalendar('changeView', 'agendaDay').fullCalendar('gotoDate', date.getFullYear(), date.getMonth(), date.getDate());
+        }
+      }
+    },
+    eventRender: function(event, element) {
+      element.bind('dblclick', function(event) {
+        var name = this.childNodes[0].innerText;
+        
+        for(var i = 0; i < $scope.events.length; i++) {
+          if($scope.events[i].title === name) {
+            //Remove Event
+            $scope.events.splice(i,1);
+            break;
+          }
+        }
+        $scope.$apply();
+      });
     }
   };
 
+  $scope.listRemove = function(index, type) {
+    $scope.list[type].splice(index,1);
+  };
+
+  //Get Calander Width
   $scope.getWidth = function() {
     return ($(document).width() - ((($(document).width() * 0.1666666667) * 2 )- 20));
   };
