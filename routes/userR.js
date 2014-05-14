@@ -12,7 +12,7 @@ module.exports = function(app, passport, mongoose) {
   // HOME PAGE (with login links) ========
   // =====================================
   app.get('/', function(req, res) {
-    //res.sendfile(path.join(clientDir, 'index.html'));
+    res.sendfile(path.join(clientDir, 'index.html'));
   });
 
   // process the login form
@@ -48,7 +48,7 @@ module.exports = function(app, passport, mongoose) {
           throw err;
     });
 
-    res.send("User: " + req.body.name + " sregistered");
+    res.send("User: " + req.body.name + " registered");
   });
 
   app.get('/registerFailure', function(req, res, next) {
