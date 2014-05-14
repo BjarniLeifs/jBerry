@@ -15,8 +15,8 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 
 	profileFactory.getProfile().then(function(respond) {
 		if(respond[0].status == 200 && respond[1].status == 200) {
-			$scope.profile = respond[0];
-			$scope.timeline = respond[1];
+			$scope.profile = respond[0].data;
+			$scope.timeline = respond[1].data;
 		} else {
 			$location.path("/login");
 		}
