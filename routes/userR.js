@@ -12,7 +12,7 @@ module.exports = function(app, passport, mongoose) {
   // HOME PAGE (with login links) ========
   // =====================================
   app.get('/', function(req, res) {
-    //res.sendfile(path.join(clientDir, 'index.html'));
+    res.sendfile(path.join(clientDir, 'index.html'));
   });
 
   // process the login form

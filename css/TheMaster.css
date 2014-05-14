@@ -195,22 +195,23 @@
   bottom: 0;
   box-shadow: inset 0 1px #c6d0da;
 }
-#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer span,
-#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer i {
+#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper {
   display: inline-block;
-  padding-left: 35px;
   font-size: 23px;
-  top: -5px;
-  right: -35px;
   position: relative;
+  height: 36px;
+  margin-right: 61px;
+  float: right;
 }
-#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer span:hover,
-#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer i:hover {
+#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper span,
+#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper i {
+  position: absolute;
+  top: 10px;
+}
+#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper span:hover,
+#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper i:hover {
   color: #000;
   cursor: pointer;
-}
-#Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer i {
-  top: -10px;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .cp-item {
   width: 100%;
