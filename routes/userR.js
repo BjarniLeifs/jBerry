@@ -60,8 +60,8 @@ module.exports = function(app, passport, mongoose) {
     User.find({}, function(err, data) {
       if(err)
         throw err;
-      console.log(data.local);
-      res.send(data.local);
+      console.log(data);
+      res.send(data);
     });
   });
 
