@@ -120,13 +120,13 @@ module.exports = function(app, passport, mongoose) {
     Profile.findOne({"userID" : req.user._id}, function(err, data) {
       if(err)
         throw err;
-      
-      // if(req.params.id === req.user._id) {
-      //   res.send(data);
-      // }
-      // else {
-      //   res.redirect('/');
-      // }
+
+      if(req.params.id === req.user._id) {
+        res.send(data);
+      }
+      else {
+        res.redirect('/');
+      }
     });
   });
 

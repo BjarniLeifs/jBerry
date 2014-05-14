@@ -1,5 +1,5 @@
-app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", 
-	function($scope, $location, $http, profileFactory) {
+app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", "userFactory", 
+	function($scope, $location, $http, profileFactory, userFactory) {
 		console.log("in controller");
 
 	$scope.profile = {
@@ -13,37 +13,24 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 
 	$scope.timeline = "";
 	
-	profileFactory.getBlogsData().success(function(data, status,headers,config){
-		if(status === 200) {
-				console.log(status);
-				console.log(data);
-				$scope.timeline = data;
-		}
-	}).error(function(){
-			console.log("getBlogsData Error");
-	}); 
 
-	profileFactory.getProfile().
-	success(function(data, status, headers,config){
-	
-			console.log("geting user: " + data);
+	profileFactory.getProfile(userFactory.getUserName()).then(function(respond) {
+		if(respond[0].status == 200 && respond[1].status == 200) {
+			console.log(data);
 			$scope.profile = data;
-			console.log("got some profiles in controller");
-			//$scope.profile = data;
-
-	}).error(function(){
-			console.log("getProfile Error");
-		});
+		} else {
+			$location.path("/login");
+		}
+	});
 
 	$scope.changeInfo = function(){
 		var data = $scope.profile;
 		console.log(data.firstName);
 
-		profileFactory.changeProfile(data)
-		.success(function(data, status,headers,config){
+		profileFactory.changeProfile(data).success(function(data, status,headers,config){
 			console.log(status);
 		}).error(function(){
-					console.log("Error");
-				});
+			console.log("Error");
+		});
 	};
 }]);
