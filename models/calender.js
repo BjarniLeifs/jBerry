@@ -10,4 +10,4 @@ var calenderSchema = mongoose.Schema({
 
 }, {collection : 'Calender'});
 
-module.exports = mongoose.model('Calender', calanderSchema);
+module.exports = mongoose.model('Calender', calenderSchema);

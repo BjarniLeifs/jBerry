@@ -41,6 +41,7 @@ require('./routes/foodR.js')(app, mongoose);
 require('./routes/blogR.js')(app, passport, mongoose);
 require('./routes/listR.js')(app, passport, mongoose);
 
+
 // launch 
 app.listen(port);
 
