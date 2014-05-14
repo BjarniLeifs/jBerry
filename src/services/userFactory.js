@@ -9,6 +9,9 @@ app.factory("userFactory", ["$location", "$http", "$q",
 		getToken: function(){
 			return user.Token;
 		},
+		getUser: function() {
+			return $http.get("http://localhost:3000/api/userinfo");
+		},
 		setUser: function(newUser) {
 			return $http.post("http://localhost:3000/api/register", {name : newUser.name, email : newUser.email, password : newUser.password});
 		},
@@ -16,7 +19,7 @@ app.factory("userFactory", ["$location", "$http", "$q",
 			user = newUser;
 		},
 		getUserName: function(){
-			return user.Username;
+			return user.name;
 		}
 	};
 }]);

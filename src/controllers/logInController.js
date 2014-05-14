@@ -33,7 +33,6 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 		userFactory.setUser($scope.reg).success(function(data, status, headers, config){
 			if (status === 200) {
 				$location.path("/");
-				$scope.$apply();
 			}
 		}).error(function(){
 			console.log("Error");

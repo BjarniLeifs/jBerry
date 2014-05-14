@@ -186,6 +186,7 @@
   white-space: nowrap;
   line-height: 0px;
   text-align: center;
+  font-size: 22px;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer {
   position: absolute;
@@ -206,7 +207,7 @@
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper span,
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper i {
   position: absolute;
-  top: 10px;
+  top: 8px;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper span:hover,
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-footer .icon-wrapper i:hover {

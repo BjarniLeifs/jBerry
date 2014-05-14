@@ -7,6 +7,13 @@ module.exports = function(app, passport, mongoose) {
 
   //Blogs
 
+  app.get('/api/blog/myblogs', function(req, res) {
+    Blog.find({"userID" : req.user._id}, function(err, data){
+      console.log(data);
+      res.send(data);
+    }).sort({date : 'desc'});
+  });
+
   app.post('/api/blog', function(req, res) {
     var newBlog = new Blog();
     newBlog.title = req.body.title;
@@ -49,7 +56,7 @@ module.exports = function(app, passport, mongoose) {
     Blog.find({}, function(err, data){
       console.log(data);
       res.send(data);
-    }).sort({title : 'desc'});
+    }).sort({date : 'desc'});
   });
 
   app.post('/api/blogByTags', function(req, res) {

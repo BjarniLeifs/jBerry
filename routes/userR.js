@@ -127,7 +127,7 @@ module.exports = function(app, passport, mongoose) {
       if(err)
         throw err;
       console.log("Profileid: " + data.userID);
-        res.send(data);
+      res.send(data);
     });
   });
 
