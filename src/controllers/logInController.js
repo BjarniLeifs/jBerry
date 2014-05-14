@@ -14,7 +14,6 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 					$scope.errorMsg = data;
 				} else if(data === 'Successfully authenticated') {
 					$location.path("/");
-					$scope.$apply();
 				}
 			}
 
