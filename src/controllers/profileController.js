@@ -14,10 +14,10 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 	$scope.timeline = "";
 	
 
-	profileFactory.getProfile(userFactory.getUserName()).then(function(respond) {
+	profileFactory.getProfile().then(function(respond) {
 		if(respond[0].status == 200 && respond[1].status == 200) {
-			console.log(data);
-			$scope.profile = data;
+			console.log(respond);
+			$scope.profile = respond[0];
 		} else {
 			$location.path("/login");
 		}

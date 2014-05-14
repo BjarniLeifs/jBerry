@@ -15,7 +15,7 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 					comment	:data.comment
 				});
 			},
-			getProfile: function(name){
+			getProfile: function(){
 				return $q.all([
 					$http.get('http://localhost:3000/api/profile'),
 						$http.get("http://localhost:3000/api/blog")
