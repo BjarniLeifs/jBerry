@@ -4,6 +4,25 @@
 			<nav id="Container-Left-Menu">
 				<div class="cp-fix">
 					<ul class="cp-menu">
+						
+						<!-- Profile Box -->
+
+						<li class="profile-box">
+							<div class="profile-image-wrapper">
+								<img src="css/img/defaultUser.jpg" class="img-circle">
+							</div>
+							<div class="profileContainer-userInfo">
+								<h2> John Dorian </h2>
+								<div class="row-fluid">
+									<p>User</p>
+								</div>
+							</div>
+							<div class="profile-footer">
+								<i class="fa fa-eye"></i>
+								<span class="glyphicon glyphicon-envelope" ng-click="setTemplate('messages/messages.html', true)"></span>
+								<span class="glyphicon glyphicon-cog"></span>
+							</div>
+						</li>
 
 						<!-- Task - 1 [Profile]-->
 
@@ -84,20 +103,6 @@
 						<li class="cp-item" ng-click="setTemplate('messurements/metabolic.html', true)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon glyphicon-heart"></span><p>Activity</p>
-							</a>
-						</li>
-
-						<!-- Task - 9 [Blogs]-->
-
-						<li class="cp-item" ng-click="setTemplate('me/blogs.html', true)">
-							<a class="accordion-toggle">
-								<span class="glyphicon glyphicon-list-alt"></span><p>Blogs</p>
-							</a>
-						</li>
-
-						<li class="cp-item" ng-click="setTemplate('messages/messages.html', true)">
-							<a class="accordion-toggle">
-								<span class="glyphicon glyphicon-envelope"></span><p>Messages</p>
 							</a>
 						</li>
 					</ul>

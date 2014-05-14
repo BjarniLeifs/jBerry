@@ -12,27 +12,47 @@ module.exports = function(app, passport, mongoose) {
   // HOME PAGE (with login links) ========
   // =====================================
   app.get('/', function(req, res) {
-    res.sendfile(path.join(clientDir, 'index.html'));
+    //res.sendfile(path.join(clientDir, 'index.html'));
   });
 
   // process the login form
   app.post('/api/login', passport.authenticate('local-login', {
-    successRedirect : '/#/', // redirect to the secure profile section
-    failureRedirect : '/#/login', // redirect back to the signup page if there is an error
+    successRedirect : '/loginSuccess', // redirect to the secure profile section
+    failureRedirect : '/loginFailure', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
   }));
  
+  app.get('/loginFailure', function(req, res, next) {
+    res.send('Failed to authenticate');
+  });
+
+  app.get('/loginSuccess', function(req, res, next) {
+    res.send('Successfully authenticated');
+  });
 
   // process the signup form
-  app.post('/api/register', passport.authenticate('local-signup'), function(req, res) {
+  app.post('/api/register', passport.authenticate('local-signup', {
+    successRedirect : '/registerSuccess', // redirect to the secure profile section
+    failureRedirect : '/registerFailure', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+  }));
+
+  app.get('/registerSuccess', function(req, res, next) {
     var newProfile = new Profile();
     newProfile.userID = req.user._id;
     newProfile.email = req.body.email;
+    console.log(newProfile);
+
     newProfile.save(function(err) {
       if (err)
           throw err;
     });
-    res.send("User: " + req.body.name + " registered");
+
+    res.send("User: " + req.body.name + " sregistered");
+  });
+
+  app.get('/registerFailure', function(req, res, next) {
+    res.send('Email Address already in use');
   });
 
   // LOGOUT

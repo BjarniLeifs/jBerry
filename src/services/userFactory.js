@@ -10,13 +10,13 @@ app.factory("userFactory", ["$location", "$http", "$q",
 			return user.Token;
 		},
 		setUser: function(newUser) {
-			console.log("Inside factory");
-
-			console.log(newUser);
 			return $http.post("http://localhost:3000/api/register", {name : newUser.name, email : newUser.email, password : newUser.password});
 		},
+		saveUser: function(newUser) {
+			user = newUser;
+		},
 		getUserName: function(){
-			return user.User.Username;
+			return user.Username;
 		}
 	};
 }]);

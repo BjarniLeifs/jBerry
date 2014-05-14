@@ -1,20 +1,29 @@
 app.controller("loginController", ["$scope", "$location", "$http", "userFactory",function($scope, $location, $http, userFactory){
 	$scope.reg = {name: '', email: '', password:'', conpassword: ''};
+	$scope.errorMsg = "";
 	$scope.email = "";
 	$scope.pass = "";
 
 	$scope.connect = function(){
 		if(!($scope.email || $scope.pass))
 			return;
-		console.log($scope.email);
+
 		userFactory.validUser($scope.email, $scope.pass).success(function(data, status, headers, config){
-			console.log(status);
 			if(status === 200) {
-				$location.path("/#/");
-				$scope.$apply();
+				if(data === 'Failed to authenticate') {
+					$scope.errorMsg = data;
+				} else if(data === 'Successfully authenticated') {
+					$location.path("/");
+					$scope.$apply();
+				}
 			}
+
+			$scope.email = "";
+			$scope.pass = "";
 		}).error(function(){
-			console.log("Error");
+			$scope.errorMsg = "Failed to authenticate";
+			$scope.email = "";
+			$scope.pass = "";
 		});
 	};
 
@@ -24,8 +33,7 @@ app.controller("loginController", ["$scope", "$location", "$http", "userFactory"
 
 		userFactory.setUser($scope.reg).success(function(data, status, headers, config){
 			if (status === 200) {
-				userFactory.setUser(data);
-				$location.path("/#");
+				$location.path("/");
 				$scope.$apply();
 			}
 		}).error(function(){
