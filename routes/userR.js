@@ -56,6 +56,15 @@ module.exports = function(app, passport, mongoose) {
     res.send("User: " + req.body.name + " registered");
   });
 
+  app.get('/api/userpublicinfo', function(req, res){
+    User.find({}, function(err, data) {
+      if(err)
+        throw err;
+      console.log(data.local);
+      res.send(data.local);
+    });
+  });
+
   app.get('/api/userinfo', function(req, res) {
     if(req.user) {
       res.send(req.user);
