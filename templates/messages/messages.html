@@ -34,7 +34,7 @@
 						<form class="bootbox-form">
 							<p>To: {{message.recID}}</p>
 							<ul ng-repeat="user in users">
-								<li ng-click="message.recID = user._id">{{user.name}}</li>
+								<li ng-click="message.recID = user._id">{{user.local.name}}</li>
 							</ul><input placeholder="To.." ng-model="message.messageTo" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
 							<legend>Subject: </legend><input placeholder="Subject.." ng-model="message.title" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
 							
