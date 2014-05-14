@@ -40,7 +40,12 @@ module.exports = function(app, passport, mongoose) {
   app.get('/registerSuccess', function(req, res, next) {
     var newProfile = new Profile();
     newProfile.userID = req.user._id;
-    newProfile.email = req.body.email;
+    newProfile.email = req.user.local.email;
+    newProfile.firstName = "";
+    newProfile.lastName = "";
+    newProfile.birthDay = new Date(Date.now());
+    newProfile.height = 0;
+    newProfile.weight = 0;
     console.log(newProfile);
 
     newProfile.save(function(err) {
@@ -67,7 +72,7 @@ module.exports = function(app, passport, mongoose) {
   // LOGOUT
   app.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/#/login');
+    res.send('Logged Out');
   });
 
   app.get('/ping', function(req, res) {
@@ -106,6 +111,7 @@ module.exports = function(app, passport, mongoose) {
       if(err)
         throw err;
 
+
       var sendData = {
         "firstName" : data.firstName,
         "lastName"  : data.lastName,
@@ -116,17 +122,12 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.get('/api/profile', function(req, res) {
-    console.log("USER: " + req.user);
+    console.log("userid: " + req.user._id);
     Profile.findOne({"userID" : req.user._id}, function(err, data) {
       if(err)
         throw err;
-      
-      // if(req.params.id === req.user._id) {
-      //   res.send(data);
-      // }
-      // else {
-      //   res.redirect('/');
-      // }
+      console.log("Profileid: " + data.userID);
+        res.send(data);
     });
   });
 
@@ -185,5 +186,5 @@ function isLoggedIn(req, res, next) {
     return next();
 
   // if they aren't redirect them to the home page
-  res.redirect('/#/login');
+  res.send('Not Logged In');
 }

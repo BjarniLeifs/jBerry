@@ -14,6 +14,7 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 	$scope.timeline = "";
 	
 	profileFactory.getBlogsData().success(function(data, status,headers,config){
+		console.log("In getblog function");
 		if(status === 200) {
 				console.log(status);
 				console.log(data);
@@ -23,8 +24,7 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 			console.log("getBlogsData Error");
 	}); 
 
-	profileFactory.getProfile().
-	success(function(data, status, headers,config){
+	profileFactory.getProfile().success(function(data, status, headers,config){
 	
 			console.log("geting user: " + data);
 			$scope.profile = data;
