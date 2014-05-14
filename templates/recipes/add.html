@@ -3,21 +3,6 @@
 		<div class="col-md-8" id="addContainer-left">
 			<form>
 				<div class="row">
-					<div class="col-md-8" id="addContainer-see"> 
-						<label for="whoSee">Who should be able to see this recipe?</label>
-						<div class="form-group" id="whoSee">
-							<span class="button-checkbox" checker>
-			                    <button type="button" class="btn" data-color="primary">Everyone</button>
-			                    <input type="checkbox" class="hidden" />
-			                </span>
-			                <span class="button-checkbox" checker>
-			                    <button type="button" class="btn" data-color="primary">Only me</button>
-			                    <input type="checkbox" class="hidden" />
-			                </span>
-						</div>
-					</div>
-				</div>
-				<div class="row">
 					<div class="col-md-6" id="addContainer-rName">
 						<div class="form-group">
 							<label for="recipeName">Recipe Name</label>
@@ -30,65 +15,147 @@
 						<div class="form-group">
 							<label for="photo">Photo</label>
 							<img src="http://www.iconsdb.com/icons/preview/moth-green/berry-xxl.png" id="photo" alt="food"  width="100%"  />
-							<input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+							<p></p>
+							<input type="file" id="addPoto" name="filename" accept="image/gif, image/jpeg, image/png">
 						</div>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8" id="addContainer-rIng">
 						<div class="form-group">
-							<div class="row">
-								<div class="col-md-8" id="addContainer-ingredient">
-									<label for="ingredient">Ingredient</label>
-									<table id="ingredient">	
-	 									<tr>
-	 										<th id="table-1">Ingredient</th>
-	 										<th id="table-2">Quantity</th>
-	 										<th id="table-3">Measurement</th>
-	 										<th id="table-4"></th>	
-	 									</tr>
-	 									<tr>
-	 										<td id="table-1">test1</td>
-	 										<td id="table-2">123</td>
-	 										<td id="table-3">gr</td>
-	 										<td id="table-4" class="table-button">
-	 											<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span></button>
-	 											<div class="divider"/>
-	 											<button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-trash"></span></button>
-	 										</td>
-	 									</tr>
-	 									<tr>
-	 										<td id="table-1">test2</td>
-	 										<td id="table-2">1</td>
-	 										<td id="table-3">bolli</td>
-	 										<td id="table-4" class="table-button">
-	 											<button type="button" class="btn btn-primary btn-xs"><div class="glyphicon glyphicon-edit"></div></button>
-	 											<div class="divider"/>
-	 											<button type="button" class="btn btn-primary btn-xs"><div class="glyphicon glyphicon-trash"></div></button>
-	 										</td>
-	 									</tr>
-	 									<tr>
-	 										<td>
-	 											<input type="text" placeholder="Search for add in table...">
-	 										</td>
-	 										<td><input type="number" min="0.0" step="0.01" max="1000" placeholder="0"></td>
-	 										<td>
-	 											<select>
-	 												<option>tsk</option>
-	 												<option>g</option>
-	 												<option>kg</option>
-	 												<option>bolli</option>
-	 												<option>stk</option>
-	 											</select>
-											</td>	
-	 										<td>
-	 											<button type="button" class="btn btn-primary btn-xs">
-	 												<span class="glyphicon glyphicon-plus"></span>
-	 											</button>
-	 										</td>
-	 									</tr>
-									</table>
+							<div id="addContainer-cat">
+								<label for="categorize">Categorize Your Recipe (optional)</label>	
+								<div id="categorize">
+									<div clas="form-group">
+										<div class="col-sm-3" id="catbox">
+											<span class="button-checkbox" checker>
+										    	<button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+									    		<input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+										  		<button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+										 	   <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+										</div>
+										<div class="col-sm-3" id"catbox">
+											<span class="button-checkbox" checker>
+										    	<button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+									    		<input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+										  		<button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+										 	   <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag" data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+											<span class="button-checkbox" checker>
+											    <button type="button" class="btn" id="catTag"  data-color="primary">some categories</button>
+											    <input type="checkbox" class="hidden" />
+											</span>
+										</div>
+									</div>
 								</div>
-							</div>
+							</div>	
 						</div>	
+					</div>
+				</div>
+				<div class="row">		
+					<div class="col-md-8" id="addContainer-ingredient">
+						<label for="ingredient">Ingredient</label>
+						<table class="table table-hover" id="ingredient">	
+								<tr>
+									<th id="table-1">Ingredient</th>
+									<th id="table-2">Quantity</th>
+									<th id="table-3">Measurement</th>
+									<th id="table-4">Edit / Delete</th>	
+								</tr>
+								<tr>
+									<td id="table-1">test1</td>
+									<td id="table-2">123</td>
+									<td id="table-3">gr</td>
+									<td id="table-4" class="table-button">
+										<div id="box-align">
+											<button type="button" class="btn btn-primary btn-xs">
+												<div class="glyphicon glyphicon-edit" id="ingButton">		
+												</div>
+											</button>
+											&nbsp;
+											<button type="button" class="btn btn-primary btn-xs">
+												<div class="glyphicon glyphicon-trash" id="ingButton">			
+												</div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td id="table-1">test2</td>
+									<td id="table-2">1</td>
+									<td id="table-3">bolli</td>
+									<td id="table-4" class="table-button">
+										<div id="box-align">
+											<button type="button" class="btn btn-primary btn-xs">
+												<div class="glyphicon glyphicon-edit" id="ingButton">		
+												</div>
+											</button>
+											&nbsp;
+											<button type="button" class="btn btn-primary btn-xs">
+												<div class="glyphicon glyphicon-trash" id="ingButton">			
+												</div>
+											</button>
+										</div>
+									</td>
+								</tr>
+								<tr>	
+									<td id="table-1">
+										<input type="text" placeholder="Search for add in table...">
+									</td>
+									<td id="table-2">
+										<input type="number" min="0.0" step="0.01" max="999" placeholder="0">
+									</td>
+									<td id="table-3">
+										<select>
+											<option>tsk</option>
+											<option>g</option>
+											<option>kg</option>
+											<option>bolli</option>
+											<option>stk</option>
+										</select>	
+									</td>
+									<td id="table-4" class="table-button">
+										<div id="box-align">
+											<button type="button" class="btn btn-primary btn-xs" id="ingButtonPlus">
+												<span class="glyphicon glyphicon-plus"></span>
+											</button>
+										</div>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<div id="addContainer-qD">
+					<div class="row">	
+						<div class="form-group" >
+							<div class="col-md-6" id="addContainer-quickNotes">
+								<label for="quickNotes">Quick Description</label>
+								<textarea class="form-control" id="quickNotes" rows="3" placeholder="Example: Here's a perky variation on pork chops and mushroom gravy. Coat the chops with a mixture of bread crumbs and Parmesan cheese before browning."></textarea>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">		
@@ -104,37 +171,66 @@
 					<div class="form-group">
 						<div class="col-md-8" id="addContainer-prep">
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-4" id="preper">
 									<label for="prepTime">Prep Time</label>
 								    <input type="text" class="form-control" id="prepTime" placeholder="Example: 10 minutes">
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-4" id="preper">
 									<label for="cookTime">Cook Time</label>
 								    <input type="text" class="form-control" id="cookTime" placeholder="Example: 15 minutes.">
 								</div>
+								<div class="col-md-4" id="preper">
+									<label for="addTag">Personalized Tag</label>
+									<input type="text" class="form-control" id="addTag" placeholder="Example: #Burgerheaven">
+								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-4">	
-									<label for="readyIn">Ready In (optional)</label>
+								<div class="col-md-4" id="preper">	
+									<label for="readyIn">Ready In</label>
 							    	<input type="text" class="form-control" id="readyIn" placeholder="Example: 15 minutes.">
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-4" id="preper">
 									<label for="numbServ">Number of Servings</label>
 									<input type="text" class="form-control" id="numbServ" placeholder="Example: 4">
 								</div>
+								<div class="col-md-4" id="preper">
+									<label for="addTag">Personalized Tag</label>
+									<input type="text" class="form-control" id="addTag" placeholder="Example: #Smoothie">
+								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-4">
-									<label for="recipeYield">Recipe Yield (optional)</label>
+								<div class="col-md-4" id="preper">
+									<label for="recipeYield">Recipe Yield</label>
 							    	<input type="text" class="form-control" id="recipeYield" placeholder="Example: One loaf">
 								</div>
-								<div class="col-md-4">
-									
+								<div class="col-md-4" id="preper">
+									<label for="addTag">Personalized Tag</label>
+									<input type="text" class="form-control" id="addTag" placeholder="Example: #Smoothie">
+								</div>
+								<div class="col-md-4" id="preper">
+									<label for="addTag">Personalized Tag</label>
+									<input type="text" class="form-control" id="addTag" placeholder="Example: #Lowcarb">
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>	
+				<div class="row">
+					<div class="col-md-8" id="addContainer-see"> 
+						<label for="whoSee">Who should be able to see this recipe?</label>
+						<div class="form-group" id="whoSee">
+							<span class="button-checkbox" checker>
+			                    <button type="button" class="btn" data-color="primary">Everyone</button>
+			                    <input type="checkbox" class="hidden" />
+			                </span>
+			                <span class="button-checkbox" checker>
+			                    <button type="button" class="btn" data-color="primary">Only me</button>
+			                    <input type="checkbox" class="hidden" />
+			                </span>
+						</div>
+					</div>
+				</div>
 				<div class="row">	
 					<div class="form-group" >
 						<div class="col-md-6" id="addContainer-notes">
@@ -142,102 +238,7 @@
 							<textarea class="form-control" id="notes" rows="3" placeholder="Example: to thiken sauce, use cream."></textarea>
 						</div>
 					</div>
-				</div>
-				<div id="addContainer-cat">
-				<label for="categorize">Categorize Your Recipe (optional)</label>	
-				<div class="row" id="categorize">
-					<div clas="form-group">
-						<div class="col-md-2">
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-						</div>
-						<div class="col-md-2">
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-						</div>
-						<div class="col-md-2">
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-							<span class="button-checkbox" checker>
-							    <button type="button" class="btn" data-color="primary">some categories</button>
-							    <input type="checkbox" class="hidden" />
-							</span>
-						</div>
-					</div>
-				</div>
-				</div>
-				<div id="addContainer-qD">
-					<div class="row">	
-						<div class="form-group" >
-							<div class="col-md-6">
-								<label for="quickNotes">Quick Description</label>
-								<textarea class="form-control" id="quickNotes" rows="3" placeholder="Example: Here's a perky variation on pork chops and mushroom gravy. Coat the chops with a mixture of bread crumbs and Parmesan cheese before browning."></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
+				</div>	
 				<div id="addContainer-subsbutton">
 					<div class="row">
 						<div clas="form-group">

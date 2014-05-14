@@ -1,0 +1,9 @@
+<p>To: {{message.recID}}</p>
+<ul ng-repeat="user in users">
+	<li ng-click="message.recID = user._id">{{user.local.name}}</li>
+</ul>
+
+<input type="text" ng-model="message.title" placeholder="Title"/>
+<input type="text" ng-model="message.message" placeholder="Body"/>
+
+<button type="button">Send</button>
