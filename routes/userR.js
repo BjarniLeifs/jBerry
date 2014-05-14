@@ -48,7 +48,16 @@ module.exports = function(app, passport, mongoose) {
           throw err;
     });
 
-    res.send("User: " + req.body.name + " sregistered");
+    res.send("User: " + req.body.name + " registered");
+  });
+
+  app.get('api/userinfo', function(req, res) {
+    if(req.user) {
+      res.send(req.user);
+    }
+    else {
+      res.send("Not logged in");
+    }
   });
 
   app.get('/registerFailure', function(req, res, next) {
