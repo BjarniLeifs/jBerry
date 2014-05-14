@@ -27,7 +27,7 @@ app.configure(function() {
 
   // required for passport
   app.use(express.session({ secret: 'fdZwwX3124dcW4324Fwwcl5g5',
-                            expires : new Date(Date.now() + 360000000), })); // session secret
+                            expires : new Date(Date.now() + 360000000)})); // session secret
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
   app.use(flash()); // use connect-flash for flash messages stored in session
