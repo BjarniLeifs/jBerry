@@ -8,10 +8,13 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 		lastName : "",
 		email : "",
 		height : "",
-		weight : ""
+		weight : "",
+		birthday : ""
 	};
 
 	$scope.timeline = "";
+
+
 
 	profileFactory.getProfile().then(function(respond) {
 		if(respond[0].status == 200 && respond[1].status == 200) {

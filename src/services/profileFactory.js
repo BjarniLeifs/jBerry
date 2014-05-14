@@ -29,7 +29,8 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 						lastName	: data.lastName,
 						height		: data.height,
 						weight		: data.weight,
-						email		: data.email 
+						email		: data.email,
+						birthday	: data.birthday
 					});
 
 			},

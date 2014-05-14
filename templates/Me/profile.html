@@ -24,11 +24,12 @@
 			<div  class="profileContainer-fluid well span6" >
 				<div class="profileContainer-left-userInfo" >
 					<div class="row-fluid">
-						<p>i am {{profile.user}}</p>
-						<p>i am {{profile.firstName}} {{user.lastName}}</p>
-						<p>i am {{profile.email}}</p>
-						<p>i am {{profile.height}}</p>
-						<p>i am {{profile.weight}}</p>
+						<p>FirstName {{profile.firstName}}</p>
+						<p>LastName {{profile.lastName}} </p>
+						<p>email {{profile.email}}</p>
+						<p>height {{profile.height}}</p>
+						<p>weight {{profile.weight}}</p>
+						<p>birthday {{profile.birthday}}</p>
 					</div>
 				</div>
 
@@ -56,6 +57,8 @@
 
 											<input placeholder="Your weight.." ng-model="profile.weight"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
 
+											<input placeholder="Your birthday.." ng-model="profile.birthday"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+
 
 
 										</form>
@@ -67,24 +70,7 @@
 									<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
 								</div>
 							</div>
-					 <!--    <div class="modal-content">
-					    	<form role="form">
-							  <div class="form-group">
-							  	<div class="input-forms">
-								    <label for="exampleInputEmail1">First name</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-								    <label for="exampleInputEmail1">Last name</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-								    <label for="exampleInputEmail1">Email address</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-								    <label for="exampleInputEmail1">Your height</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-								    <label for="exampleInputEmail1">Your weight</label>
-								    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-								</div>
-							  </div>
-							</form>
-						</div> -->
+					 
 					</div>
 				</div>
 
