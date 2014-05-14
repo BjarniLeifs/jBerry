@@ -26,7 +26,8 @@ app.configure(function() {
   app.use(express.bodyParser()); // get information from html forms
 
   // required for passport
-  app.use(express.session({ secret: 'fdZwwX3124dcW4324Fwwcl5g5' })); // session secret
+  app.use(express.session({ secret: 'fdZwwX3124dcW4324Fwwcl5g5',
+                            expires : new Date(Date.now() + 360000000)})); // session secret
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
   app.use(flash()); // use connect-flash for flash messages stored in session
@@ -39,6 +40,7 @@ require('./routes/userR.js')(app, passport, mongoose);
 require('./routes/foodR.js')(app, mongoose);
 require('./routes/blogR.js')(app, passport, mongoose);
 require('./routes/listR.js')(app, passport, mongoose);
+
 
 // launch 
 app.listen(port);

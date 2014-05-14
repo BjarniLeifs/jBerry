@@ -3,8 +3,11 @@
 var List = require('../models/list');
 var Matis = require('../models/food');
 var Recipe = require('../models/recipe');
+var Calender = require('../models/calender');
 
 module.exports = function(app, passport, mongoose) {
+
+// Lists
 
   app.post('/api/list/:type', function(req, res) {
     List.findOne({"userID" : req.user._id}, function(err, data) {
@@ -54,11 +57,28 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
-};
+// Calender
 
-function isSupersetF(val, reqTags) { 
-  return reqTags.indexOf(val) >= 0; 
-}
+  app.get('/api/calender', function(req, res) {
+    Calender.findOne({"userID" : req.user._id}, function(err, data) {
+      if(err)
+        throw err;
+      res.send(data);
+    });
+  });
+
+  app.post('/api/calender', function(req, res) {
+    newCalender = new Calender();
+    newCalender.userID = req.user._id;
+    newCalender.calenderObj = req.body.calender;
+    newCalender.save();
+  });
+
+  app.delete('/api/calender', function(req, res) {
+    Calender.find({ "calenderObj" : req.body.calender }).remove().exec();
+  });
+
+};
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {

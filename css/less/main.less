@@ -99,6 +99,7 @@
 								white-space: nowrap;
 								line-height: 0px;
 								text-align: center;
+								font-size: 22px;
 							}
 						}
 
@@ -110,22 +111,23 @@
 							bottom: 0;
 							box-shadow: inset 0 1px #c6d0da;
 
-							span , i {
+							.icon-wrapper {
 								display: inline-block;
-								padding-left: 35px;
 								font-size: 23px;
-								top: -5px;
-								right: -35px;
 								position: relative;
+								height: 36px;
+								margin-right: 61px;
+								float: right;
 
-								&:hover {
-									color: #000;
-									cursor: pointer;
+								span , i {
+									position: absolute;
+									top: 8px;
+
+									&:hover {
+										color: #000;
+										cursor: pointer;
+									}
 								}
-							}
-
-							i {
-								top: -10px;
 							}
 						}
 					}
