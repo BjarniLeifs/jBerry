@@ -3,6 +3,7 @@ app.controller("MainController", ["$scope", "$location", "userFactory", function
 	$scope.isSideBar = true;
 	$scope.events = [];
 	$scope.eventSource = {};
+	$scope.user = "";
 
 	$scope.calendarConfig = {
 		height: $(document).height(),

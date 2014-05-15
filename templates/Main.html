@@ -19,7 +19,7 @@
 							</div>
 							<div class="profile-footer">
 								<div class='icon-wrapper'>
-									<span class="glyphicon glyphicon-cog"></span>
+									<span class="glyphicon glyphicon-cog" ng-click="setTemplate('Me/settings.html', true)"></span>
 								</div>
 								<div class='icon-wrapper'>
 									<i class="fa fa-eye"></i>
@@ -27,9 +27,11 @@
 								<div class='icon-wrapper'>
 									<span class="glyphicon glyphicon-envelope" ng-click="setTemplate('messages/messages.html', true)"></span>
 								</div>
+								
+
 							</div>
 						</li>
-
+						
 						<!-- Task - 1 [Profile]-->
 
 						<li class="cp-item" ng-click="setTemplate('Me/profile.html', true)">
