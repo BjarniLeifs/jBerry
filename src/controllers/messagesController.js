@@ -29,6 +29,7 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 
 		$scope.setRec = function(user) {
 			$scope.message.recID = user._id;
+			$scope.message.senName = user.local.name;
 		};
 
 		messagesFactory.getUsers().success(function(data, status, headers, config) {
