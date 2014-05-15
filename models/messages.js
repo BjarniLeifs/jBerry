@@ -7,6 +7,7 @@ var messageSchema = mongoose.Schema({
 
 	senderID	: String,
 	recID		: String,
+	senName		: String,
     title       : String,
     message     : String,
     date        : { type: Date, default: Date.now },

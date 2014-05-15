@@ -1,8 +1,4 @@
 <div id="MessageContainer" ng-controller="messagesController">
-	<button type="button" data-toggle="modal" data-target=".bs-example-modal-sm" class="bn btn-labeled bn-write">
-		<span class="btn-label"><i class="glyphicon glyphicon-pencil"></i>
-		</span>Write
-	</button>
 	<button type="button" class="bn btn-labeled bn-info">
 		<span class="btn-label"><i class="glyphicon glyphicon-refresh"></i>
 		</span>Refresh
@@ -20,42 +16,3 @@
 
 	</tabset>
 </div>
-
-
-<!-- Write a message -->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-sm" style="width: 35%">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"></button>
-				<h4 class="modal-title">Email messenger </h4></div>
-				<div class="modal-body">
-					<div class="bootbox-body">
-						<form class="bootbox-form">
-							<p>To: {{message.recID}}</p>
-							<ul ng-repeat="user in users">
-								<li ng-click="message.recID = user._id">{{user.name}}</li>
-							</ul><input placeholder="To.." ng-model="message.messageTo" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-							<legend>Subject: </legend><input placeholder="Subject.." ng-model="message.title" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-							
-							<legend>Whats up?</legend>
-							<div class="required-field-block">
-								<textarea rows="3" class="form-control" placeholder="And your message is?" ng-model="message.message"></textarea>
-								<div class="required-icon">
-									<div class="text">*</div>
-								</div>
-							</div>
-
-						</form>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button data-bb-handler="cancel" type="button" ng-click="$location.path('/#/')" class="btn btn-default">Cancel</button>
-					
-					<button data-bb-handler="confirm" type="button" ng-click="sendMessage()" class="btn btn-success">Save!</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-

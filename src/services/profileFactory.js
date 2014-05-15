@@ -18,7 +18,7 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 			getProfile: function(){
 				return $q.all([
 					$http.get('http://localhost:3000/api/profile'),
-						$http.get("http://localhost:3000/api/blog/myblogs")
+						$http.get("http://localhost:3000/api/blog")
 				]);
 			},
 			changeProfile: function(data){
@@ -29,9 +29,18 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 						lastName	: data.lastName,
 						height		: data.height,
 						weight		: data.weight,
-						email		: data.email 
+						email		: data.email,
+						birthday	: data.birthday
 					});
 
 			},
+			pushPost: function(data){
+				return $http.post("http://localhost:3000/api/blog", 
+					{	title	:data.title, 
+						body	:data.body, 
+						tags	:data.tags
+					});
+			},
+			
 		};
 	}]);

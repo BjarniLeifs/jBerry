@@ -160,7 +160,7 @@
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-image-wrapper {
   width: 100px;
   position: absolute;
-  left: 55px;
+  left: 34%;
   top: 8px;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-image-wrapper img {
@@ -556,7 +556,7 @@ body {
 }
 #addContainer #addContainer-left {
   margin-right: 0em;
-  margin-top: 4em;
+  margin-top: 1.5em;
 }
 #addContainer #addContainer-left #addContainer-see {
   margin-left: 4em;
@@ -599,7 +599,7 @@ body {
   display: inline-flex;
 }
 #addContainer #addContainer-left #addContainer-ingredient #ingredient .table-button #box-align {
-  margin-left: 1.2em;
+  width: 9em;
 }
 #addContainer #addContainer-left #addContainer-ingredient #ingredient #table-1 {
   width: 60%;
@@ -608,16 +608,25 @@ body {
   width: 15%;
   text-align: center;
 }
+#addContainer #addContainer-left #addContainer-ingredient #ingredient #table-2 .addQuant {
+  margin-left: -3em;
+}
 #addContainer #addContainer-left #addContainer-ingredient #ingredient #table-3 {
   width: 10%;
   text-align: center;
+}
+#addContainer #addContainer-left #addContainer-ingredient #ingredient #table-3 #mesureSelect {
+  height: 1.9em;
+  width: 4em;
+  margin-left: -1em;
 }
 #addContainer #addContainer-left #addContainer-ingredient #ingredient #table-4 {
   width: 100%;
   text-align: center;
 }
 #addContainer #addContainer-left #addContainer-ingredient #ingButtonPlus {
-  width: 5.2em;
+  width: 4.77em;
+  height: 2.25em;
 }
 #addContainer #addContainer-left #addContainer-direction {
   width: 78%;
@@ -644,10 +653,10 @@ body {
 }
 #addContainer #addContainer-left #addContainer-qD {
   margin-left: 4em;
-  width: 77%;
+  width: 78%;
 }
 #addContainer #addContainer-left #addContainer-qD #addContainer-quickNotes {
-  width: 100%;
+  width: 81.5%;
 }
 #addContainer #addContainer-left #addContainer-subsbutton {
   margin-top: 2em;
@@ -656,8 +665,8 @@ body {
 }
 #addContainer #addContainer-right {
   width: 24em;
-  margin-left: 0em;
-  margin-top: 4em;
+  margin-left: -2.5em;
+  margin-top: 1.5em;
   border: solid;
 }
 /* Recipes */
@@ -1223,6 +1232,28 @@ body {
   width: 60%;
   float: right;
 }
+#jkP7 .thumbnail,
+jkP4 .thumbnail,
+dWp4 .thumbnail {
+  width: 13.5em;
+}
+#jkP7 .thumbnail .boxSize,
+jkP4 .thumbnail .boxSize,
+dWp4 .thumbnail .boxSize {
+  width: 6em;
+}
+#jkP4 .thumbnail {
+  width: 13.5em;
+}
+#jkP4 .thumbnail .boxSize {
+  width: 6em;
+}
+#dWp4 .thumbnail {
+  width: 13.5em;
+}
+#dWp4 .thumbnail .boxSize {
+  width: 6em;
+}
 /* Messages*/
 #MessageContainer {
   position: absolute;
@@ -1503,4 +1534,50 @@ bn.write {
   background-color: #fcfcfc;
   border-color: #ccc;
   outline: none;
+}
+/* Settings */
+#settingsContainer {
+  position: ;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+  height: 100%;
+}
+#settingsContainer #settingsContainer-img .settingsContainer-img-wrapper .btn-label {
+  position: relative;
+  left: -12px;
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px 0 0 3px;
+}
+#settingsContainer #settingsContainer-img .settingsContainer-img-wrapper .btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* Profile*/
+.profileContainer {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10%;
+  padding: 10px;
+  height: 1000px;
+  overflow: scroll;
+}
+.profileContainer .profileContainer-left {
+  height: 100%;
+  margin-top: 10%;
+  width: 24%;
+  position: fixed;
+}
+.profileContainer .profileContainer-left .profileContainer-left-userInfo {
+  float: right;
+  margin-right: 10%;
+}
+.profileContainer .profileContainer-timeline-feed {
+  width: auto;
+  height: auto;
+  margin: -3em auto 2em auto;
 }
