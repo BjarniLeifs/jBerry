@@ -11,6 +11,9 @@
 		<span class="btn-label"><i class="glyphicon glyphicon-trash"></i>
 		</span>Trash
 	</button></th> <p> vantar betri takka hér fyrir ofan, kannski staðsetja þá annarsstaðar</p>
+								<ul>
+								<li ng-repeat="user in users">Nafn: {{user.local.name}}</li>
+							</ul>
 	<tabset>	
 
 		<tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="tab.active" >
@@ -33,9 +36,9 @@
 					<div class="bootbox-body">
 						<form class="bootbox-form">
 							<p>To: {{message.recID}}</p>
-							<ul ng-repeat="user in users">
-								<li ng-click="message.recID = user._id">{{user.local.name}}</li>
-							</ul><input placeholder="To.." ng-model="message.messageTo" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
+							<ul>
+								<li ng-repeat="user in users">Nafn: {{user.local.name}}</li>
+							</ul>
 							<legend>Subject: </legend><input placeholder="Subject.." ng-model="message.title" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
 							
 							<legend>Whats up?</legend>

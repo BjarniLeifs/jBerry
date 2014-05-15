@@ -27,8 +27,14 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 			message : ""
 		};
 
-		$scope.users = messagesFactory.getUsers();
-		console.log(users);
+		messagesFactory.getUsers().success(function(data, status, headers,config) {
+			if(status == 200) {
+				$scope.users = data;
+			}
+		}).error(function(){
+			$location.path("/login");
+		});
+
 		$scope.messages = messagesFactory.getMessages();
 
 		$scope.sendMessage = function(){
