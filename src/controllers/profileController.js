@@ -1,4 +1,4 @@
-app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", "userFactory", 
+	app.controller("profileController", ["$scope", "$location", "$http", "profileFactory", "userFactory", 
 	function($scope, $location, $http, profileFactory, userFactory) {
 		console.log("in controller");
 
@@ -12,14 +12,25 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 		birthday : ""
 	};
 
+	$scope.posts = "";
 	$scope.timeline = "";
+
+	$scope.post = function(){
+		var data = $scope.timeline;
+		console.log(data);
+		profileFactory.pushPost(data).success(function(data,status, headers,config){
+			console.log(status);
+		}).error(function(){
+				console.log("error posting");
+			});
+	};
 
 
 
 	profileFactory.getProfile().then(function(respond) {
 		if(respond[0].status == 200 && respond[1].status == 200) {
 			$scope.profile = respond[0].data;
-			$scope.timeline = respond[1].data;
+			$scope.posts = respond[1].data;
 		} else {
 			$location.path("/login");
 		}
@@ -31,6 +42,7 @@ app.controller("profileController", ["$scope", "$location", "$http", "profileFac
 
 		profileFactory.changeProfile(data).success(function(data, status,headers,config){
 			console.log(status);
+			$location.path("/");
 		}).error(function(){
 			console.log("Error");
 		});

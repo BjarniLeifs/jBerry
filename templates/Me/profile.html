@@ -1,104 +1,72 @@
 <div id="profileContainer" class="profileContainer" ng-controller="profileController">
-	<div id="ProfileContrainer-Left" class="col-md-2 column">
-		<div class="profileContainer-left"> <br>
-			<div class="profileContainer-fluid well span6">
-				<div class="profileContainer-left-userPhoto" >
-					<div class="row-fluid">
-						<img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
-					</div>
-				</div>
-				<div class="popover-markup"> 
-					<a class="trigger" data-placement="bottom">Change pic</a> 
-					<div class="popInput">
-						<div class="head hide">Url..</div>
-						<div class="content hide">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="well well-sm">
+				<form>
+					<div class="row">
+						<div class="col-md-4">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Whats your url?">
+								<label for="name">
+									Title</label>
+									<input ng-model="timeline.title"type="text" class="form-control" id="name" placeholder="Title" required="required" />
+</br>
+									<label for="tags">
+									Tags</label>
+									<input ng-model="timeline.tags"type="text" class="form-control" id="name" placeholder="Place your tags" required="required" />
+								</div>
+
+								
+
+								<div class="form-group">
+									<label for="subject">
+										Subject</label>
+										<select id="subject" name="subject" class="form-control" required="required">
+											<option value="na" selected="">Choose One:</option>
+											<option value="service">Blog</option>
+											<option value="suggestions">Food</option>
+											<option value="product">Trainings</option>
+										</select>
+									</div>
+
+									
+								</div>
+								
+								<div class="col-md-8">
+									<div class="form-group">
+										<label for="name">
+											Post</label>
+											<textarea ng-model="timeline.body"name="message" id="message" class="form-control" rows="8.5" cols="25" required="required"
+											placeholder="Whats up?"></textarea>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<button ng-click="post()"type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+											Post it!</button>
+										</div>
+									</div>
+								</form>
 							</div>
-							<button type="submit" class="btn btn-default btn-block">Submit</button>
+						</div>
+					</div>
+					<div ng-repeat="post in posts" id="ProfileContainer-Timeline" class="col-md-12 column">
+						<div class="profileContainer-timeline">
+							<br><br>
+							<div class="profileContainer-fluid well span6">
+
+								<div class="profileContainer-timeline-feed">
+									<div class="col-md-12">
+										<h1>{{post.title}}</h1>
+										<p>{{post.body}}</p>
+									</div>
+									<hr>
+									<span class="badge">Posted 2012-08-02 20:47:04</span>
+									<div ng-repeat="tag in post.tags" class="pull-right">
+
+										<span class="label label-success">{{tag}}</span> 
+									</div>         
+								</div>
+								<hr>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>	
-
-			<div  class="profileContainer-fluid well span6" >
-				<div class="profileContainer-left-userInfo" >
-					<div class="row-fluid">
-						<p>FirstName {{profile.firstName}}</p>
-						<p>LastName {{profile.lastName}} </p>
-						<p>email {{profile.email}}</p>
-						<p>height {{profile.height}}</p>
-						<p>weight {{profile.weight}}</p>
-						<p>birthday {{profile.birthday}}</p>
-					</div>
-				</div>
-
-				<!-- Small modal -->
-				<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-sm" style="width: 35%">
-
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true"></button>
-								<h4 class="modal-title">What would you like to change {{profile.user}}</h4></div>
-								<div class="modal-body">
-									<div class="bootbox-body">
-										<form class="bootbox-form">
-											<input placeholder="First Name.." ng-model="profile.firstName" style="margin: 2% "class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-
-											<input placeholder="Last Name.." ng-model="profile.lastName"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-											<input placeholder="Email Name.."  ng-model="profile.email"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-											<input placeholder="Your height.." ng-model="profile.height"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-											<input placeholder="Your weight.." ng-model="profile.weight"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-											<input placeholder="Your birthday.." ng-model="profile.birthday"  style="margin: 2% " class="bootbox-input bootbox-input-text form-control" autocomplete="off" type="text">
-
-
-
-										</form>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button data-bb-handler="cancel" type="button" class="btn btn-default">Cancel</button>
-									
-									<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
-								</div>
-							</div>
-					 
-					</div>
-				</div>
-
-
-
-			</div>
-		</div>
-	</div>
-	<div ng-repeat="post in timeline" id="ProfileContainer-Timeline" class="col-md-8 column">
-		<div class="profileContainer-timeline">
-			<br><br>
-			<div class="profileContainer-fluid well span6">
-
-				<div class="profileContainer-timeline-feed">
-					<div class="col-md-12">
-						<h1>{{post.title}}</h1>
-						<p>{{post.body}}</p>
-					</div>
-					<hr>
-					<span class="badge">Posted 2012-08-02 20:47:04</span>
-					<div ng-repeat="tag in post.tags" class="pull-right">
-
-						<span class="label label-success">{{tag}}</span> 
-
-					</div>         
-				</div>
-				<hr>
-			</div>
-		</div>
-	</div>
-</div>

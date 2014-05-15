@@ -57,7 +57,6 @@ app.controller("statisticController", ["$scope", "$location", function($scope, $
         setTimeout(function() { 
             $scope.destroy('plotNutrients');
             $scope.repaint('plotNutrients');
-        }
-        , 1000);
+        }, 1000);
     });
 }]);
