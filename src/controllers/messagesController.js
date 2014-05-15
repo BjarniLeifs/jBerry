@@ -3,8 +3,8 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 		console.log("controller");
 		$scope.tabs = [
 			{
-				name:	"All emails",
-				url:	"templates/messages/allEmail.html"
+				name:	"New message",
+				url:	"templates/messages/write.html"
 			},
 			{
 				name:	"Inbox",
@@ -27,21 +27,31 @@ app.controller('messagesController', ['$scope', "$location", "$http", "messagesF
 			message : ""
 		};
 
-		messagesFactory.getUsers().success(function(data, status, headers,config) {
+		$scope.setRec = function(user) {
+			$scope.message.recID = user._id;
+		};
+
+		messagesFactory.getUsers().success(function(data, status, headers, config) {
 			if(status == 200) {
 				$scope.users = data;
 			}
 		}).error(function(){
-			$location.path("/login");
+			$scope.users.local.name = "Error";
 		});
 
-		$scope.messages = messagesFactory.getMessages();
+		messagesFactory.getMessages().success(function(data, status, headers, config) {
+			if(status == 200) {
+				$scope.messages = data;
+			}
+		}).error(function(){
+			$scope.messages = "Error";
+		});
 
 		$scope.sendMessage = function(){
 			console.log("controller sendMessage");
 			console.log($scope.message.recID);
-			if(message.recID !== "" && message.title !== "" && message.message !== "") {
-				messagesFactory.sendMessage(message);
+			if($scope.message.recID !== "" && $scope.message.title !== "" && $scope.message.message !== "") {
+				messagesFactory.sendMessage($scope.message);
 			}
 		};
 

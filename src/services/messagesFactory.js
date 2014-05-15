@@ -3,9 +3,10 @@ app.factory("messagesFactory", ["$location", "$http", "$q",
 		return {
 
 			sendMessage: function(data){
-				return $http.post("http://localhost:3000/api/blog", 
-					{	title	: data.title, 
-						message	: data.body,
+				return $http.post("http://localhost:3000/api/messages", 
+					{	
+						title	: data.title, 
+						message	: data.message,
 						recID	: data.recID
 					}
 				);

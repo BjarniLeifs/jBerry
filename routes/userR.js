@@ -153,8 +153,8 @@ module.exports = function(app, passport, mongoose) {
     newMessage.senderID = req.body.senderID;
     newMessage.recID = req.body.recID;
     newMessage.title = req.body.title;
-    newMessage.date = req.body.date;
     newMessage.read = false;
+    newMessage.message = req.body.message;
     newMessage.save(function(err) {
       if (err)
         throw err;
