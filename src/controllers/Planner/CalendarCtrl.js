@@ -1,4 +1,4 @@
-app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $location) {
+app.controller("CalendarCtrl", ["$scope", "$location", "calendarFactory", function($scope, $location, calendarFactory) {
   $scope.events = [];
   $scope.eventSource = {};
 
@@ -32,6 +32,8 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
           className: [ui.helper[0].attributes[0].value]
         });
       });
+
+      $scope.update();
     },
     dayClick: function(date, allDay, jsEvent, view) {
       if(allDay) {
@@ -39,6 +41,12 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
           $scope.planner.fullCalendar('changeView', 'agendaDay').fullCalendar('gotoDate', date.getFullYear(), date.getMonth(), date.getDate());
         }
       }
+    },
+    eventDragStop: function(event, jsEvent, ui, view) { 
+      $scope.update();
+    },
+    eventResizeStop: function(event, jsEvent, ui, view) {
+      $scope.update();
     },
     eventRender: function(event, element) {
       element.bind('dblclick', function(event) {
@@ -48,12 +56,33 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
           if($scope.events[i].title === name) {
             //Remove Event
             $scope.events.splice(i,1);
+            $scope.update();
             break;
           }
         }
-        $scope.$apply();
       });
     }
+  };
+
+  calendarFactory.getCalender().success(function(data, status, headers, config) {
+    if(status === 200) {
+      if(data !== "") {   //Ignore empty
+        for(var i = 0; i < data.calenderObj.length; i++) {
+          $scope.events.push({
+            title: data.calenderObj[i].title,
+            start: data.calenderObj[i].start,
+            end: data.calenderObj[i].end,
+            className: data.calenderObj[i].className
+          });
+        }
+      }
+    }
+  }).error(function(){
+    console.log("Error");
+  });
+
+  $scope.update = function() {
+    calendarFactory.setCalender($scope.events);
   };
 
   $scope.listRemove = function(index, type) {
@@ -62,7 +91,7 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
 
   //Get Calander Width
   $scope.getWidth = function() {
-    return ($(document).width() - ((($(document).width() * 0.1666666667) * 2 )- 20));
+    return ($(document).width() - ((($(document).width() * 0.1666666667) * 2 ) - 20));
   };
 
   angular.element(document).ready(function () {
