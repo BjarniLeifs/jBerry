@@ -11,7 +11,25 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.put('/api/settrainer', function(req, res) {
-    User.update({"_id" : req.body.ID}, {"isTrainer" : "true"});
+    console.log(req.body.ID);
+    User.update({"_id" : req.body.ID}, {"isTrainer" : "true"}, function(err){
+      if(err)
+        throw err;
+      res.send(200, "Trainer set");
+    });
+  });
+
+  app.post('/api/setcostumer', function(req, res) {
+    User.findOne({"_id" : req.body.tID}, function(err, data) {
+      if(err)
+        throw err;
+      if(!data)
+        console.log("No data");
+      data.customers.push(req.body.userID);
+      data.markModified('customers');
+      data.save();
+      res.send(200, "Customer saved");
+    });
   });
 
 };
