@@ -20,9 +20,11 @@
 		console.log(data);
 		profileFactory.pushPost(data).success(function(data,status, headers,config){
 			console.log(status);
+
 		}).error(function(){
 				console.log("error posting");
 			});
+		$scope.apply();
 	};
 
 
