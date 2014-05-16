@@ -31,9 +31,7 @@ var userSchema = mongoose.Schema({
         name         : String
     },
     isTrainer        : Boolean,
-    trainer          : {
-        customers    : [{userID : String}]
-    }
+    customers        : [{userID : String}]
 
 });
 
