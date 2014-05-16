@@ -11,8 +11,7 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.put('/api/settrainer', function(req, res) {
-    console.log(req.body.ID);
-    User.update({"_id" : req.body.ID}, {"isTrainer" : "true"}, function(err){
+    User.update({"_id" : req.user._id}, {"isTrainer" : "true"}, function(err){
       if(err)
         throw err;
       res.send(200, "Trainer set");
@@ -20,7 +19,7 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.post('/api/setcostumer', function(req, res) {
-    User.findOne({"_id" : req.body.tID}, function(err, data) {
+    User.findOne({"_id" : req.user._id}, function(err, data) {
       if(err)
         throw err;
       if(!data)
