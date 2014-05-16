@@ -49,4 +49,17 @@
 			console.log("Error");
 		});
 	};
+
+	// Put user as a trainer
+	$scope.trainer = function(){
+		profileFactory.ImTrainer().then(function(){
+			console.log("controller trainer");
+		});
+			
+		
+	};
 }]);
+
+
+
+
