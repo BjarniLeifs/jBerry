@@ -1,7 +1,7 @@
 app.controller("addCtrl", ["$scope", "$location", "foodFactory", function($scope, $location, foodFactory) {
 	$scope.ingredients = [];
 	$scope.foods = {};
-	$scope.name = ""
+	$scope.name = "";
 
 	$scope.addIngredient = function() {
 		if($scope.name === "" || $scope.amount === "" || $scope.type === "")

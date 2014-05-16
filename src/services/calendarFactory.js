@@ -7,5 +7,5 @@ app.factory("calendarFactory", ["$location", "$http", function($location, $http)
 		getCalender: function() {
 			return $http.get('http://localhost:3000/api/api/calender');
 		}
-	}
+	};
 }]);
