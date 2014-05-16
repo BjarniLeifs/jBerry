@@ -3,24 +3,20 @@ jBerry
 
 Þriggja vikna áfangi Háskólans í Reykjavík
 
-Install:
+# Install:
 
 npm install -d
+
+# Run
 
 Run grunt task and server:
 
 grunt
 
-Smá git guide:
-Þið breytið skrá/m og vlljið setja þær á github.
-git add (slóð og nafn á skrá)
-git commit -m "Changed this here" (einhver lýsandi, lítill texti)
-git pull origin master
-git push origin master
-Þá á þetta að vera komið ef ekkert merge vesen varð, það er eitthvað sem við hugsum um þegar/ef það kemur.
+The grunt command comcats the JS and CSS files, runs JSHint and runs the server at port 3000 (default)
 
 # How to setup matis database in mongo
 	
 	mongoimport --db jBerry --collection matis --file /path/to/matisDbNold.json
 
-mongodb.exe --dbpath c:/something....
+mongodb.exe --dbpath <path to DB>
