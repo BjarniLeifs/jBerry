@@ -10,7 +10,7 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
-  app.post('/api/settrainer', function(req, res) {
+  app.put('/api/settrainer', function(req, res) {
     User.update({"_id" : req.body.ID}, {"isTrainer" : "true"});
   });
 
