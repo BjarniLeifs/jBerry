@@ -150,11 +150,12 @@ module.exports = function(app, passport, mongoose) {
 
   app.post('/api/messages', function(req, res) {
     var newMessage = new Messages();
-    newMessage.senderID = req.body.senderID;
+    newMessage.senderID = req.user._id;
     newMessage.recID = req.body.recID;
+    newMessage.senName = req.user.local.name;
     newMessage.title = req.body.title;
-    newMessage.date = req.body.date;
     newMessage.read = false;
+    newMessage.message = req.body.message;
     newMessage.save(function(err) {
       if (err)
         throw err;
@@ -167,10 +168,7 @@ module.exports = function(app, passport, mongoose) {
         throw err;
 
       var newMessage = new Messages();
-      newMessage.senderID = req.body.senderID;
-      newMessage.recID = req.body.recID;
-      newMessage.title = req.body.title;
-      newMessage.date = req.body.date;
+      newMessage = data;  
       newMessage.read = true;
 
       // save the user
