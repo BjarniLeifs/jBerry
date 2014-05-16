@@ -160,7 +160,7 @@
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-image-wrapper {
   width: 100px;
   position: absolute;
-  left: 34%;
+  left: calc(50% - 50px);
   top: 8px;
 }
 #Container .container-main #Container-Left #Container-Left-Menu .cp-menu .profile-box .profile-image-wrapper img {

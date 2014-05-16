@@ -1,4 +1,4 @@
-app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $location) {
+app.controller("CalendarCtrl", ["$scope", "$location", "calendarFactory", function($scope, $location, calendarFactory) {
   $scope.events = [];
   $scope.eventSource = {};
 
@@ -32,6 +32,8 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
           className: [ui.helper[0].attributes[0].value]
         });
       });
+
+      $scope.update();
     },
     dayClick: function(date, allDay, jsEvent, view) {
       if(allDay) {
@@ -48,12 +50,25 @@ app.controller("CalendarCtrl", ["$scope", "$location", function($scope, $locatio
           if($scope.events[i].title === name) {
             //Remove Event
             $scope.events.splice(i,1);
+            $scope.update();
             break;
           }
         }
         $scope.$apply();
       });
     }
+  };
+
+  calendarFactory.getCalender().success(function(data, status, headers, config){
+    if(status === 200) {
+      $scope.events = data;
+    }
+  }).error(function(){
+    console.log("Error");
+  });
+
+  $scope.update = function() {
+    calendarFactory.setCalender($scope.events);
   };
 
   $scope.listRemove = function(index, type) {

@@ -68,11 +68,11 @@
 	 									</tr>
 	 									<tr>
 	 										<td>
-	 											<input type="text" placeholder="Search for add in table...">
+	 											<input type="text" placeholder="Search for add in table..." ng-model="name">
 	 										</td>
-	 										<td><input type="number" min="0.0" step="0.01" max="1000" placeholder="0"></td>
+	 										<td><input type="number" min="0.0" step="0.01" max="1000" placeholder="0" ng-model="amount"></td>
 	 										<td>
-	 											<select>
+	 											<select ng-model="type">
 	 												<option>tsk</option>
 	 												<option>g</option>
 	 												<option>kg</option>
