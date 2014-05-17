@@ -4,10 +4,9 @@ app.controller("trainersController", ["$scope", "$location", "trainersFactory",
 		$scope.trainers = "";
 
 
-		trainersFactory.getTrainers().then(function(data){
-			if(data.status == 200){
-				console.log(data.data);
-				$scope.trainers = data.data;
+		trainersFactory.getTrainers().success(function(data, status, headers, config) {
+			if(status === 200){
+				$scope.trainers = data;
 			}
 		});
 	}]);

@@ -24,7 +24,6 @@
 		}).error(function(){
 				console.log("error posting");
 			});
-		$scope.apply();
 	};
 
 
