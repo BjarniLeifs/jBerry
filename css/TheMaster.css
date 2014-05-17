@@ -1,105 +1,120 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 /* Main Less Files */
-#container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-#container #container-header {
+.navbar-fixed-top .container {
   width: 100%;
-  border-bottom: 1px solid #ccc;
-  padding: 1%;
-  height: 6.5em;
 }
-#container #container-header #container-header-form {
-  float: right;
+.navbar-fixed-top .container .navbar-brand {
+  font-size: 1.8em;
+  margin-top: 5px;
 }
-#container #container-header #container-header-form input {
+.navbar-fixed-top .container #container-header-form input {
   color: black;
 }
-#container #container-header #container-header-form li {
+.navbar-fixed-top .container #container-header-form li {
   float: right;
   margin: 10px;
 }
-#container #container-header #container-header-form .checkbox {
+.navbar-fixed-top .container #container-header-form .checkbox {
   float: left;
   margin-top: 5px;
 }
-#container #container-header #container-header-form .input-group {
+.navbar-fixed-top .container #container-header-form .input-group {
   width: 200px;
-  float: right;
   margin: 10px;
+  display: inline-block;
 }
-#container #container-header #container-header-form .input-group .input-group {
+.navbar-fixed-top .container #container-header-form .input-group .input-group {
   margin: 0;
+  display: table;
 }
-#container #container-header #container-header-form button {
+.navbar-fixed-top .container #container-header-form button {
   float: right;
   margin: 10px;
 }
-#container #container-header .error {
+.navbar-fixed-top .container .error {
   position: absolute;
   right: 25px;
   top: 65px;
   color: #da3b3b;
   font-weight: bolder;
 }
-#container #container-main {
-  width: 100%;
-  height: 100%;
-}
-#container #container-main #container-register {
+.jumbotron {
+  height: calc(100% - 100px);
+  background-color: #fff;
   position: absolute;
-  right: 5em;
-  float: right;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+}
+.jumbotron .container {
+  position: absolute;
+  top: calc(50% - 221px);
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.jumbotron .container .col-lg-4 {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+.jumbotron .container .col-lg-4 #container-register {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 2%;
-  height: 30em;
-  width: 22em;
+  height: auto;
   box-shadow: 2px 4px 14px #000;
+  background-color: #fff;
 }
-#container #container-main #container-register #container-register-header h2 {
+.jumbotron .container .col-lg-4 #container-register #container-register-header h2 {
   font: 25px Georgia, "Times New Roman", Times, serif;
-  padding: 0px 0px 10px 20px;
+  padding: 10px 0px 10px 20px;
   display: block;
   border-bottom: 1px solid #DADADA;
   color: #888;
   font-weight: bolder;
 }
-#container #container-main #container-register #container-register-form {
-  padding: 2% 7% 2% 7%;
+.jumbotron .container .col-lg-4 #container-register #container-register-form {
+  padding: 20px 7% 0px 7%;
 }
-#container #container-main #container-register #container-register-form .input-group {
+.jumbotron .container .col-lg-4 #container-register #container-register-form .input-group {
   margin-bottom: 25px;
 }
-#container #container-main #container-register #container-register-form .button-sub {
+.jumbotron .container .col-lg-4 #container-register #container-register-form .button-sub {
   width: 100%;
 }
-#container #container-main #container-register #container-register-form .button-sub .btn-social-icon {
+.jumbotron .container .col-lg-4 #container-register #container-register-form .button-sub .btn-social-icon {
   float: right;
   margin-left: 25px;
 }
-#container #container-main #focus-box {
-  width: 60%;
-  padding-top: 5%;
-  position: absolute;
-  margin: 2%;
+.jumbotron .container .col-lg-8 {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -4px;
 }
-#container #container-main #focus-box div {
+.jumbotron .container .col-lg-8 #focus-box h4 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.jumbotron .container .col-lg-8 #focus-box i {
+  vertical-align: -10%;
+  font-size: 28px;
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  margin-right: 5px;
+}
+.jumbotron .container .col-lg-8 #focus-box div {
   margin-bottom: 30px;
-}
-#container #container-main #container-imgRow {
-  margin-right: -15px;
-  padding-top: 20%;
-  padding-left: 5%;
-  padding-right: 5%;
-  margin-left: -15px;
-}
-#container #container-main #container-loginbutton {
-  margin: 1%;
 }
 @font-face {
   font-family: 'codropsicons';
@@ -543,12 +558,7 @@ section {
 }
 html,
 body {
-  width: 100%;
-  height: 100%;
   font-family: 'Lato', 'sans-serif';
-}
-body {
-  overflow: hidden;
 }
 #addContainer {
   position: absolute;
@@ -670,14 +680,9 @@ body {
   border: solid;
 }
 /* Recipes */
-.container {
-  position: absolute;
-  width: 100% !important;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-}
 .container .main {
+  position: absolute;
+  width: 100%;
   height: 100%;
   background-color: #252525;
 }
@@ -691,7 +696,6 @@ body {
   border-bottom: 1px solid #c6d0da;
 }
 .container .main #main-container .search #main-container-search {
-  border-bottom: 1px solid #2c2c2c;
   position: absolute;
   top: 0;
   right: 0;
