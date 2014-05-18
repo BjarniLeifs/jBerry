@@ -54,7 +54,7 @@ app.controller("MainController", ["$scope", "$location", "userFactory", "calenda
 	$scope.setSelect = function($event) {
 		$(".cp-menu li a").removeClass("active");
 		$($event.currentTarget.children[0]).addClass('active');
-	}
+	};
 
 	$scope.getTemplate = function() {
 		return name;
