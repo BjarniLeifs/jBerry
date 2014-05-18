@@ -1,10 +1,10 @@
-<div id="addContainer-main"  ng-controller="addCtrl">
+<div id="addContainer-main"  ng-controller="addController">
 	<div class="row">
 		<div class="col-md-8" id="addContainer-left">
 			<div class="row">
 				<div class="col-md-8" id="addContainer-rName">
 					<label for="recipeName">Recipe Name</label>
-					<input type="text" class="form-control" id="recipeName" placeholder="Recipe Name" />
+					<input type="text" class="form-control" id="recipeName" placeholder="Recipe Name" ng-model="recipe.title"/>
 				</div>
 			</div>
 			<div class="col-md-8" id="addContainer-photo-pTag">

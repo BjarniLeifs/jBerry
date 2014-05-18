@@ -12,5 +12,5 @@ app.controller("addController", ["$scope", "$location", "foodFactory", function(
 				console.log(status);
 			});
 		}
-	}
+	};
 }]);
