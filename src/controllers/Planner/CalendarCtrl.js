@@ -91,7 +91,7 @@ app.controller("CalendarCtrl", ["$scope", "$location", "calendarFactory", functi
 
   //Get Calander Width
   $scope.getWidth = function() {
-    return ($(document).width() - ((($(document).width() * 0.1666666667) * 2 ) - 20));
+    return ($(document).width() - ((($(document).width() * 0.1666666667) * 2 )));
   };
 
   angular.element(document).ready(function () {

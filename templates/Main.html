@@ -34,7 +34,7 @@
 						
 						<!-- Task - 1 [Profile]-->
 
-						<li class="cp-item" ng-click="setTemplate('Me/profile.html', true)">
+						<li class="cp-item" ng-click="setTemplate('Me/profile.html', true, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-user"></span><p>Profile</p>
 							</a>
@@ -42,7 +42,7 @@
 
 						<!-- Task - 2 [Stats]-->
 
-						<li class="cp-item" ng-click="setTemplate('stats/statistic.html', false)">
+						<li class="cp-item" ng-click="setTemplate('stats/statistic.html', false, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-stats"></span><p>Stats</p>
 							</a>
@@ -58,16 +58,16 @@
 						<li id="Recipes" class="accordion-body collapse" style="height:0px;">
 							<div class="accordion-inner">
 								<ul class="cp-submenu">
-									<li ng-click="setTemplate('recipes/browse.html', false)">
+									<li ng-click="setTemplate('recipes/browse.html', false, $event)">
 										Browse Recipes
 									</li>
-									<li ng-click="setTemplate('recipes/add.html', false)">
+									<li ng-click="setTemplate('recipes/add.html', false, $event)">
 										Create Recipes
 									</li>
-									<li ng-click="setTemplate('noView.html', true)">
+									<li ng-click="setTemplate('noView.html', true, $event)">
 										My Recipes
 									</li>
-									<li ng-click="setTemplate('noView.html', true)">
+									<li ng-click="setTemplate('noView.html', true, $event)">
 										My Favorite Recipes
 									</li>
 								</ul>
@@ -76,7 +76,7 @@
 
 						<!-- Task - 4 [Planner]-->
 
-						<li class="cp-item" ng-click="setTemplate('Planner/calendar.html', false)">
+						<li class="cp-item" ng-click="setTemplate('Planner/calendar.html', false, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-calendar"></span><p>Planner</p>
 							</a>
@@ -84,7 +84,7 @@
 
 						<!-- Task - 5 [Food]-->
 
-						<li class="cp-item" ng-click="setTemplate('recipes/browse.html', false)">
+						<li class="cp-item" ng-click="setTemplate('recipes/browse.html', false, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-cutlery"></span><p>Food</p>
 							</a>
@@ -92,7 +92,11 @@
 
 						<!-- Task - 6 [Trainers]-->
 
+<<<<<<< HEAD
 						<li class="cp-item" ng-click="setTemplate('trainers.html', true)">
+=======
+						<li class="cp-item" ng-click="setTemplate('noView.html', true, $event)">
+>>>>>>> c99cecb81a5c007b357af684a5a58794807da1e1
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-eye-open"></span><p>Trainers</p>
 							</a>
@@ -100,7 +104,7 @@
 
 						<!-- Task - 7 [Measurements]-->
 
-						<li class="cp-item" ng-click="setTemplate('messurements/measurements.html', true)">
+						<li class="cp-item" ng-click="setTemplate('messurements/measurements.html', true, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon-list-alt"></span><p>Measurements</p>
 							</a>
@@ -108,7 +112,7 @@
 
 						<!-- Task - 8 [Activity]-->
 
-						<li class="cp-item" ng-click="setTemplate('messurements/metabolic.html', true)">
+						<li class="cp-item" ng-click="setTemplate('messurements/metabolic.html', true, $event)">
 							<a class="accordion-toggle">
 								<span class="glyphicon glyphicon glyphicon-heart"></span><p>Activity</p>
 							</a>
@@ -116,7 +120,7 @@
 
 						<!-- Task - 8 [Goals]-->
 
-						<li class="cp-item" ng-click="setTemplate('food/nutritionopz.html', true)">
+						<li class="cp-item" ng-click="setTemplate('food/nutritionopz.html', true, $event)">
 							<a class="accordion-toggle">
 								<i class="fa fa-trophy"></i><p>Goals</p>
 							</a>
