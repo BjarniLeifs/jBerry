@@ -6,6 +6,10 @@ app.controller("addController", ["$scope", "$location", "foodFactory", function(
 		tags : []
 	};
 
+	$scope.addIngredient = function(){
+		$scope.recipe.ingredients.push();
+	};
+
 	$scope.addRecipe = function(){
 		if($scope.recipe.title !== ""){
 			foodFactory.postRecipe(recipe).success(function(data, status, headers) {
