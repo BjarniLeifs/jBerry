@@ -38,9 +38,14 @@
 
 
 			</form>
+			<div class="isTrainer">
+				 <input type="checkbox" name="trainer">I am a personal trainer!</input>
+			</div>
 
 			<div class="modal-footer">
 				<button data-bb-handler="cancel" type="button" class="btn btn-default">Cancel</button>
+
+				<button data-bb-handler="confirm" type="button" ng-click="trainer()" class="btn btn-success">trainer!</button>
 									
 				<button data-bb-handler="confirm" type="button" ng-click="changeInfo()" class="btn btn-success">Save!</button>
 			</div>
