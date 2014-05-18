@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var calenderSchema = mongoose.Schema({
 
 	userID		: String,
-	calenderObj	: String
+	calenderObj	: [],
 
 }, {collection : 'Calender'});
 

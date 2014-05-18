@@ -68,10 +68,19 @@ module.exports = function(app, passport, mongoose) {
   });
 
   app.post('/api/calender', function(req, res) {
-    newCalender = new Calender();
-    newCalender.userID = req.user._id;
-    newCalender.calenderObj = req.body.calender;
-    newCalender.save();
+    Calender.findOne({"userID" : req.user._id}, function(err, data) {
+      if(err)
+        throw err;
+
+      if(data === null)
+        data = new Calender();
+      
+
+      data.userID = req.user._id;
+      data.calenderObj = req.body.calender;
+      data.save();
+      res.send(data);
+    });
   });
 
   app.delete('/api/calender', function(req, res) {
