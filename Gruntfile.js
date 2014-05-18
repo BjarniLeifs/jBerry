@@ -9,11 +9,20 @@
         basic: {
           src: ['src/**/*.js'],
           dest: 'out/JBerry.js',
-        },
-        extras: {
-          src: ['css/*.css'],
-          dest: 'out/style.css',
-        },
+        }
+      },
+      less: {
+        development: {
+          options: {
+            paths: ['css/less'],
+            yuicompress: true,
+            optimization: 2
+          },
+          files: {
+            // target.css file: source.less file
+            'out/TheMaster.css': 'css/less/TheMaster.less'
+          }
+        }
       },
       uglify: {
         options: {
@@ -46,10 +55,10 @@
           }
         },
         css: {
-          files: ['css/*.css', 'css/less/*.less'],
-          tasks: ['concat:extras'],
+          files: ['css/less/*.less'],
+          tasks: ['less'],
           options: {
-            livereload: true,
+            nospawn: true
           }
         }
       },
@@ -67,6 +76,7 @@
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'express:server', 'watch']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'express:server', 'watch', 'less']);
 };
