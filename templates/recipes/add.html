@@ -1,312 +1,293 @@
-<div id="addContainer" class="col-md-10" ng-controller="addCtrl">	
+<div id="addContainer-main"  ng-controller="addCtrl">
 	<div class="row">
 		<div class="col-md-8" id="addContainer-left">
-			<form>
-				<div class="row">
-					<div class="col-md-6" id="addContainer-rName">
-						<div class="form-group">
-							<label for="recipeName">Recipe Name</label>
-							<input type="text" class="form-control" id="recipeName" placeholder="Recipe Name" />
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-rName">
+					<label for="recipeName">Recipe Name</label>
+					<input type="text" class="form-control" id="recipeName" placeholder="Recipe Name" />
 				</div>
-				<div class="row" >	
-					<div class="col-md-2" id="addContainer-photo">
-						<div class="form-group">
+			</div>
+			<div class="col-md-8" id="addContainer-photo-pTag">
+				<div class="row">
+					<div class="col-md-3">
+						<div id="addContainer-photo">
 							<label for="photo">Photo</label>
 							<img src="http://www.iconsdb.com/icons/preview/moth-green/berry-xxl.png" id="photo" alt="food"  width="100%"  />
 							<p></p>
 							<input type="file" id="addPoto" name="filename" accept="image/gif, image/jpeg, image/png">
 						</div>
 					</div>
-					<div class="col-md-8" id="personal-tag">
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Burgerheaven">
-						</div>
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Smoothie">
-						</div>
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Smoothie">
-						</div>
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Lowcarb">
-						</div>
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Smoothie">
-						</div>
-						<div class="col-md-4 preper">
-							<label for="addTag">Personalized Tag</label>
-							<input type="text" class="form-control" id="addTag" placeholder="Example: #Lowcarb">
+					<div class="col-md-8">
+						<div id="addContainer-pTag">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Burgerheaven">
+									</div>
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Smoothie">
+									</div>
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Smoothie">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Lowcarb">
+									</div>
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Smoothie">
+									</div>
+									<div class="pTag">
+										<label for="addTag">Personalized Tag</label>
+										<input type="text" class="form-control" placeholder="Example: #Lowcarb">
+									</div>
+								</div>
+							</div>			
 						</div>
 					</div>
 				</div>
-				<div>
-					<div class="col-md-8" id="addContainer-rIng">
-						<div class="form-group">
-							<div id="addContainer-cat">
-								<label for="btnbox">Categorize Your Recipe (optional)</label>	
-
-									<div class="form-group" id="btnbox">
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" data-color="primary">Appetizers</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our"  data-color="primary">BBQ & Grill</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our"  data-color="primary">Beef</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id="" data-color="primary">Beverages</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id="" data-color="primary">Bread</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									  		<button type="button" class="btn btn-our" id="" data-color="primary">Breakfast</button>
-									 	   <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id="" data-color="primary">Brunch</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Cakes</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Chicken</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Cookies</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									  		<button type="button" class="btn btn-our" id="" data-color="primary">Desserts</button>
-									 	   <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Healthy</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Holidays</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Italian</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id="" data-color="primary">Main Dish</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Mexican</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id="" data-color="primary">Pasta</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Pork</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-										    <button type="button" class="btn btn-our" id=""  data-color="primary">Salad</button>
-										    <input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Seafood</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Seasonal</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Side-dish</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Soups</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Stews</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-										<span class="button-checkbox" checker>
-									    	<button type="button" class="btn btn-our" id="" data-color="primary">Vegetarian</button>
-								    		<input type="checkbox" class="hidden" />
-										</span>
-									</div>
-								
-							</div>	
+			</div>
+			<div Class="row">
+				<div class="col-md-8" id="addContainer-cat">
+					<label for="btnbox">Categorize Your Recipe (optional)</label>	
+					<div id="btnbox"></div>		
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Appetizers</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">BBQ & Grill</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Beef</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Beverages</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Bread</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				  		<button type="button" class="btn btn-our" data-color="primary">Breakfast</button>
+				 	   <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Brunch</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Cakes</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Chicken</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Cookies</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				  		<button type="button" class="btn btn-our" data-color="primary">Desserts</button>
+				 	   <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Healthy</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Holidays</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Italian</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Main Dish</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Mexican</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Pasta</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Pork</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+					    <button type="button" class="btn btn-our" data-color="primary">Salad</button>
+					    <input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Seafood</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Seasonal</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Side-dish</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Soups</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Stews</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+					<span class="button-checkbox" checker>
+				    	<button type="button" class="btn btn-our" data-color="primary">Vegetarian</button>
+			    		<input type="checkbox" class="hidden" />
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-ingredient">
+					<table class="table table-hover" id="ingredient">	
+						<tr>
+							<td class="table-1"><label for="inglabel">Ingredient</label><div id="inglabel"></div></td>
+							<td class="table-2"><label for="qualabel">Quantity</label><div id="qualabel"></div></td>
+							<td class="table-3"><label for="meslabel">Measurement</label><div id="meslabel"></div></td>
+							<td class="table-4"><label for="edlabel">Edit/Delete</label><div id="edlabel"></div></td>
+						</tr>
+						<tr ng-repeat="ingredient in ingredients">
+							<td class="table-1">{{ingredient.name}}</td>
+							<td class="table-2">{{ingredient.amount}}</td>
+							<td class="table-3">{{ingredient.type}}</td>
+							<td class="table-4" class="table-button">
+								<div id="box-align">
+									<button type="button" class="btn btn-primary btn-xs">
+										<div class="glyphicon glyphicon-edit" id="ingButton"></div>
+									</button>
+									&nbsp;
+									<button type="button" class="btn btn-primary btn-xs" ng-click="removeIngredient($index)">
+										<div class="glyphicon glyphicon-trash" id="ingButton"></div>
+									</button>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<table class="table" id="ingredient">	
+						<tr>	
+							<td class="table-1">
+								<div class="addSearcher" ><input type="text" style="width: 23.5em;" placeholder="Search for add in table..." ng-model="name" ng-change="updateTypeHead()" typeahead="food.Name for food in foods | filter:$viewValue | limitTo:4"></div>
+							</td>
+							<td class="table-2">
+								<div class="addQuant"><input type="number" min="0.0" step="0.01" max="999" style="width: 4.5em;" placeholder="0" ng-model="amount"></div>
+							</td>
+							<td class="table-3">
+								<select id="mesureSelect" ng-model="type">
+									<option>tsk</option>
+									<option>g</option>
+									<option>kg</option>
+									<option>bolli</option>
+									<option>stk</option>
+								</select>	
+							</td>
+							<td class="table-4" class="table-button">
+								<div id="box-align">
+									<button type="button" class="btn btn-primary btn-xs" id="ingButtonPlus" ng-click="addIngredient()">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-quickNotes">
+					<label for="quickNotes">Quick Description</label>
+					<textarea class="form-control" id="quickNotes" rows="3" placeholder="Example: Here's a perky variation on pork chops and mushroom gravy. Coat the chops with a mixture of bread crumbs and Parmesan cheese before browning."></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-direction" >
+					<label for="direction">Directions</label>
+					<textarea  id="direction" class="form-control" rows="3" placeholder="Please add new steps for each part of the recipe, by using the button below."></textarea>
+					<p id="button-direction">
+					<button type="button" class="btn btn-primary btn-xs">Add new step</button>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-prep">
+					<div class="row">
+						<div class="col-md-4">
+							<label for="prepTime">Prep Time</label>
+						    <input type="text" class="form-control" id="prepTime" placeholder="Example: 10 minutes">
+						</div>
+						<div class="col-md-4">
+							<label for="cookTime">Cook Time</label>
+						    <input type="text" class="form-control" id="cookTime" placeholder="Example: 15 minutes.">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">	
+							<label for="readyIn">Ready In</label>
+					    	<input type="text" class="form-control" id="readyIn" placeholder="Example: 15 minutes.">
+						</div>
+						<div class="col-md-4">
+							<label for="numbServ">Number of Servings</label>
+							<input type="text" class="form-control" id="numbServ" placeholder="Example: 4">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="recipeYield">Recipe Yield</label>
+					    	<input type="text" class="form-control" id="recipeYield" placeholder="Example: One loaf">
 						</div>	
 					</div>
 				</div>
-				<div class="row">		
-					<div class="col-md-8" id="addContainer-ingredient">
-						<table class="table table-hover" id="ingredient">	
-								<tr>
-									<td class="table-1"><label for="inglabel">Ingredient</label><div id="inglabel"></div></td>
-									<td class="table-2"><label for="qualabel">Quantity</label><div id="qualabel"></div></td>
-									<td class="table-3"><label for="meslabel">Measurement</label><div id="meslabel"></div></td>
-									<td class="table-4"><label for="edlabel">Edit/Delete</label><div id="edlabel"></div></td>
-								</tr>
-								<tr ng-repeat="ingredient in ingredients">
-									<td class="table-1">{{ingredient.name}}</td>
-									<td class="table-2">{{ingredient.amount}}</td>
-									<td class="table-3">{{ingredient.type}}</td>
-									<td class="table-4" class="table-button">
-										<div id="box-align">
-											<button type="button" class="btn btn-primary btn-xs">
-												<div class="glyphicon glyphicon-edit" id="ingButton"></div>
-											</button>
-											&nbsp;
-											<button type="button" class="btn btn-primary btn-xs" ng-click="removeIngredient($index)">
-												<div class="glyphicon glyphicon-trash" id="ingButton"></div>
-											</button>
-										</div>
-									</td>
-								</tr>
-						</table>
-						<table class="table" id="ingredient">	
-							<tr>	
-								<td class="table-1">
-									<div class="addSearcher" ><input type="text" style="width: 23.5em;" placeholder="Search for add in table..." ng-model="name" ng-change="updateTypeHead()" typeahead="food.Name for food in foods | filter:$viewValue | limitTo:4"></div>
-								</td>
-								<td class="table-2">
-									<div class="addQuant"><input type="number" min="0.0" step="0.01" max="999" style="width: 4.5em;" placeholder="0" ng-model="amount"></div>
-								</td>
-								<td class="table-3">
-									<select id="mesureSelect" ng-model="type">
-										<option>tsk</option>
-										<option>g</option>
-										<option>kg</option>
-										<option>bolli</option>
-										<option>stk</option>
-									</select>	
-								</td>
-								<td class="table-4" class="table-button">
-									<div id="box-align">
-										<button type="button" class="btn btn-primary btn-xs" id="ingButtonPlus" ng-click="addIngredient()">
-											<span class="glyphicon glyphicon-plus"></span>
-										</button>
-									</div>
-								</td>
-							</tr>
-						</table>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-see"> 
+					<label for="whoSee">Who should be able to see this recipe?</label>
+					<div id="whoSee">
+						<span class="button-checkbox" checker>
+		                    <button type="button" class="btn" data-color="primary">Everyone</button>
+		                    <input type="checkbox" class="hidden" />
+		                </span>
+		                <span class="button-checkbox" checker>
+		                    <button type="button" class="btn" data-color="primary">Only me</button>
+		                    <input type="checkbox" class="hidden" />
+		                </span>
 					</div>
 				</div>
-				<div id="addContainer-qD">
-					<div class="row">	
-						<div class="form-group" >
-							<div class="col-md-6" id="addContainer-quickNotes">
-								<label for="quickNotes">Quick Description</label>
-								<textarea class="form-control" id="quickNotes" rows="3" placeholder="Example: Here's a perky variation on pork chops and mushroom gravy. Coat the chops with a mixture of bread crumbs and Parmesan cheese before browning."></textarea>
-							</div>
-						</div>
-					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-notes">
+					<label for="notes">Notes (optional)</label>
+					<textarea class="form-control" id="notes" rows="3" placeholder="Example: to thiken sauce, use cream."></textarea>
 				</div>
-				<div class="row">		
-					<div class="col-md-8" id="addContainer-direction" >
-						<label for="direction">Directions</label>
-						<textarea  id="direction" class="form-control" rows="3" placeholder="Please add new steps for each part of the recipe, by using the button below."></textarea>
-						<p id="button-direction">
-						<button type="button" class="btn btn-primary btn-xs">Add new step</button>
-						</p>
-					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8" id="addContainer-subsbutton">
+					<button type="button" class="btn btn-default">Preview</button>
+					<button type="button" class="btn btn-default">Cancel</button>
+					<button type="button" class="btn btn-default">Post</button>	
 				</div>
-				<div class="row">
-					<div class="form-group">
-						<div class="col-md-8" id="addContainer-prep">
-							<div class="row">
-								<div class="col-md-4" id="preper">
-									<label for="prepTime">Prep Time</label>
-								    <input type="text" class="form-control" id="prepTime" placeholder="Example: 10 minutes">
-								</div>
-								<div class="col-md-4" id="preper">
-									<label for="cookTime">Cook Time</label>
-								    <input type="text" class="form-control" id="cookTime" placeholder="Example: 15 minutes.">
-								</div>
-
-							</div>
-							<div class="row">
-								<div class="col-md-4" id="preper">	
-									<label for="readyIn">Ready In</label>
-							    	<input type="text" class="form-control" id="readyIn" placeholder="Example: 15 minutes.">
-								</div>
-								<div class="col-md-4" id="preper">
-									<label for="numbServ">Number of Servings</label>
-									<input type="text" class="form-control" id="numbServ" placeholder="Example: 4">
-								</div>
-
-							</div>
-							<div class="row">
-								<div class="col-md-4" id="preper">
-									<label for="recipeYield">Recipe Yield</label>
-							    	<input type="text" class="form-control" id="recipeYield" placeholder="Example: One loaf">
-								</div>
-								
-							</div>
-
-						</div>
-					</div>
-				</div>	
-				<div class="row">
-					<div class="col-md-8" id="addContainer-see"> 
-						<label for="whoSee">Who should be able to see this recipe?</label>
-						<div class="form-group" id="whoSee">
-							<span class="button-checkbox" checker>
-			                    <button type="button" class="btn" data-color="primary">Everyone</button>
-			                    <input type="checkbox" class="hidden" />
-			                </span>
-			                <span class="button-checkbox" checker>
-			                    <button type="button" class="btn" data-color="primary">Only me</button>
-			                    <input type="checkbox" class="hidden" />
-			                </span>
-						</div>
-					</div>
-				</div>
-				<div class="row">	
-					<div class="form-group" >
-						<div class="col-md-6" id="addContainer-notes">
-							<label for="notes">Notes (optional)</label>
-							<textarea class="form-control" id="notes" rows="3" placeholder="Example: to thiken sauce, use cream."></textarea>
-						</div>
-					</div>
-				</div>	
-				<div id="addContainer-subsbutton">
-					<div class="row">
-						<div clas="form-group">
-							<div class="col-md-6">	
-	 							<button type="button" class="btn btn-default">Preview</button>
-								<button type="button" class="btn btn-default">Cancel</button>
-								<button type="button" class="btn btn-default">Post</button>	
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
+			</div>
 		</div>
-		<div class="col-md-3" id="addContainer-right">
+		<div class="col-md-4" id="addContainer-right">
 			<div class="nutrition-label">
 			<section class="performance-facts">
 				<header class="performance-facts__header">
