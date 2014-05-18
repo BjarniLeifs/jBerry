@@ -39,14 +39,22 @@ app.controller("MainController", ["$scope", "$location", "userFactory", "calenda
 		console.log("Error");
 	});
 
-	$scope.setTemplate = function(path, hide) {
-		if($scope.templates[0].lastPath != path)
+	$scope.setTemplate = function(path, hide, $event) {
+		if($scope.templates[0].lastPath != path) {
 			$scope.templates = [{url: "/templates/" + path, lastPath:path}];
+			$scope.setSelect($event);
+		}
 
 		if(hide !== undefined)
 			if($scope.isSideBar !== hide)
 				$scope.isSideBar = hide;
+
 	};
+
+	$scope.setSelect = function($event) {
+		$(".cp-menu li a").removeClass("active");
+		$($event.currentTarget.children[0]).addClass('active');
+	}
 
 	$scope.getTemplate = function() {
 		return name;

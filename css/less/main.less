@@ -38,9 +38,16 @@
 			background-color: #fff;
 
 			#Container-Left-Menu {
+				overflow: hidden;
+
+				.cp-scroller {
+					position: absolute;
+					overflow-y: scroll;
+					height: 100%;
+				}
+
 				.cp-fix {
 					position: absolute;
-					overflow-y: auto;
 					width: 100%;
 					height: 100%;
 				}
@@ -83,13 +90,13 @@
 
 						.profileContainer-userInfo {
 							position: absolute;
-							top: 110px;
-							height: 85px;
+							top: 120px;
+							height: 70px;
 							width: 100%;
 
 							p {
 								font-size: 1.1em;
-								line-height: 2.6;
+								line-height: initial;
 								color: #d2d2d2;
 								text-align: center;
 								width: 100%;
@@ -97,7 +104,7 @@
 
 							h2 {
 								white-space: nowrap;
-								line-height: 0px;
+								line-height: initial;
 								text-align: center;
 								font-size: 22px;
 							}
@@ -145,6 +152,11 @@
 						span, i {
 							display: inline-block;
 							padding: 0 15px 0 12px;
+						}
+
+						.active {
+							background: #5F6FB0 !important; //Overide hover
+							color: white;
 						}
 
 						a {
