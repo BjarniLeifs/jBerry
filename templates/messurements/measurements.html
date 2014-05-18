@@ -1,18 +1,19 @@
-<div id="content" ng-controller="skinfoldController">
-    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a data-target="#body" data-toggle="tab">My Body </a></li>
-        <li><a data-target="#jkP7" data-toggle="tab">Jackson-Pollock 7-point</a></li>
-        <li><a data-target="#jkP4" data-toggle="tab">Jackson-Pollock 4-points</a></li>
-        <li><a data-target="#dWp4" data-toggle="tab">Durnin-Womersley 4-points</a></li>
-        <li><a data-target="#activityMets" data-toggle="tab"></a></li>
-    </ul>
-    <div id="my-tab-content" class="tab-content">
-      <div class="tab-pane active" id="body">
-  			<div class="col-md-12">
-  	    		<div class="row">
-  	      			<div class="body-display col-md-4">
-  	        			<img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto" />
-  	      			</div>
+<div id="content" class="messurements" ng-controller="skinfoldController">
+  <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+      <li class="active"><a data-target="#body" data-toggle="tab">My Body </a></li>
+      <li><a data-target="#jkP7" data-toggle="tab">Jackson-Pollock 7-point</a></li>
+      <li><a data-target="#jkP4" data-toggle="tab">Jackson-Pollock 4-points</a></li>
+      <li><a data-target="#dWp4" data-toggle="tab">Durnin-Womersley 4-points</a></li>
+      <li><a data-target="#activityMets" data-toggle="tab"></a></li>
+  </ul>
+  <div class="content-wraper">
+    <div id="tab-content" class="tab-content">
+        <div class="tab-pane active" id="body">
+    			<div class="col-md-12">
+        		<div class="row">
+          			<div class="body-display col-md-4">
+            			<img src="css/img/tape-measurement-sites.jpg" alt="Measurement info" height="auto" width="auto" />
+          			</div>
                 <div class="col-md-8">
     	      			<form role="form" class="body-form" role="form">
                     <div class="form-group">
@@ -101,52 +102,69 @@
                     </div>
     	        		</form>
                 </div>
-  	    		</div>
-  	  		</div>     
+    	    		</div>
+    	  		</div>     
         </div>
+
         <div class="tab-pane" id="jkP7">
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
-              <div class="thumbnail" ><input type="number" class="boxSize" id="SkinfoldSuprailiac" min="0" step="1" max="100000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldSuprailiac"  min="0" step="1" max="100000"  name="Suprailiac" placeholder=" Suprailiac">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldAbdomen.gif" alt="Abdomen" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldAbdomen" min="0" step="1" max="100000"  name="Abdomen" placeholder=" Abdomen"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldAbdomen" min="0" step="1" max="100000"  name="Abdomen" placeholder=" Abdomen">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldChest.gif" alt="Chest" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldChest" min="0" step="1" max="100000"  name="Chest" placeholder=" Chest"> mm     
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldChest" min="0" step="1" max="100000"  name="Chest" placeholder=" Chest">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
           </div>
+
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldAxilla.gif" alt="Axilla" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldAxilla" min="0" step="1" max="100000"  name="axilla" placeholder=" Axilla"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldAxilla" min="0" step="1" max="100000"  name="axilla" placeholder=" Axilla">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldSubscapula.gif" alt="Scapula" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldSubscapula" min="0" step="1" max="100000"  name=" Subscapula" placeholder=" Scapula"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldSubscapula" min="0" step="1" max="100000"  name=" Subscapula" placeholder=" Scapula">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldTriceps" min="0" step="1" max="100000"  name="triceps" placeholder=" Tricep"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldTriceps" min="0" step="1" max="100000"  name="triceps" placeholder=" Tricep">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
           </div>
+
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldThigh.gif" alt="Thigh" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldThigh" min="0" step="1" max="100000"  name="thigh" placeholder=" Thigh"> mm
-              </div> 
-            </div>
-            <div class="col-md-4" >
-              <table class="table table-striped">
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldThigh" min="0" step="1" max="100000"  name="thigh" placeholder=" Thigh">
+                <span class="input-group-addon">mm</span>
+              </div>
+            </div> 
+            <div class="col-md-8" >
+              <table class="table table-bordered">
                 <tr>     
                   <td>Body Fat</td>
                   <td>19</td>
@@ -162,39 +180,46 @@
                   <td>77</td>
                   <td>kg</td>
                 </tr>
-                <tr>
-                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
-                </tr>
               </table>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
             </div>
           </div>
         </div>
+
         <div class="tab-pane" id="jkP4">
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
-              <div class="thumbnail" ><input type="number" class="boxSize" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
-              </div>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac">
+                  <span class="input-group-addon">mm</span>
+                </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldAbdomen.gif" alt="Abdomen" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldAbdomen" min="0" step="1" max="10000"  name="Abdomen" placeholder=" Abdomen"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldAbdomen" min="0" step="1" max="10000"  name="Abdomen" placeholder=" Abdomen">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep"> mm  
-              </div>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep">
+                  <span class="input-group-addon">mm</span>
+                </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldThigh.gif" alt="Thigh" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldThigh" min="0" step="1" max="10000"  name="thigh" placeholder=" Thigh"> mm
-              </div> 
+                <div class="input-group">
+                  <input type="number" class="form-control" id="SkinfoldThigh" min="0" step="1" max="10000"  name="thigh" placeholder=" Thigh">
+                  <span class="input-group-addon">mm</span>
+                </div>
             </div>
             <div class="col-md-4" >
-              <table class="table table-striped">
+              <table class="table table-bordered">
                 <tr>     
                   <td>Body Fat</td>
                   <td>19</td>
@@ -210,39 +235,46 @@
                   <td>77</td>
                   <td>kg</td>
                 </tr>
-                <tr>
-                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
-                </tr>
               </table>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
             </div>
           </div>
         </div>
+
         <div class="tab-pane" id="dWp4">
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldSuprailiac.gif" alt="Suprailiac" height="140px" width="140px" />
-              <div class="thumbnail" ><input type="number" class="boxSize" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac"> mm  
-              </div>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="SkinfoldSuprailiac" min="0" step="1" max="10000"  name="Suprailiac" placeholder=" Suprailiac">
+                  <span class="input-group-addon">mm</span>
+                </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldSubscapula.gif" alt="Scapula" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldSubscapula" min="0" step="1" max="10000"  name=" Subscapula" placeholder=" Scapula"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldSubscapula" min="0" step="1" max="10000"  name=" Subscapula" placeholder=" Scapula">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
             <div class="col-sm-2">
               <img src="css/img/SkinfoldTriceps.gif" alt="Tricep" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldTriceps" min="0" step="1" max="1000"  name="triceps" placeholder=" Tricep">
+                <span class="input-group-addon">mm</span>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-2">
               <img src="css/img/SkinfoldChest.gif" alt="Thigh" height="140px" width="140px" />
-              <div class="thumbnail"><input type="number" class="boxSize" id="SkinfoldBicep" min="0" step="1" max="10000"  name="bicep" placeholder=" Bicep"> mm
+              <div class="input-group">
+                <input type="number" class="form-control" id="SkinfoldBicep" min="0" step="1" max="10000"  name="bicep" placeholder=" Bicep">
+                <span class="input-group-addon">mm</span>
               </div> 
             </div>
             <div class="col-md-4" >
-              <table class="table table-striped">
+              <table class="table table-bordered">
                 <tr>     
                   <td>Body Fat</td>
                   <td>19</td>
@@ -258,21 +290,11 @@
                   <td>77</td>
                   <td>kg</td>
                 </tr>
-                <tr>
-                  <td colspan="3"><button type="button" class="btn btn-primary btn-lg btn-block">Submit</button></td>
-                </tr>
               </table>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
             </div>
           </div>
         </div>
     </div>
+  </div>
 </div>
-<!-- Enable the tabs -->
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('#tabs').tab();
-    });
-</script> 
-
-
-

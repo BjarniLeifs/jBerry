@@ -202,9 +202,16 @@
 
 		#Container-Center {
 			height: 100%;
-			overflow: overlay;
 			padding: 0;
 			overflow: hidden;
+
+			#content {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+			}
 
 			&.filler {
 			  -webkit-animation: filler 2s 1;
