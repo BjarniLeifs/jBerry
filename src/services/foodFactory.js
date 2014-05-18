@@ -10,6 +10,16 @@ app.factory("foodFactory", ["$location", "$http", "$q",function($location, $http
 				{
 					id :recipeId
 				});
+		},
+
+		postRecipe: function(data) {
+			return $http.post('http://localhost:3000/api/recipe', 
+			{
+				title : data.title,
+				steps : data.steps,
+				ingredients : data.ingredients,
+				tags : data.tags
+			});
 		}
 	};
 }]);
