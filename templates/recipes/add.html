@@ -168,10 +168,10 @@
 							<td class="table-3"><label for="meslabel">Measurement</label><div id="meslabel"></div></td>
 							<td class="table-4"><label for="edlabel">Edit/Delete</label><div id="edlabel"></div></td>
 						</tr>
-						<tr ng-repeat="ingredient in ingredients">
-							<td class="table-1">{{ingredient.name}}</td>
-							<td class="table-2">{{ingredient.amount}}</td>
-							<td class="table-3">{{ingredient.type}}</td>
+						<tr ng-repeat="ingredient in recipe.ingredients">
+							<td class="table-1">{{recipe.ingredient.name}}</td>
+							<td class="table-2">{{recipe.ingredient.amount}}</td>
+							<td class="table-3">{{recipe.ingredient.type}}</td>
 							<td class="table-4" class="table-button">
 								<div id="box-align">
 									<button type="button" class="btn btn-primary btn-xs">
@@ -183,6 +183,7 @@
 									</button>
 								</div>
 							</td>
+							<button ng-click="addIngredient(recipe.ingredient)">Add</button>
 						</tr>
 					</table>
 					<table class="table" id="ingredient">	
