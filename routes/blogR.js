@@ -52,11 +52,13 @@ module.exports = function(app, passport, mongoose) {
     });
   });
 
+
+
   app.get('/api/blog', function(req, res) {
     Blog.find({}, function(err, data){
       console.log(data);
       res.send(data);
-    }).sort({date : 'desc'});
+    }).sort({date : -1});
   });
 
   app.post('/api/blogByTags', function(req, res) {
@@ -80,6 +82,7 @@ module.exports = function(app, passport, mongoose) {
         commenter : req.user.local.name,
         body: req.body.comment
       };
+      console.log(newComment);
       data.comments.push(newComment);
       data.save(function(err) {
         if (err)
