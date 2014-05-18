@@ -41,6 +41,10 @@ app.factory("profileFactory", ["$location", "$http", "$q",
 						tags	:data.tags
 					});
 			},
+
+			ImTrainer: function(){
+				return $http.put("http://localhost:3000/api/settrainer");
+			}
 			
 		};
 	}]);
