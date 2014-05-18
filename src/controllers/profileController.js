@@ -14,7 +14,7 @@
 
 	$scope.posts = "";
 	$scope.timeline = "";
-	
+
 
 	$scope.post = function(){
 		var data = $scope.timeline;
@@ -57,7 +57,7 @@
 			console.log("controller trainer");
 		});
 			
-		
+		 
 	};
 
 
