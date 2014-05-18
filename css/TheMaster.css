@@ -1230,22 +1230,25 @@ body {
   color: #000;
 }
 #body .body-form {
-  padding: 2% 5%;
+  padding: 5%;
   width: 100%;
 }
 #body .body-form .form-group {
-  margin-bottom: -5px;
   width: 60%;
   float: left;
 }
 #body .body-form .form-group label {
-  margin-top: 1.3em;
+  float: left;
+  line-height: 34px;
+  height: 34px;
 }
 #body .body-form .form-group input {
-  margin: 10px;
   display: inline-block;
-  width: 60%;
+  width: 150px;
   float: right;
+}
+#body .body-form .form-group span {
+  min-width: 44px;
 }
 #jkP7 .thumbnail,
 jkP4 .thumbnail,
@@ -1382,7 +1385,7 @@ bn.write {
   padding: 0 !important;
   width: 100%;
   list-style: none;
-  min-height: 231px;
+  min-height: 240px;
 }
 .list-container .list .sublist li:not(.header) {
   font-size: 16px;
@@ -1575,9 +1578,7 @@ bn.write {
 }
 /* Profile*/
 .profileContainer {
-  top: 0;
-  bottom: 0;
-  overflow: auto;
+  padding: 20px;
 }
 .profileContainer .profileContainer-left {
   height: 100%;
